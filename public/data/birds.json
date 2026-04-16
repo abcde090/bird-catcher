@@ -1,0 +1,1613 @@
+[
+  {
+    "id": "emu",
+    "commonName": "Emu",
+    "scientificName": "Dromaius novaehollandiae",
+    "family": "Casuariidae",
+    "order": "Casuariiformes",
+    "category": "Flightless Birds",
+    "description": "The Emu is Australia's largest native bird and the second-tallest living bird in the world. These flightless birds roam vast distances across the Australian mainland, feeding on plants, insects, and small animals.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert",
+      "eucalyptus_forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/405_61_emu.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — seeds, fruits, flowers, insects, and small vertebrates",
+    "size": {
+      "lengthCm": 180,
+      "wingspanCm": 20,
+      "weightG": 45000
+    },
+    "funFact": "Emus can sprint at speeds up to 50 km/h and are excellent swimmers.",
+    "population": {
+      "current": 725000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -31.95,
+      "lng": 141.47
+    }
+  },
+  {
+    "id": "southern-cassowary",
+    "commonName": "Southern Cassowary",
+    "scientificName": "Casuarius casuarius",
+    "family": "Casuariidae",
+    "order": "Casuariiformes",
+    "category": "Flightless Birds",
+    "description": "The Southern Cassowary is a large, flightless bird with a distinctive blue neck and a prominent casque on its head. Found in the tropical rainforests of Far North Queensland, it plays a vital role in seed dispersal.",
+    "conservationStatus": "endangered",
+    "habitats": [
+      "rainforest",
+      "mangrove"
+    ],
+    "regions": [
+      "qld"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/southern_cassowary.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Frugivore — primarily fallen fruits, also fungi, snails, and small vertebrates",
+    "size": {
+      "lengthCm": 170,
+      "wingspanCm": 18,
+      "weightG": 58500
+    },
+    "funFact": "Cassowaries are considered the most dangerous bird in the world due to their powerful kick and dagger-like claws.",
+    "population": {
+      "current": 4400,
+      "trend": "decreasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -16.25,
+      "lng": 145.47
+    }
+  },
+  {
+    "id": "laughing-kookaburra",
+    "commonName": "Laughing Kookaburra",
+    "scientificName": "Dacelo novaeguineae",
+    "family": "Alcedinidae",
+    "order": "Coraciiformes",
+    "category": "Kingfishers & Kookaburras",
+    "description": "Famous for its unmistakable laughing call, the Laughing Kookaburra is the largest member of the kingfisher family. It is a beloved icon of the Australian bush, often seen perched on fence posts and branches.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "urban",
+      "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "wa",
+      "tas"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/img_6094_kookaburra_imp.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — insects, lizards, snakes, mice, and small birds",
+    "size": {
+      "lengthCm": 43,
+      "wingspanCm": 56,
+      "weightG": 345
+    },
+    "funFact": "Kookaburras are territorial and their laughing chorus at dawn and dusk marks their territory boundaries.",
+    "population": {
+      "current": 11340000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -33.72,
+      "lng": 150.31
+    }
+  },
+  {
+    "id": "rainbow-lorikeet",
+    "commonName": "Rainbow Lorikeet",
+    "scientificName": "Trichoglossus moluccanus",
+    "family": "Psittaculidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Rainbow Lorikeet is one of Australia's most colourful birds, with bright plumage of blue, green, orange, and red. These energetic parrots are commonly seen in noisy flocks feeding on nectar and pollen in urban gardens and bushland.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "urban",
+      "rainforest",
+      "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "wa"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg/330px-Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Nectarivore — nectar, pollen, fruits, seeds, and occasional insects",
+    "size": {
+      "lengthCm": 30,
+      "wingspanCm": 46,
+      "weightG": 133
+    },
+    "funFact": "Rainbow Lorikeets have a brush-tipped tongue specially adapted for extracting nectar from flowers.",
+    "population": {
+      "current": 5190000,
+      "trend": "increasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -27.47,
+      "lng": 153.03
+    }
+  },
+  {
+    "id": "sulphur-crested-cockatoo",
+    "commonName": "Sulphur-crested Cockatoo",
+    "scientificName": "Cacatua galerita",
+    "family": "Cacatuidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Sulphur-crested Cockatoo is a large white parrot with a distinctive yellow crest that it raises when excited or alarmed. Highly intelligent and social, these birds are found across eastern and northern Australia.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "urban",
+      "rainforest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "tas",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/sulphur-crested_cockatoo.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — seeds, nuts, berries, flowers, roots, and grubs",
+    "size": {
+      "lengthCm": 50,
+      "wingspanCm": 95,
+      "weightG": 880
+    },
+    "funFact": "These cockatoos can live over 80 years and have been observed teaching each other to open garbage bins.",
+    "population": {
+      "current": 920000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -33.87,
+      "lng": 151.21
+    }
+  },
+  {
+    "id": "galah",
+    "commonName": "Galah",
+    "scientificName": "Eolophus roseicapilla",
+    "family": "Cacatuidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Galah is one of the most abundant and widespread cockatoos in Australia, easily recognised by its pink and grey plumage. Often seen in large, noisy flocks, it has adapted well to both rural and urban environments.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "grassland",
+      "urban",
+      "eucalyptus_forest",
+      "desert"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Eolophus_roseicapilla_-Brisbane%2C_Queensland%2C_Australia-8.jpg/330px-Eolophus_roseicapilla_-Brisbane%2C_Queensland%2C_Australia-8.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — seeds, grains, nuts, berries, and roots",
+    "size": {
+      "lengthCm": 35,
+      "wingspanCm": 75,
+      "weightG": 345
+    },
+    "funFact": "In Australian slang, 'galah' is used to describe someone acting foolishly, owing to the bird's playful antics.",
+    "population": {
+      "current": 5800000,
+      "trend": "increasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -29.05,
+      "lng": 134.75
+    }
+  },
+  {
+    "id": "budgerigar",
+    "commonName": "Budgerigar",
+    "scientificName": "Melopsittacus undulatus",
+    "family": "Psittaculidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Budgerigar is a small, nomadic parrot native to Australia's arid interior. Wild budgies are green and yellow with black barring, forming massive flocks that swirl like clouds over the outback.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/budgerigar_imp.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Granivore — grass seeds and cereal grains",
+    "size": {
+      "lengthCm": 18,
+      "wingspanCm": 30,
+      "weightG": 32
+    },
+    "funFact": "Budgerigars are the third most popular pet in the world, after dogs and cats.",
+    "population": {
+      "current": 5000000,
+      "trend": "stable",
+      "lastSurveyYear": 2021
+    },
+    "coordinates": {
+      "lat": -23.7,
+      "lng": 133.88
+    }
+  },
+  {
+    "id": "cockatiel",
+    "commonName": "Cockatiel",
+    "scientificName": "Nymphicus hollandicus",
+    "family": "Cacatuidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Cockatiel is a small, graceful cockatoo with a distinctive pointed crest and orange cheek patches. Native to the Australian outback, it is a highly social bird found near water sources in arid regions.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert",
+      "wetland"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/cockatiel_improved.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Granivore — seeds, grains, and fruits",
+    "size": {
+      "lengthCm": 32,
+      "wingspanCm": 40,
+      "weightG": 90
+    },
+    "funFact": "Cockatiels are the smallest members of the cockatoo family and are the most popular pet bird in Australia.",
+    "population": {
+      "current": 1200000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -26.5,
+      "lng": 148.78
+    }
+  },
+  {
+    "id": "king-parrot",
+    "commonName": "Australian King Parrot",
+    "scientificName": "Alisterus scapularis",
+    "family": "Psittaculidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Australian King Parrot is a striking bird with vivid red and green plumage. Males have an entirely red head and breast, while females are green with a red belly. They inhabit dense rainforests and wet eucalyptus forests along the east coast.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "rainforest",
+      "eucalyptus_forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_4431%28male%29.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — fruits, seeds, nuts, berries, and blossoms",
+    "size": {
+      "lengthCm": 43,
+      "wingspanCm": 52,
+      "weightG": 230
+    },
+    "funFact": "King Parrots are one of the few parrots where males and females look completely different.",
+    "population": {
+      "current": 256000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -30.45,
+      "lng": 152.84
+    }
+  },
+  {
+    "id": "crimson-rosella",
+    "commonName": "Crimson Rosella",
+    "scientificName": "Platycercus elegans",
+    "family": "Psittaculidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Crimson Rosella is a medium-sized parrot with rich crimson plumage and bright blue cheeks and tail feathers. Found in forests and gardens of southeastern Australia, it is a common visitor to bird feeders.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "rainforest",
+      "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act",
+      "tas"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Crimson%20Rosella.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — seeds, fruits, flowers, nectar, and insects",
+    "size": {
+      "lengthCm": 36,
+      "wingspanCm": 52,
+      "weightG": 145
+    },
+    "funFact": "Juvenile Crimson Rosellas are mostly green and gradually moult into their red adult plumage over two years.",
+    "population": {
+      "current": 830000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -35.28,
+      "lng": 149.13
+    }
+  },
+  {
+    "id": "major-mitchells-cockatoo",
+    "commonName": "Major Mitchell's Cockatoo",
+    "scientificName": "Lophochroa leadbeateri",
+    "family": "Cacatuidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "Major Mitchell's Cockatoo is considered one of the most beautiful cockatoos with its soft pink and white plumage and striking red and yellow banded crest. It inhabits arid and semi-arid woodlands across inland Australia.",
+    "conservationStatus": "near_threatened",
+    "habitats": [
+      "desert",
+      "grassland",
+      "eucalyptus_forest"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Major%20Mitchell%20Cockatoo%2005.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — seeds, nuts, roots, and fruit",
+    "size": {
+      "lengthCm": 36,
+      "wingspanCm": 75,
+      "weightG": 425
+    },
+    "funFact": "These cockatoos mate for life and can live over 75 years in captivity.",
+    "population": {
+      "current": 42000,
+      "trend": "decreasing",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -30.97,
+      "lng": 136.52
+    }
+  },
+  {
+    "id": "palm-cockatoo",
+    "commonName": "Palm Cockatoo",
+    "scientificName": "Probosciger aterrimus",
+    "family": "Cacatuidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Palm Cockatoo is a large, smoky-grey cockatoo with a massive bill and prominent red cheek patches. Found in the Cape York Peninsula, it is famous for using sticks to drum on hollow trees.",
+    "conservationStatus": "vulnerable",
+    "habitats": [
+      "rainforest",
+      "eucalyptus_forest"
+    ],
+    "regions": [
+      "qld"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Palm_Cockatoo_0A2A7769.jpg/330px-Palm_Cockatoo_0A2A7769.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — pandanus nuts, seeds, and fruits",
+    "size": {
+      "lengthCm": 60,
+      "wingspanCm": 80,
+      "weightG": 910
+    },
+    "funFact": "Palm Cockatoos are the only birds known to use tools as musical instruments, drumming sticks against trees.",
+    "population": {
+      "current": 3150,
+      "trend": "decreasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -13.76,
+      "lng": 143.4
+    }
+  },
+  {
+    "id": "wedge-tailed-eagle",
+    "commonName": "Wedge-tailed Eagle",
+    "scientificName": "Aquila audax",
+    "family": "Accipitridae",
+    "order": "Accipitriformes",
+    "category": "Raptors",
+    "description": "Australia's largest bird of prey, the Wedge-tailed Eagle has a wingspan of up to 2.3 metres and a distinctive wedge-shaped tail. It soars effortlessly on thermal currents, scanning the landscape for prey.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert",
+      "eucalyptus_forest",
+      "alpine"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Wedge-tailed%20eagle%202%20Judy%20Harrington.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — rabbits, hares, wallabies, reptiles, and carrion",
+    "size": {
+      "lengthCm": 100,
+      "wingspanCm": 230,
+      "weightG": 4200
+    },
+    "funFact": "Wedge-tailed Eagles have been recorded soaring at altitudes over 2,000 metres.",
+    "population": {
+      "current": 225000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -25.75,
+      "lng": 134.2
+    }
+  },
+  {
+    "id": "peregrine-falcon",
+    "commonName": "Peregrine Falcon",
+    "scientificName": "Falco peregrinus",
+    "family": "Falconidae",
+    "order": "Falconiformes",
+    "category": "Raptors",
+    "description": "The Peregrine Falcon is the fastest animal on Earth, reaching speeds over 380 km/h during its hunting stoop. In Australia, it is found across diverse habitats from coastal cliffs to city skyscrapers.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "coastal",
+      "alpine",
+      "urban",
+      "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/405038_peregrinefalcon_male.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — medium-sized birds, bats, and occasionally small mammals",
+    "size": {
+      "lengthCm": 45,
+      "wingspanCm": 105,
+      "weightG": 850
+    },
+    "funFact": "Peregrine Falcons have a third eyelid to protect their eyes and special baffles in their nostrils to breathe during high-speed dives.",
+    "population": {
+      "current": 14700,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -37.82,
+      "lng": 144.97
+    }
+  },
+  {
+    "id": "powerful-owl",
+    "commonName": "Powerful Owl",
+    "scientificName": "Ninox strenua",
+    "family": "Strigidae",
+    "order": "Strigiformes",
+    "category": "Raptors",
+    "description": "Australia's largest owl, the Powerful Owl has piercing yellow eyes and is a formidable nocturnal predator. It inhabits dense forests along the eastern seaboard, hunting possums and gliders at night.",
+    "conservationStatus": "vulnerable",
+    "habitats": [
+      "eucalyptus_forest",
+      "rainforest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/powerful_owl_tquested.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — possums, gliders, flying foxes, and birds",
+    "size": {
+      "lengthCm": 60,
+      "wingspanCm": 135,
+      "weightG": 1450
+    },
+    "funFact": "Powerful Owls are known to carry their prey back to a favourite perch and hold it in their talons all day.",
+    "population": {
+      "current": 7800,
+      "trend": "decreasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -33.6,
+      "lng": 150.65
+    }
+  },
+  {
+    "id": "nankeen-kestrel",
+    "commonName": "Nankeen Kestrel",
+    "scientificName": "Falco cenchroides",
+    "family": "Falconidae",
+    "order": "Falconiformes",
+    "category": "Raptors",
+    "description": "The Nankeen Kestrel is a small, graceful falcon known for its habit of hovering motionless in the wind while scanning the ground for prey. Its rufous-brown plumage and pointed wings make it easy to identify.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert",
+      "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/nankeen_kestrel.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — insects, mice, lizards, and small birds",
+    "size": {
+      "lengthCm": 33,
+      "wingspanCm": 73,
+      "weightG": 160
+    },
+    "funFact": "Nankeen Kestrels can see ultraviolet light, which helps them detect rodent urine trails that glow under UV.",
+    "population": {
+      "current": 345000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -34.93,
+      "lng": 138.6
+    }
+  },
+  {
+    "id": "white-bellied-sea-eagle",
+    "commonName": "White-bellied Sea Eagle",
+    "scientificName": "Haliaeetus leucogaster",
+    "family": "Accipitridae",
+    "order": "Accipitriformes",
+    "category": "Raptors",
+    "description": "The White-bellied Sea Eagle is a majestic raptor found along Australian coastlines, rivers, and large inland waterways. With its white head and belly contrasting dark grey wings, it is an iconic coastal predator.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "coastal",
+      "wetland",
+      "mangrove"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/White-bellied%20Sea-eagle.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — fish, sea snakes, turtles, waterbirds, and carrion",
+    "size": {
+      "lengthCm": 80,
+      "wingspanCm": 210,
+      "weightG": 3700
+    },
+    "funFact": "Mating pairs perform spectacular aerial courtship displays, locking talons and cartwheeling through the sky.",
+    "population": {
+      "current": 18500,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -16.92,
+      "lng": 145.78
+    }
+  },
+  {
+    "id": "black-swan",
+    "commonName": "Black Swan",
+    "scientificName": "Cygnus atratus",
+    "family": "Anatidae",
+    "order": "Anseriformes",
+    "category": "Waterbirds",
+    "description": "The Black Swan is an elegant waterbird unique to Australia, with striking black plumage and a bright red bill. It is the state bird of Western Australia and is found on lakes, rivers, and estuaries across the continent.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/byb_319.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — aquatic plants, algae, and grasses",
+    "size": {
+      "lengthCm": 130,
+      "wingspanCm": 190,
+      "weightG": 6200
+    },
+    "funFact": "Before the discovery of Australia, Europeans believed all swans were white, making the Black Swan a symbol of the unexpected.",
+    "population": {
+      "current": 310000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -31.95,
+      "lng": 115.86
+    }
+  },
+  {
+    "id": "australian-pelican",
+    "commonName": "Australian Pelican",
+    "scientificName": "Pelecanus conspicillatus",
+    "family": "Pelecanidae",
+    "order": "Pelecaniformes",
+    "category": "Waterbirds",
+    "description": "The Australian Pelican has the longest bill of any living bird, up to 50 cm long. These large waterbirds are found across Australia wherever there is water, from coastal shores to inland lakes and rivers.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/byb_236.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Piscivore — fish, crustaceans, and occasionally small waterbirds",
+    "size": {
+      "lengthCm": 170,
+      "wingspanCm": 250,
+      "weightG": 6800
+    },
+    "funFact": "Their bill pouch can hold up to 13 litres of water, which they use to scoop up fish.",
+    "population": {
+      "current": 415000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -28.77,
+      "lng": 153.61
+    }
+  },
+  {
+    "id": "brolga",
+    "commonName": "Brolga",
+    "scientificName": "Antigone rubicunda",
+    "family": "Gruidae",
+    "order": "Gruiformes",
+    "category": "Waterbirds",
+    "description": "The Brolga is a tall, elegant crane renowned for its intricate mating dance. Standing over a metre tall with a distinctive red head patch, it inhabits wetlands and grasslands across northern and eastern Australia.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "wetland",
+      "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Brolga_%2829920460794%29.jpg/330px-Brolga_%2829920460794%29.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — tubers, seeds, insects, molluscs, and frogs",
+    "size": {
+      "lengthCm": 130,
+      "wingspanCm": 200,
+      "weightG": 6500
+    },
+    "funFact": "The Brolga's elaborate dance, involving leaping, wing-stretching, and head-bobbing, has inspired Aboriginal Dreamtime stories.",
+    "population": {
+      "current": 52000,
+      "trend": "decreasing",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -19.92,
+      "lng": 148.78
+    }
+  },
+  {
+    "id": "royal-spoonbill",
+    "commonName": "Royal Spoonbill",
+    "scientificName": "Platalea regia",
+    "family": "Threskiornithidae",
+    "order": "Pelecaniformes",
+    "category": "Waterbirds",
+    "description": "The Royal Spoonbill is a large white wading bird with a distinctive black, spoon-shaped bill. It feeds by sweeping its bill side to side through shallow water to catch fish and crustaceans.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal",
+      "mangrove"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "wa",
+      "tas"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_3337.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — fish, shrimp, crabs, and aquatic insects",
+    "size": {
+      "lengthCm": 77,
+      "wingspanCm": 120,
+      "weightG": 1700
+    },
+    "funFact": "During breeding season, Royal Spoonbills grow long white plumes on the back of their heads.",
+    "population": {
+      "current": 28000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -36.05,
+      "lng": 146.96
+    }
+  },
+  {
+    "id": "australian-wood-duck",
+    "commonName": "Australian Wood Duck",
+    "scientificName": "Chenonetta jubata",
+    "family": "Anatidae",
+    "order": "Anseriformes",
+    "category": "Waterbirds",
+    "description": "The Australian Wood Duck is a medium-sized duck with a distinctive maned appearance. Unlike most ducks, it grazes on grassland and is often seen far from water, perching in trees near farm dams.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "wetland",
+      "grassland",
+      "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act",
+      "tas"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/img_9024austwoodduck.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Herbivore — grasses, clover, and aquatic vegetation",
+    "size": {
+      "lengthCm": 48,
+      "wingspanCm": 80,
+      "weightG": 815
+    },
+    "funFact": "Australian Wood Ducks nest in tree hollows, sometimes up to 10 metres above the ground, and their ducklings jump down to join their parents.",
+    "population": {
+      "current": 1950000,
+      "trend": "increasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -34.75,
+      "lng": 149.7
+    }
+  },
+  {
+    "id": "superb-fairy-wren",
+    "commonName": "Superb Fairy-wren",
+    "scientificName": "Malurus cyaneus",
+    "family": "Maluridae",
+    "order": "Passeriformes",
+    "category": "Songbirds",
+    "description": "The Superb Fairy-wren is a tiny, energetic bird where breeding males display a brilliant iridescent blue plumage. These social birds live in family groups and are one of the most recognised small birds in Australia.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "urban",
+      "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act",
+      "tas"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_5804%28breedingmale%29.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Insectivore — insects, spiders, and small seeds",
+    "size": {
+      "lengthCm": 14,
+      "wingspanCm": 18,
+      "weightG": 10
+    },
+    "funFact": "Male Superb Fairy-wrens pluck yellow petals to present to females as part of their courtship display.",
+    "population": {
+      "current": 3400000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -37.81,
+      "lng": 144.96
+    }
+  },
+  {
+    "id": "australian-magpie",
+    "commonName": "Australian Magpie",
+    "scientificName": "Gymnorhina tibicen",
+    "family": "Artamidae",
+    "order": "Passeriformes",
+    "category": "Songbirds",
+    "description": "The Australian Magpie is one of the most recognised and beloved birds in Australia, known for its melodious carolling song. Black and white plumaged, intelligent, and bold, it thrives in suburban areas across the country.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "urban",
+      "grassland",
+      "eucalyptus_forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Australian_Magpie%2C_Majura_Nature_Reserve%2C_ACT.jpg/330px-Australian_Magpie%2C_Majura_Nature_Reserve%2C_ACT.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — insects, larvae, worms, snails, and small vertebrates",
+    "size": {
+      "lengthCm": 40,
+      "wingspanCm": 55,
+      "weightG": 330
+    },
+    "funFact": "Magpies can recognise up to 100 individual human faces and remember those who have threatened them.",
+    "population": {
+      "current": 12450000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -33.87,
+      "lng": 151.21
+    }
+  },
+  {
+    "id": "magpie-lark",
+    "commonName": "Australian Magpie-lark",
+    "scientificName": "Grallina cyanoleuca",
+    "family": "Monarchidae",
+    "order": "Passeriformes",
+    "category": "Songbirds",
+    "description": "Also known as the Peewee or Mudlark, the Magpie-lark is a bold black and white bird commonly seen across Australia. It builds distinctive mud nests on horizontal branches and is known for its territorial displays.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "urban",
+      "grassland",
+      "wetland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/byb_85.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Insectivore — insects, larvae, earthworms, and freshwater invertebrates",
+    "size": {
+      "lengthCm": 28,
+      "wingspanCm": 42,
+      "weightG": 85
+    },
+    "funFact": "Magpie-larks often attack their own reflection in windows, thinking it is a rival bird.",
+    "population": {
+      "current": 8920000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -27.47,
+      "lng": 153.03
+    }
+  },
+  {
+    "id": "willie-wagtail",
+    "commonName": "Willie Wagtail",
+    "scientificName": "Rhipidura leucophrys",
+    "family": "Rhipiduridae",
+    "order": "Passeriformes",
+    "category": "Songbirds",
+    "description": "The Willie Wagtail is a small, fearless bird easily identified by its constant tail-wagging behaviour and black and white plumage. Despite its small size, it boldly defends its territory against much larger birds.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "urban",
+      "grassland",
+      "eucalyptus_forest",
+      "wetland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_6139.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Insectivore — flying insects, beetles, moths, and spiders",
+    "size": {
+      "lengthCm": 20,
+      "wingspanCm": 28,
+      "weightG": 18
+    },
+    "funFact": "Willie Wagtails have been seen riding on the backs of cattle and horses to catch insects disturbed by their movement.",
+    "population": {
+      "current": 7650000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -31.95,
+      "lng": 115.86
+    }
+  },
+  {
+    "id": "splendid-fairy-wren",
+    "commonName": "Splendid Fairy-wren",
+    "scientificName": "Malurus splendens",
+    "family": "Maluridae",
+    "order": "Passeriformes",
+    "category": "Songbirds",
+    "description": "The Splendid Fairy-wren is a tiny bird where breeding males display an intense cobalt-blue plumage that is among the most vivid of any Australian bird. Found mainly in Western and South Australia in scrubby habitats.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "desert",
+      "grassland"
+    ],
+    "regions": [
+      "wa",
+      "sa"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/splendid%20fairy-wren.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Insectivore — insects, spiders, and small seeds",
+    "size": {
+      "lengthCm": 14,
+      "wingspanCm": 17,
+      "weightG": 10
+    },
+    "funFact": "Splendid Fairy-wrens are socially monogamous but genetically promiscuous, with most chicks fathered by males outside the pair.",
+    "population": {
+      "current": 1830000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -31.95,
+      "lng": 115.86
+    }
+  },
+  {
+    "id": "satin-bowerbird",
+    "commonName": "Satin Bowerbird",
+    "scientificName": "Ptilonorhynchus violaceus",
+    "family": "Ptilonorhynchidae",
+    "order": "Passeriformes",
+    "category": "Songbirds",
+    "description": "The male Satin Bowerbird has glossy blue-black plumage with striking violet-blue eyes. Famous for building elaborate bowers decorated with blue objects to attract females, it is one of nature's most creative architects.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "rainforest",
+      "eucalyptus_forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/bowermale6_improved.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — fruits, flowers, leaves, seeds, and insects",
+    "size": {
+      "lengthCm": 32,
+      "wingspanCm": 48,
+      "weightG": 210
+    },
+    "funFact": "Male bowerbirds collect blue objects including bottle caps, straws, and pegs to decorate their bowers and impress females.",
+    "population": {
+      "current": 185000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -30.31,
+      "lng": 153.14
+    }
+  },
+  {
+    "id": "blue-winged-kookaburra",
+    "commonName": "Blue-winged Kookaburra",
+    "scientificName": "Dacelo leachii",
+    "family": "Alcedinidae",
+    "order": "Coraciiformes",
+    "category": "Kingfishers & Kookaburras",
+    "description": "The Blue-winged Kookaburra is the tropical cousin of the Laughing Kookaburra, with striking blue wing patches and a lighter, more maniacal call. Found across northern Australia in open woodlands and paperbarks.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "mangrove",
+      "wetland"
+    ],
+    "regions": [
+      "qld",
+      "nt",
+      "wa"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/40515_bluewingedkookaburra.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — insects, lizards, frogs, fish, and crustaceans",
+    "size": {
+      "lengthCm": 40,
+      "wingspanCm": 55,
+      "weightG": 330
+    },
+    "funFact": "Unlike Laughing Kookaburras, Blue-winged Kookaburras have a harsh, cackling call that sounds quite different.",
+    "population": {
+      "current": 780000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -16.92,
+      "lng": 145.78
+    }
+  },
+  {
+    "id": "sacred-kingfisher",
+    "commonName": "Sacred Kingfisher",
+    "scientificName": "Todiramphus sanctus",
+    "family": "Alcedinidae",
+    "order": "Coraciiformes",
+    "category": "Kingfishers & Kookaburras",
+    "description": "The Sacred Kingfisher is a medium-sized kingfisher with turquoise-blue and buff plumage. Despite its name, it often hunts far from water, catching insects and small reptiles in open woodland.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "mangrove",
+      "wetland",
+      "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Kingfisher_Sacred_filtered.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Carnivore — insects, crustaceans, lizards, and small fish",
+    "size": {
+      "lengthCm": 22,
+      "wingspanCm": 33,
+      "weightG": 45
+    },
+    "funFact": "Sacred Kingfishers nest in termite mounds, tree hollows, and even earthen banks.",
+    "population": {
+      "current": 620000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -33.87,
+      "lng": 151.21
+    }
+  },
+  {
+    "id": "azure-kingfisher",
+    "commonName": "Azure Kingfisher",
+    "scientificName": "Ceyx azureus",
+    "family": "Alcedinidae",
+    "order": "Coraciiformes",
+    "category": "Kingfishers & Kookaburras",
+    "description": "The Azure Kingfisher is a small, jewel-like bird with vivid blue upperparts and a rich orange breast. It perches low over freshwater streams and rivers, diving with remarkable speed to catch small fish.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "wetland",
+      "rainforest",
+      "mangrove"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "nt"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/405-016_azurekingfisher.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Piscivore — small fish, crustaceans, and aquatic insects",
+    "size": {
+      "lengthCm": 18,
+      "wingspanCm": 26,
+      "weightG": 32
+    },
+    "funFact": "Azure Kingfishers can plunge-dive into water from a perch at speeds that would stun most small birds.",
+    "population": {
+      "current": 95000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -28.64,
+      "lng": 153.35
+    }
+  },
+  {
+    "id": "noisy-miner",
+    "commonName": "Noisy Miner",
+    "scientificName": "Manorina melanocephala",
+    "family": "Meliphagidae",
+    "order": "Passeriformes",
+    "category": "Honeyeaters",
+    "description": "The Noisy Miner is an assertive grey honeyeater with a yellow bill, eye patch, and feet. Living in large communal groups, they aggressively mob larger birds and other species, dominating their territory.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act",
+      "tas"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Noisy_Miner_%28Manorina_melanocephala%29.jpg/330px-Noisy_Miner_%28Manorina_melanocephala%29.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — nectar, fruits, insects, and lerps",
+    "size": {
+      "lengthCm": 27,
+      "wingspanCm": 36,
+      "weightG": 75
+    },
+    "funFact": "Noisy Miners are so aggressive that they can drive away all other bird species from an area, reducing local biodiversity.",
+    "population": {
+      "current": 9870000,
+      "trend": "increasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -33.87,
+      "lng": 151.21
+    }
+  },
+  {
+    "id": "new-holland-honeyeater",
+    "commonName": "New Holland Honeyeater",
+    "scientificName": "Phylidonyris novaehollandiae",
+    "family": "Meliphagidae",
+    "order": "Passeriformes",
+    "category": "Honeyeaters",
+    "description": "The New Holland Honeyeater is a striking black and white bird with yellow wing patches. Active and vocal, it is one of the first birds described from Australia, collected during Captain Cook's voyage in 1770.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "coastal",
+      "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "tas"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/newhollandhoneyeater.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Nectarivore — nectar, pollen, fruits, and insects",
+    "size": {
+      "lengthCm": 18,
+      "wingspanCm": 25,
+      "weightG": 20
+    },
+    "funFact": "New Holland Honeyeaters were one of the first Australian bird species to be scientifically described by Europeans.",
+    "population": {
+      "current": 2150000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -38.14,
+      "lng": 144.36
+    }
+  },
+  {
+    "id": "eastern-spinebill",
+    "commonName": "Eastern Spinebill",
+    "scientificName": "Acanthorhynchus tenuirostris",
+    "family": "Meliphagidae",
+    "order": "Passeriformes",
+    "category": "Honeyeaters",
+    "description": "The Eastern Spinebill is a small, elegant honeyeater with a long, curved bill perfectly adapted for probing flowers. With its rufous, black, and white plumage, it resembles a tiny hummingbird as it hovers at flowers.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "rainforest",
+      "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act",
+      "tas"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg/330px-Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Nectarivore — nectar from native flowers, insects, and spiders",
+    "size": {
+      "lengthCm": 16,
+      "wingspanCm": 22,
+      "weightG": 11
+    },
+    "funFact": "Eastern Spinebills can hover like hummingbirds while feeding, a rare ability among Australian birds.",
+    "population": {
+      "current": 1460000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -37.81,
+      "lng": 144.96
+    }
+  },
+  {
+    "id": "red-wattlebird",
+    "commonName": "Red Wattlebird",
+    "scientificName": "Anthochaera carunculata",
+    "family": "Meliphagidae",
+    "order": "Passeriformes",
+    "category": "Honeyeaters",
+    "description": "The Red Wattlebird is one of Australia's largest honeyeaters, with grey-brown plumage, prominent yellow belly patch, and distinctive red wattles on the neck. It has a loud, raucous call and is common in eucalyptus woodland.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "urban",
+      "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "qld",
+      "act",
+      "tas"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_3027%21%21.JPG%20Red%20W%2314B531.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — nectar, fruits, insects, and small vertebrates",
+    "size": {
+      "lengthCm": 35,
+      "wingspanCm": 48,
+      "weightG": 110
+    },
+    "funFact": "Red Wattlebirds are important pollinators of native plants, especially banksia and eucalyptus species.",
+    "population": {
+      "current": 2730000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -34.93,
+      "lng": 138.6
+    }
+  },
+  {
+    "id": "tawny-frogmouth",
+    "commonName": "Tawny Frogmouth",
+    "scientificName": "Podargus strigoides",
+    "family": "Podargidae",
+    "order": "Caprimulgiformes",
+    "category": "Nocturnal Birds",
+    "description": "The Tawny Frogmouth is a master of camouflage, resembling a broken tree branch when roosting during the day. Often mistaken for an owl, this nocturnal bird has a wide, frog-like mouth used for snapping up insects.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "eucalyptus_forest",
+      "urban",
+      "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Podargus_strigoides_Bonorong.jpg/330px-Podargus_strigoides_Bonorong.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Insectivore — moths, beetles, spiders, worms, slugs, and small frogs",
+    "size": {
+      "lengthCm": 45,
+      "wingspanCm": 65,
+      "weightG": 350
+    },
+    "funFact": "Tawny Frogmouths are frequently voted Australia's favourite bird in popular surveys.",
+    "population": {
+      "current": 1320000,
+      "trend": "stable",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -33.87,
+      "lng": 151.21
+    }
+  },
+  {
+    "id": "superb-lyrebird",
+    "commonName": "Superb Lyrebird",
+    "scientificName": "Menura novaehollandiae",
+    "family": "Menuridae",
+    "order": "Passeriformes",
+    "category": "Songbirds",
+    "description": "The Superb Lyrebird is one of the world's greatest vocal mimics, able to perfectly imitate the calls of other birds, chainsaws, car alarms, and camera shutters. Males have an elaborate lyre-shaped tail used in courtship displays.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "rainforest",
+      "eucalyptus_forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "act"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/superb_lyrebird_at_nest_a_%20Selby.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Insectivore — insects, spiders, worms, and small crustaceans found by raking leaf litter",
+    "size": {
+      "lengthCm": 95,
+      "wingspanCm": 78,
+      "weightG": 1100
+    },
+    "funFact": "A lyrebird's mimicry is so accurate that it can fool even the species it is imitating.",
+    "population": {
+      "current": 142000,
+      "trend": "stable",
+      "lastSurveyYear": 2022
+    },
+    "coordinates": {
+      "lat": -37.3,
+      "lng": 149.08
+    }
+  },
+  {
+    "id": "australian-brush-turkey",
+    "commonName": "Australian Brush-turkey",
+    "scientificName": "Alectura lathami",
+    "family": "Megapodiidae",
+    "order": "Galliformes",
+    "category": "Megapodes",
+    "description": "The Australian Brush-turkey is a large, ground-dwelling bird with black plumage, a bare red head, and a bright yellow wattle. Males build massive mound nests of decomposing vegetation to incubate their eggs using the heat generated.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "rainforest",
+      "eucalyptus_forest",
+      "urban"
+    ],
+    "regions": [
+      "nsw",
+      "qld"
+    ],
+    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_4529.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — seeds, fruits, insects, and fallen fruit",
+    "size": {
+      "lengthCm": 70,
+      "wingspanCm": 85,
+      "weightG": 2200
+    },
+    "funFact": "Brush-turkey mound nests can be up to 4 metres wide and 1.5 metres tall, weighing several tonnes.",
+    "population": {
+      "current": 376000,
+      "trend": "increasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -27.47,
+      "lng": 153.03
+    }
+  },
+  {
+    "id": "eclectus-parrot",
+    "commonName": "Eclectus Parrot",
+    "scientificName": "Eclectus roratus",
+    "family": "Psittaculidae",
+    "order": "Psittaciformes",
+    "category": "Parrots & Cockatoos",
+    "description": "The Eclectus Parrot is remarkable for its extreme sexual dimorphism — males are bright green while females are vivid red and purple. Found in the rainforests of Cape York Peninsula, it is one of Australia's most colourful parrots.",
+    "conservationStatus": "vulnerable",
+    "habitats": [
+      "rainforest"
+    ],
+    "regions": [
+      "qld"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Eclectus_roratus-20030511.jpg/330px-Eclectus_roratus-20030511.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Frugivore — fruits, flowers, nuts, seeds, and leaf buds",
+    "size": {
+      "lengthCm": 35,
+      "wingspanCm": 60,
+      "weightG": 450
+    },
+    "funFact": "Male and female Eclectus Parrots look so different that they were once classified as separate species.",
+    "population": {
+      "current": 8200,
+      "trend": "decreasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -12.46,
+      "lng": 142.55
+    }
+  },
+  {
+    "id": "australian-white-ibis",
+    "commonName": "Australian White Ibis",
+    "scientificName": "Threskiornis moluccus",
+    "family": "Threskiornithidae",
+    "order": "Pelecaniformes",
+    "category": "Waterbirds",
+    "description": "The Australian White Ibis, affectionately nicknamed the \"bin chicken\", is a large white wading bird with a distinctive curved black bill and bald black head. Once mainly found in wetlands, it has adapted remarkably to urban environments.",
+    "conservationStatus": "least_concern",
+    "habitats": [
+      "wetland",
+      "urban",
+      "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "wa",
+      "act"
+    ],
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Threskiornis_molucca_-_Perth.jpg/330px-Threskiornis_molucca_-_Perth.jpg",
+    "imageCredit": "Wikimedia Commons",
+    "diet": "Omnivore — insects, crustaceans, food scraps, and waste in urban areas",
+    "size": {
+      "lengthCm": 75,
+      "wingspanCm": 123,
+      "weightG": 1800
+    },
+    "funFact": "The Australian White Ibis has become an internet meme known as the \"bin chicken\" for its scavenging habits in city bins.",
+    "population": {
+      "current": 1170000,
+      "trend": "increasing",
+      "lastSurveyYear": 2023
+    },
+    "coordinates": {
+      "lat": -33.87,
+      "lng": 151.21
+    }
+  }
+]
