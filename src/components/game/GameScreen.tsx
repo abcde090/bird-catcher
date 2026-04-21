@@ -6,6 +6,7 @@ import Sky from "./Sky";
 import NetCharacter from "./NetCharacter";
 import AimArc from "./AimArc";
 import FlyingBird from "./FlyingBird";
+import Net from "./Net";
 import GameHUD from "./GameHUD";
 import CatchEffect from "./CatchEffect";
 import MissFlash from "./MissFlash";
@@ -58,6 +59,7 @@ export default function GameScreen() {
           <FlyingBird key={b.id} bird={b} onCatch={catchBird} />
         ))}
       </div>
+      <Net />
       <CatchEffect />
       <GameHUD />
       <MissFlash trigger={missFlashKey} />
