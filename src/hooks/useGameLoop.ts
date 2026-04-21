@@ -195,6 +195,10 @@ export function useGameLoop() {
         // Every frame during open — check collisions
         if (net.phase === "open" && elapsed < CAST + OPEN) {
           for (const bird of birdsRef.current) {
+            // Legendaries are only catchable during their bite window
+            if (bird.species.status === "critically_endangered") {
+              if (now < bird.biteStart || now > bird.biteEnd) continue;
+            }
             const dx = bird.x - net.targetX;
             const dy = bird.y - net.targetY;
             const distSq = dx * dx + dy * dy;
