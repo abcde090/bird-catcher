@@ -24,6 +24,7 @@ export default function GameHUD() {
   return (
     <>
       <div
+        className="hud-top"
         style={{
           position: "absolute",
           top: 20,
@@ -40,6 +41,7 @@ export default function GameHUD() {
         <div className="panel" style={{ padding: "14px 22px", minWidth: 220 }}>
           <div className="label">Score</div>
           <div
+            className="hud-score-value"
             style={{
               fontFamily: "'Fraunces', serif",
               fontSize: 42,
@@ -53,7 +55,7 @@ export default function GameHUD() {
             {score.toLocaleString()}
           </div>
           <div
-            className="label"
+            className="label hud-best"
             style={{ marginTop: 4, opacity: 0.7, fontSize: 10 }}
           >
             Best ·{" "}
@@ -84,12 +86,13 @@ export default function GameHUD() {
             <PhaseGlyph id={phase.id} />
             <div>
               <div
-                className="label"
+                className="label hud-chapter-label"
                 style={{ fontSize: 9, opacity: 0.7 }}
               >
                 Chapter
               </div>
               <div
+                className="hud-chapter-value"
                 style={{
                   fontFamily: "'Fraunces', serif",
                   fontSize: 18,
@@ -110,6 +113,7 @@ export default function GameHUD() {
               Time
             </div>
             <div
+              className="hud-time-value"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: 28,
@@ -141,6 +145,7 @@ export default function GameHUD() {
               {Array.from({ length: MAX_MISSES }).map((_, i) => (
                 <div
                   key={i}
+                  className="hud-miss-dot"
                   style={{
                     width: 14,
                     height: 14,
@@ -162,14 +167,15 @@ export default function GameHUD() {
           </div>
           <div className="panel" style={{ padding: "8px 14px" }}>
             <div
+              className="hud-discovered"
               style={{
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: 12,
                 color: "var(--ink)",
               }}
             >
-              <span style={{ opacity: 0.6 }}>Discovered</span>{" "}
-              {discovered.size}/{totalBirds}
+              <span style={{ opacity: 0.6 }}>Discovered</span> {discovered.size}
+              /{totalBirds}
             </div>
           </div>
         </div>
@@ -191,6 +197,7 @@ export default function GameHUD() {
           }}
         >
           <div
+            className="combo-display"
             style={{
               fontFamily: "'Fraunces', serif",
               fontSize: 72,
@@ -260,7 +267,14 @@ export function PhaseGlyph({ id }: PhaseGlyphProps) {
           strokeWidth="2"
           strokeLinecap="round"
         />
-        <line x1="4" y1="26" x2="28" y2="26" stroke="#6a4a2b" strokeWidth="1.5" />
+        <line
+          x1="4"
+          y1="26"
+          x2="28"
+          y2="26"
+          stroke="#6a4a2b"
+          strokeWidth="1.5"
+        />
       </svg>
     );
   if (id === "noon")

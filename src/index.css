@@ -310,3 +310,111 @@ button:focus {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+ * Mobile (≤ 640px)
+ * Components tag themselves with these classes; the CSS here
+ * overrides the inline styles that don't fit a phone viewport.
+ * ============================================================ */
+@media (max-width: 640px) {
+  /* HUD: stack the three top plates into a tighter horizontal row,
+     shrink numbers, reduce padding so they fit side by side. */
+  .hud-top {
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    gap: 6px;
+  }
+  .hud-top .panel {
+    padding: 8px 12px !important;
+    min-width: 0 !important;
+  }
+  .hud-score-value {
+    font-size: 24px !important;
+  }
+  .hud-time-value {
+    font-size: 20px !important;
+  }
+  .hud-best,
+  .hud-discovered,
+  .hud-chapter-label {
+    font-size: 9px !important;
+  }
+  .hud-chapter-value {
+    font-size: 14px !important;
+  }
+  .hud-miss-dot {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  /* Combo tier display scales down so it doesn't dominate the sky. */
+  .combo-display {
+    font-size: 48px !important;
+  }
+
+  /* Field Guide grid: tighter cards, less page padding. */
+  .guide-page {
+    padding: 24px 16px !important;
+  }
+  .guide-header {
+    font-size: 48px !important;
+  }
+  .guide-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+    gap: 10px !important;
+  }
+  .guide-card {
+    padding: 12px !important;
+  }
+  .guide-card-photo {
+    height: 100px !important;
+  }
+  .guide-card-name {
+    font-size: 15px !important;
+  }
+
+  /* BirdDetailModal: single column at narrow widths. Map stacks above stats. */
+  .modal-shell {
+    padding: 20px 18px !important;
+  }
+  .modal-header {
+    gap: 14px !important;
+  }
+  .modal-header h2 {
+    font-size: 24px !important;
+  }
+  .modal-body {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .modal-map {
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  /* Title screen: allow the display heading to wrap on very small screens. */
+  .title-heading {
+    white-space: normal !important;
+  }
+
+  /* CardReveal toast slides in from the top on mobile — right-edge is too narrow. */
+  .card-reveal {
+    top: 10px !important;
+    right: 10px !important;
+    left: 10px !important;
+    width: auto !important;
+  }
+}
+
+/* Touch-device helpers — no hover, minimum 44px targets on interactive
+ * controls the player is expected to tap. Targets the playfield's
+ * button-based controls without rewriting their inline styles. */
+@media (hover: none) {
+  .btn {
+    min-height: 44px;
+  }
+  .chip {
+    min-height: 36px;
+  }
+}
