@@ -9,6 +9,14 @@ interface FlyingBirdProps {
 export default function FlyingBird({ bird }: FlyingBirdProps) {
   const rarity = RARITY[bird.species.status];
   const size = 80 * rarity.sizeScale;
+  // Intentional impure read: halo intensifies during the bite window, re-read
+  // each render since the game loop updates bird positions every tick.
+  // eslint-disable-next-line react-hooks/purity
+  const nowS = performance.now() / 1000;
+  const isBiting =
+    bird.species.status === "critically_endangered" &&
+    nowS >= bird.biteStart &&
+    nowS <= bird.biteEnd;
   return (
     <div
       style={{
@@ -24,12 +32,12 @@ export default function FlyingBird({ bird }: FlyingBirdProps) {
       <div
         style={{
           position: "absolute",
-          inset: -12,
+          inset: isBiting ? -22 : -12,
           borderRadius: "50%",
-          background: `radial-gradient(circle, ${rarity.ring}55 0%, transparent 70%)`,
+          background: `radial-gradient(circle, ${rarity.ring}${isBiting ? "cc" : "55"} 0%, transparent 70%)`,
           animation:
             rarity.label !== "Common"
-              ? "bird-glow 1.5s ease-in-out infinite alternate"
+              ? `bird-glow ${isBiting ? "0.4s" : "1.5s"} ease-in-out infinite alternate`
               : undefined,
         }}
       />
