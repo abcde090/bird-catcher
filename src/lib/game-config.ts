@@ -2,8 +2,30 @@ import type { ConservationStatus } from "../types/bird";
 import type { PhaseId } from "../types/game";
 
 export const ROUND_DURATION = 90;
-export const MAX_MISSES = 10;
+export const MAX_MISSES = 6;
 export const MAX_ACTIVE = 6;
+
+// Net cast state machine (seconds)
+export const NET_CAST_DURATION = 0.5;
+export const NET_OPEN_DURATION = 0.8;
+export const NET_RETRACT_DURATION = 0.4;
+export const NET_COOLDOWN = 0.3;
+
+// Geometry
+export const NET_RADIUS = 60;
+export const NET_CHARACTER_Y_OFFSET = 80;
+
+// Tier reaction tuning
+export const FLINCH_TRIGGER_DIST = 120;
+export const FLINCH_DURATION = 0.15;
+export const FLINCH_MAX_OFFSET = 18;
+export const RARE_SPEED_BURST_MULT = 1.4;
+export const RARE_SPEED_BURST_DURATION = 0.4;
+export const EPIC_DODGE_SPEED = 180;
+export const EPIC_DODGE_DURATION = 0.5;
+export const LEGENDARY_BITE_DURATION = 0.7;
+export const LEGENDARY_BITE_WINDOW_MIN = 0.3;
+export const LEGENDARY_BITE_WINDOW_MAX = 0.7;
 
 export interface RarityConfig {
   label: string;
@@ -106,12 +128,7 @@ export const PHASES: PhaseConfig[] = [
     sky: ["#d87030", "#b8452a", "#6a2840", "#2a1a3a"],
     sun: "#e85a30",
     horizon: "#1a1018",
-    allowed: [
-      "least_concern",
-      "near_threatened",
-      "vulnerable",
-      "endangered",
-    ],
+    allowed: ["least_concern", "near_threatened", "vulnerable", "endangered"],
     spawn: 0.9,
   },
   {

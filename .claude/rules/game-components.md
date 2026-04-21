@@ -33,7 +33,7 @@ When working on "Birds at Golden Hour" game code. Full rule reference: [docs/GAM
    - `endangered` → Epic (0.90 size, ×1.4 speed, 250 pts)
    - `critically_endangered` → Legendary (0.85 size, ×1.6 speed, 400 pts)
 
-8. **Miss limit** — `MAX_MISSES = 10`; combo resets after any miss or 2.5 s without a catch.
+8. **Miss limit** — `MAX_MISSES = 6`. A miss is now an *empty cast* (zero catches during the net's open window), not an off-screen bird. Combo resets only on 2.5 s of inactivity; empty casts do not reset combo.
 
 9. **Combo multipliers** — see `getComboMult`: 2→1.5×, 3→2×, 5→3×, 8→4×.
 

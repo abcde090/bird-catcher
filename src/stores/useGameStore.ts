@@ -4,9 +4,20 @@ import type {
   CatchEffectData,
   FlyingBird,
   GameScreen,
+  NetPhase,
   RevealBird,
 } from "../types/game";
 import { ROUND_DURATION } from "../lib/game-config";
+
+interface NetState {
+  phase: NetPhase;
+  startTime: number;
+  targetX: number;
+  targetY: number;
+  originX: number;
+  originY: number;
+  catchesThisCast: number;
+}
 
 interface GameStore {
   screen: GameScreen;
@@ -24,6 +35,12 @@ interface GameStore {
   revealBird: RevealBird | null;
   missFlashKey: number;
 
+  net: NetState;
+  setNet: (net: Partial<NetState>) => void;
+  cursorX: number;
+  cursorY: number;
+  setCursor: (x: number, y: number) => void;
+
   startRound: () => void;
   endRound: () => void;
 }
@@ -40,12 +57,25 @@ const initialRoundState = () => ({
   newDiscoveries: 0,
   revealBird: null,
   missFlashKey: 0,
+  net: {
+    phase: "idle" as NetPhase,
+    startTime: 0,
+    targetX: 0,
+    targetY: 0,
+    originX: 0,
+    originY: 0,
+    catchesThisCast: 0,
+  },
 });
 
 export const useGameStore = create<GameStore>((set) => ({
   screen: "title",
   setScreen: (screen) => set({ screen }),
   ...initialRoundState(),
+  cursorX: 0,
+  cursorY: 0,
+  setNet: (net) => set((s) => ({ net: { ...s.net, ...net } })),
+  setCursor: (cursorX, cursorY) => set({ cursorX, cursorY }),
   startRound: () => set({ ...initialRoundState(), screen: "playing" }),
   endRound: () => set({ screen: "results" }),
 }));

@@ -91,7 +91,30 @@ Rarer birds also show a pulsing `bird-glow` halo (anything that isn't Common) an
 
 ## Catching
 
-A bird is caught when the player clicks it before it exits the screen (`progress >= 1`).
+A bird is caught when the player's cast net opens and its catch circle overlaps the bird's hitbox. The net is triggered by clicking anywhere in the sky (not the bird directly).
+
+### Net mechanic
+
+A naturalist character is fixed at bottom-center. Clicking the sky casts a net along a parabolic arc to the clicked point. The net has four sequential states:
+
+| State | Duration |
+|---|---|
+| Casting out | 0.5 s |
+| Open (catch window) | 0.8 s |
+| Retracting | 0.4 s |
+| Cooldown | 0.3 s |
+
+Total cycle: ~2 s. The catch circle is 60 px radius. Multi-catch is allowed — any bird whose center is inside the circle during any frame of the 0.8 s open window is caught.
+
+### Tier reactions
+
+When the net's open circle appears within 120 px of a bird, per-tier reactions trigger:
+
+- Common (`least_concern`) — no reaction.
+- Uncommon (`near_threatened`) — 0.15 s random lateral twitch (up to ±18 px).
+- Rare (`vulnerable`) — flinch + 1.4× speed burst for 0.4 s.
+- Epic (`endangered`) — banks away from net center at 180 px/s for 0.5 s with linear decay.
+- Legendary (`critically_endangered`) — does NOT flinch/dodge/burst. Instead, pauses mid-flight for 0.7 s at a random 30%–70% point of its path. Catchable ONLY during this pause. After the pause, resumes normal flight (with pause duration discounted from progress).
 
 **Score awarded** (per catch):
 
@@ -111,9 +134,7 @@ gained     = round(basePoints × comboMultiplier)
 | 5–7 | 3× |
 | 8+ | 4× |
 
-**Combo resets** when either:
-- 2.5 seconds elapse since the last catch, or
-- Any bird flies off-screen uncaught (a miss).
+**Combo resets** when 2.5 seconds elapse since the last catch. Empty casts increment the miss counter but do not reset combo — that's an intentional softening to pair with the tighter miss cap.
 
 **New-species toast** — if `firstDiscovery` is true, `gameStore.revealBird` is set to trigger the CardReveal toast. The toast auto-dismisses after 3.2 s or on click. The game loop does not pause.
 
@@ -124,9 +145,9 @@ gained     = round(basePoints × comboMultiplier)
 The round ends when either condition is met first:
 
 - `timeRemaining <= 0` — time ran out
-- `misses >= MAX_MISSES` where `MAX_MISSES = 10`
+- `misses >= MAX_MISSES` where `MAX_MISSES = 6`. A miss is now triggered by an *empty cast* — a cast whose open window catches zero birds. Birds flying off-screen no longer count against the player.
 
-A "miss" is a bird whose `progress` hit 1 without being caught. On game-over:
+On game-over:
 - High score updates in localStorage (`bc_high`) if beaten
 - `screen` flips to `results`
 - `activeBirds` and `birdsRef.current` are emptied
@@ -187,3 +208,6 @@ Night is 22 seconds with a 0.7 s spawn interval ⇒ up to ~31 spawn attempts. A 
 | Flight-pattern distribution (55/30/10/5) | `spawnBird` in [src/lib/spawner.ts](../src/lib/spawner.ts) |
 | Card-reveal toast duration (3.2 s) | `CardReveal` effect in [src/components/game/CardReveal.tsx](../src/components/game/CardReveal.tsx) |
 | Species roster | Append a tuple in `BIRDS` in [scripts/build-birds.py](../scripts/build-birds.py), then `python3 scripts/build-birds.py` |
+| Net state-machine timings, geometry, reaction tuning | `NET_*`, `FLINCH_*`, `RARE_SPEED_BURST_*`, `EPIC_DODGE_*`, `LEGENDARY_BITE_*` in [src/lib/game-config.ts](../src/lib/game-config.ts) |
+| Net cast trajectory (arc shape) | `arcPoint` helper in [src/components/game/Net.tsx](../src/components/game/Net.tsx) and symmetric math in [src/components/game/AimArc.tsx](../src/components/game/AimArc.tsx) |
+| Per-tier reactions | Trigger block (casting → open transition) and per-bird map in [src/hooks/useGameLoop.ts](../src/hooks/useGameLoop.ts) |

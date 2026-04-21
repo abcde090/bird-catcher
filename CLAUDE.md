@@ -42,7 +42,7 @@ Stores access each other via `useXStore.getState()` inside the game loop to avoi
 
 A single `requestAnimationFrame` loop drives everything. Critical detail: **active birds live in a `useRef` array** (`birdsRef.current`), not in Zustand state — the store is updated once per frame via `setState`. This keeps per-frame mutation off React's render path. On catch/spawn, the ref is the canonical list; the store mirror is for rendering.
 
-Per-tick work: decrement timer → maybe spawn (phase `spawn` interval, capped at `MAX_ACTIVE=6`) → advance each bird's progress along its flight pattern (straight / arc / dive / zigzag, with a sine bob) → drop birds at `progress >= 1` as misses → expire combo after 2.5s of inactivity → check game-over (`timeRemaining <= 0` or `misses >= MAX_MISSES=10`).
+Per-tick work: decrement timer → maybe spawn → advance each bird's progress, apply per-tier reactions (flinch / speed burst / dodge) and Legendary bite-pause → tick net state machine (idle → casting → open → retracting → cooldown) → during `open`, check bird/net collisions and call `catchBird` → at open→retracting, increment `misses` if zero catches this cast → check game-over (`timeRemaining <= 0` or `misses >= MAX_MISSES=6`).
 
 ### Phases and rarity ([src/lib/game-config.ts](src/lib/game-config.ts))
 
@@ -52,12 +52,12 @@ Spawning ([src/lib/spawner.ts](src/lib/spawner.ts)) uses weighted-random selecti
 
 ### Components
 
-- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `FlyingBird`, `BirdSVG`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`
-- Birds render as inline SVG via `BirdSVG` — silhouette path data lives in [src/lib/bird-silhouettes.ts](src/lib/bird-silhouettes.ts), keyed by `SilhouetteId`. Each bird supplies a 3-color `palette` (body, accent, belly).
+- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `NetCharacter`, `AimArc`, `Net`, `FlyingBird`, `BirdImage`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`
+- Birds render as real photos via `BirdImage` — cropped JPEGs under [public/birds/](public/birds/) (`{id}.jpg`, ≤320 px). The image is masked inside a rarity-colored circular frame.
 
 ### Types
 
-- [src/types/bird.ts](src/types/bird.ts) — `BirdSpecies`, `ConservationStatus`, `SilhouetteId`
+- [src/types/bird.ts](src/types/bird.ts) — `BirdSpecies`, `ConservationStatus`
 - [src/types/game.ts](src/types/game.ts) — `GameScreen`, `PhaseId`, `FlightPattern`, `FlyingBird`, `CatchEffectData`, `RevealBird`
 
 ## Conventions

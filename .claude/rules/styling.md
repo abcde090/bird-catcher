@@ -42,3 +42,16 @@ Both loaded via Google Fonts link in [index.html](../../index.html).
 - New `@theme` blocks or Tailwind color aliases — the old `outback-gold` / `night-sky` / `reef-blue` palette was removed along with the previous UI.
 - Inline-style strings that hard-code rarity colors — pull from `RARITY[status].color` / `.ring` instead.
 - Mixing Tailwind utility classes with large blocks of inline style in the same element — pick one.
+
+## Z-index stack
+
+- `10` — terrain silhouette (implicit, inside Sky)
+- `11` — NetCharacter
+- `12` — AimArc preview
+- `20` — flying birds
+- `25` — Net (during cast/open/retract)
+- `30` — CatchEffect
+- `50` — GameHUD
+- `60` — MissFlash, CardReveal toast
+
+Keep new elements aware of this ordering. Net assets are inline SVG matching the paper/ink/ember palette.

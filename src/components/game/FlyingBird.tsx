@@ -4,25 +4,27 @@ import BirdImage from "./BirdImage";
 
 interface FlyingBirdProps {
   bird: FlyingBirdType;
-  onCatch: (id: string, x: number, y: number) => void;
 }
 
-export default function FlyingBird({ bird, onCatch }: FlyingBirdProps) {
+export default function FlyingBird({ bird }: FlyingBirdProps) {
   const rarity = RARITY[bird.species.status];
   const size = 80 * rarity.sizeScale;
+  // Intentional impure read: halo intensifies during the bite window, re-read
+  // each render since the game loop updates bird positions every tick.
+  // eslint-disable-next-line react-hooks/purity
+  const nowS = performance.now() / 1000;
+  const isBiting =
+    bird.species.status === "critically_endangered" &&
+    nowS >= bird.biteStart &&
+    nowS <= bird.biteEnd;
   return (
     <div
-      onClick={(e) => {
-        e.stopPropagation();
-        onCatch(bird.id, e.clientX, e.clientY);
-      }}
       style={{
         position: "absolute",
         left: bird.x - size / 2,
         top: bird.y - size / 2,
         width: size,
         height: size,
-        cursor: "crosshair",
         transform: `rotate(${bird.wobble}deg)`,
         willChange: "transform",
       }}
@@ -30,12 +32,12 @@ export default function FlyingBird({ bird, onCatch }: FlyingBirdProps) {
       <div
         style={{
           position: "absolute",
-          inset: -12,
+          inset: isBiting ? -22 : -12,
           borderRadius: "50%",
-          background: `radial-gradient(circle, ${rarity.ring}55 0%, transparent 70%)`,
+          background: `radial-gradient(circle, ${rarity.ring}${isBiting ? "cc" : "55"} 0%, transparent 70%)`,
           animation:
             rarity.label !== "Common"
-              ? "bird-glow 1.5s ease-in-out infinite alternate"
+              ? `bird-glow ${isBiting ? "0.4s" : "1.5s"} ease-in-out infinite alternate`
               : undefined,
         }}
       />
