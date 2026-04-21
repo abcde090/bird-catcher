@@ -122,6 +122,48 @@ export function useGameLoop() {
         missFlashKey,
       });
 
+      // --- Net state machine ---
+      const net = gameStore.getState().net;
+      if (net.phase !== "idle") {
+        const elapsed = now - net.startTime;
+        const CAST = 0.5;
+        const OPEN = 0.8;
+        const RETRACT = 0.4;
+        const COOLDOWN = 0.3;
+
+        if (net.phase === "casting" && elapsed >= CAST) {
+          gameStore.setState({
+            net: { ...net, phase: "open", catchesThisCast: 0 },
+          });
+        } else if (net.phase === "open" && elapsed >= CAST + OPEN) {
+          const current = gameStore.getState();
+          const hadCatches = current.net.catchesThisCast > 0;
+          if (!hadCatches) {
+            gameStore.setState({
+              misses: current.misses + 1,
+              missFlashKey: Date.now(),
+            });
+          }
+          gameStore.setState({
+            net: { ...gameStore.getState().net, phase: "retracting" },
+          });
+        } else if (
+          net.phase === "retracting" &&
+          elapsed >= CAST + OPEN + RETRACT
+        ) {
+          gameStore.setState({
+            net: { ...gameStore.getState().net, phase: "cooldown" },
+          });
+        } else if (
+          net.phase === "cooldown" &&
+          elapsed >= CAST + OPEN + RETRACT + COOLDOWN
+        ) {
+          gameStore.setState({
+            net: { ...gameStore.getState().net, phase: "idle" },
+          });
+        }
+      }
+
       if (gameOver) {
         const finalScore = gameStore.getState().score;
         const { highScore, setHighScore } = collectionStore.getState();

@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { useGameStore } from "../../stores/useGameStore";
 import { useGameLoop } from "../../hooks/useGameLoop";
 import { getPhase } from "../../lib/game-config";
@@ -16,13 +17,32 @@ export default function GameScreen() {
   const missFlashKey = useGameStore((s) => s.missFlashKey);
   const revealBird = useGameStore((s) => s.revealBird);
   const setCursor = useGameStore((s) => s.setCursor);
+  const netPhase = useGameStore((s) => s.net.phase);
+  const setNet = useGameStore((s) => s.setNet);
   const { catchBird, closeReveal } = useGameLoop();
 
   const phase = getPhase(time);
 
+  const handleCast = (e: MouseEvent) => {
+    if (netPhase !== "idle") return;
+    const originX = window.innerWidth / 2;
+    const originY = window.innerHeight - 80 - 90;
+    if (e.clientY >= originY - 10) return;
+    setNet({
+      phase: "casting",
+      startTime: performance.now() / 1000,
+      originX,
+      originY,
+      targetX: e.clientX,
+      targetY: e.clientY,
+      catchesThisCast: 0,
+    });
+  };
+
   return (
     <div
       onMouseMove={(e) => setCursor(e.clientX, e.clientY)}
+      onClick={handleCast}
       style={{
         position: "absolute",
         inset: 0,
