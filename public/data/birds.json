@@ -152,7 +152,8 @@
     "funFact": "Males pluck yellow petals as courtship gifts.",
     "size": 14,
     "population": "3.4M",
-    "imageUrl": "/birds/fairywren.jpg"
+    "imageUrl": "/birds/fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/fairywren.png"
   },
   {
     "id": "pelican",
@@ -232,7 +233,8 @@
     "funFact": "Soars at altitudes over 2,000 metres with a 2.3m wingspan.",
     "size": 100,
     "population": "225K",
-    "imageUrl": "/birds/eagle.jpg"
+    "imageUrl": "/birds/eagle.jpg",
+    "rangeMapUrl": "/birds/maps/eagle.png"
   },
   {
     "id": "cockatoo",
@@ -281,7 +283,8 @@
     "funFact": "Forms aggressive colonies that drive out smaller birds.",
     "size": 26,
     "population": "5M",
-    "imageUrl": "/birds/noisy-miner.jpg"
+    "imageUrl": "/birds/noisy-miner.jpg",
+    "rangeMapUrl": "/birds/maps/noisy-miner.png"
   },
   {
     "id": "white-ibis",
@@ -403,7 +406,8 @@
     "funFact": "Considered one of Australia's finest songbirds — melodic flute-like calls.",
     "size": 35,
     "population": "880K",
-    "imageUrl": "/birds/pied-butcherbird.jpg"
+    "imageUrl": "/birds/pied-butcherbird.jpg",
+    "rangeMapUrl": "/birds/maps/pied-butcherbird.png"
   },
   {
     "id": "grey-butcherbird",
@@ -453,7 +457,8 @@
     "funFact": "Their slow, drawn-out 'aah-aah-aaaah' call is unmistakable.",
     "size": 51,
     "population": "2.2M",
-    "imageUrl": "/birds/raven.jpg"
+    "imageUrl": "/birds/raven.jpg",
+    "rangeMapUrl": "/birds/maps/raven.png"
   },
   {
     "id": "pied-currawong",
@@ -708,7 +713,8 @@
     "funFact": "The floral emblem of Western Australia.",
     "size": 140,
     "population": "500K",
-    "imageUrl": "/birds/black-swan.jpg"
+    "imageUrl": "/birds/black-swan.jpg",
+    "rangeMapUrl": "/birds/maps/black-swan.png"
   },
   {
     "id": "little-pied-cormorant",
@@ -761,7 +767,8 @@
     "funFact": "Its feathers are not fully waterproof — often seen drying wings outstretched.",
     "size": 85,
     "population": "210K",
-    "imageUrl": "/birds/great-cormorant.jpg"
+    "imageUrl": "/birds/great-cormorant.jpg",
+    "rangeMapUrl": "/birds/maps/great-cormorant.png"
   },
   {
     "id": "darter",
@@ -1084,7 +1091,8 @@
     "funFact": "Named for its bald black head, said to resemble a friar's tonsure.",
     "size": 32,
     "population": "520K",
-    "imageUrl": "/birds/noisy-friarbird.jpg"
+    "imageUrl": "/birds/noisy-friarbird.jpg",
+    "rangeMapUrl": "/birds/maps/noisy-friarbird.png"
   },
   {
     "id": "new-holland-honeyeater",
@@ -1459,7 +1467,8 @@
     "funFact": "Males turn deep cobalt blue only during the breeding season.",
     "size": 14,
     "population": "380K",
-    "imageUrl": "/birds/splendid-fairywren.jpg"
+    "imageUrl": "/birds/splendid-fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/splendid-fairywren.png"
   },
   {
     "id": "variegated-fairywren",
@@ -1506,7 +1515,8 @@
     "funFact": "Breeding males are jet black with a flame-red saddle.",
     "size": 13,
     "population": "620K",
-    "imageUrl": "/birds/red-backed-fairywren.jpg"
+    "imageUrl": "/birds/red-backed-fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/red-backed-fairywren.png"
   },
   {
     "id": "king-parrot",
@@ -1553,7 +1563,8 @@
     "funFact": "A brood parasite — lays eggs in other birds' nests.",
     "size": 42,
     "population": "165K",
-    "imageUrl": "/birds/koel.jpg"
+    "imageUrl": "/birds/koel.jpg",
+    "rangeMapUrl": "/birds/maps/koel.png"
   },
   {
     "id": "cuckoo-shrike",
@@ -1829,7 +1840,8 @@
     "funFact": "Known to pick up burning sticks to spread fires and flush prey.",
     "size": 55,
     "population": "580K",
-    "imageUrl": "/birds/black-kite.jpg"
+    "imageUrl": "/birds/black-kite.jpg",
+    "rangeMapUrl": "/birds/maps/black-kite.png"
   },
   {
     "id": "silver-gull",
@@ -1976,7 +1988,8 @@
     "funFact": "Its toes are lobed rather than webbed — a unique adaptation for swimming.",
     "size": 38,
     "population": "640K",
-    "imageUrl": "/birds/eurasian-coot.jpg"
+    "imageUrl": "/birds/eurasian-coot.jpg",
+    "rangeMapUrl": "/birds/maps/eurasian-coot.png"
   },
   {
     "id": "red-capped-plover",
@@ -2027,7 +2040,8 @@
     "funFact": "Carries chicks on its back while swimming between waterways.",
     "size": 25,
     "population": "480K",
-    "imageUrl": "/birds/australasian-grebe.jpg"
+    "imageUrl": "/birds/australasian-grebe.jpg",
+    "rangeMapUrl": "/birds/maps/australasian-grebe.png"
   },
   {
     "id": "striated-thornbill",
@@ -2048,7 +2062,8 @@
     "funFact": "Frequently joins mixed-species feeding flocks in winter.",
     "size": 10,
     "population": "380K",
-    "imageUrl": "/birds/striated-thornbill.jpg"
+    "imageUrl": "/birds/striated-thornbill.jpg",
+    "rangeMapUrl": "/birds/maps/striated-thornbill.png"
   },
   {
     "id": "mitchell",
@@ -2094,7 +2109,8 @@
     "funFact": "Males have brilliant red tail panels visible only in flight.",
     "size": 60,
     "population": "135K",
-    "imageUrl": "/birds/blackcockatoo.jpg"
+    "imageUrl": "/birds/blackcockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/blackcockatoo.jpg"
   },
   {
     "id": "yellow-tailed-blackcockatoo",
@@ -2233,7 +2249,8 @@
     "funFact": "Males have a fleshy black lobe under the bill and a musky odour.",
     "size": 70,
     "population": "45K",
-    "imageUrl": "/birds/musk-duck.jpg"
+    "imageUrl": "/birds/musk-duck.jpg",
+    "rangeMapUrl": "/birds/maps/musk-duck.png"
   },
   {
     "id": "barking-owl",
@@ -2363,7 +2380,8 @@
     "funFact": "Carries prey back to a favourite perch and holds it all day.",
     "size": 60,
     "population": "7.8K",
-    "imageUrl": "/birds/owl.jpg"
+    "imageUrl": "/birds/owl.jpg",
+    "rangeMapUrl": "/birds/maps/owl.png"
   },
   {
     "id": "bustard",
@@ -2619,7 +2637,8 @@
     "funFact": "Prefers running through undergrowth to flying — critically fire-sensitive.",
     "size": 22,
     "population": "2.5K",
-    "imageUrl": "/birds/bristlebird.jpg"
+    "imageUrl": "/birds/bristlebird.jpg",
+    "rangeMapUrl": "/birds/maps/bristlebird.png"
   },
   {
     "id": "mallee-emu-wren",
@@ -2659,7 +2678,8 @@
     "funFact": "Hybridises with Yellow-throated Miners — threatening genetic identity.",
     "size": 25,
     "population": "3K",
-    "imageUrl": "/birds/black-eared-miner.jpg"
+    "imageUrl": "/birds/black-eared-miner.jpg",
+    "rangeMapUrl": "/birds/maps/black-eared-miner.png"
   },
   {
     "id": "golden-shouldered-parrot",

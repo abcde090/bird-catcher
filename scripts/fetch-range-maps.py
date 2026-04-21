@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import urllib.parse
@@ -64,6 +65,49 @@ def list_images(title: str) -> list[str]:
     if page.get("missing"):
         return []
     return [img["title"] for img in page.get("images", [])]
+
+
+def extract_taxobox_range_map(title: str) -> str | None:
+    """Grab the `range_map = ...` field from the article's lead wikitext.
+
+    Many species-article range maps live in the Taxobox template and don't
+    always surface via the `images` API (e.g. when transcluded through
+    complex template chains). Parsing the wikitext is the most reliable
+    way to recover them.
+    """
+    endpoint = (
+        f"https://en.wikipedia.org/w/api.php?action=parse"
+        f"&page={urllib.parse.quote(title)}"
+        f"&prop=wikitext&section=0&redirects=1&format=json&formatversion=2"
+    )
+    try:
+        result = subprocess.run(
+            ["curl", "-sS", "-L", "--max-time", "15",
+             "-H", f"User-Agent: {UA}", endpoint],
+            check=True, capture_output=True,
+        )
+        data = json.loads(result.stdout)
+        wt = data.get("parse", {}).get("wikitext", "")
+    except Exception:
+        return None
+
+    # range_map = Foo.svg    (may have spaces / underscores, case-insensitive)
+    match = re.search(
+        r"range[_ ]?map\s*=\s*([^\n|}]+)",
+        wt,
+        re.IGNORECASE,
+    )
+    if not match:
+        return None
+    filename = match.group(1).strip()
+    # Strip comments and stray markup
+    filename = re.sub(r"<!--.*?-->", "", filename).strip()
+    if not filename:
+        return None
+    # Normalize to "File:..." form
+    if not filename.lower().startswith("file:"):
+        filename = f"File:{filename}"
+    return filename
 
 
 def pick_range_map(image_titles: list[str]) -> str | None:
@@ -162,15 +206,19 @@ def fetch_one(bird_id: str, wiki_title: str, force: bool) -> dict:
         if os.path.exists(existing) and not force:
             return {"id": bird_id, "status": "cached", "ext": existing_ext}
 
-    try:
-        images = list_images(wiki_title)
-    except Exception as e:
-        return {"id": bird_id, "status": "err-list", "error": str(e)}
+    # First try the Taxobox range_map field via wikitext — most reliable
+    taxobox_match = extract_taxobox_range_map(wiki_title)
+    match = taxobox_match
 
-    if not images:
-        return {"id": bird_id, "status": "no-page"}
-
-    match = pick_range_map(images)
+    # Fall back to scanning all images on the page with heuristics
+    if not match:
+        try:
+            images = list_images(wiki_title)
+        except Exception as e:
+            return {"id": bird_id, "status": "err-list", "error": str(e)}
+        if not images:
+            return {"id": bird_id, "status": "no-page"}
+        match = pick_range_map(images)
     if not match:
         return {"id": bird_id, "status": "no-match"}
 
