@@ -3,6 +3,7 @@ import { useGameLoop } from "../../hooks/useGameLoop";
 import { getPhase } from "../../lib/game-config";
 import Sky from "./Sky";
 import NetCharacter from "./NetCharacter";
+import AimArc from "./AimArc";
 import FlyingBird from "./FlyingBird";
 import GameHUD from "./GameHUD";
 import CatchEffect from "./CatchEffect";
@@ -31,6 +32,7 @@ export default function GameScreen() {
     >
       <Sky phase={phase} timeRemaining={time} />
       <NetCharacter />
+      <AimArc />
       <div style={{ position: "absolute", inset: 0, zIndex: 20 }}>
         {activeBirds.map((b) => (
           <FlyingBird key={b.id} bird={b} onCatch={catchBird} />
