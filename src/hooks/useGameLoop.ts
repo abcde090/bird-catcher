@@ -8,6 +8,7 @@ import {
   MAX_MISSES,
   NET_RADIUS,
   RARITY,
+  LEGENDARY_BITE_DURATION,
   getComboMult,
   getPhase,
 } from "../lib/game-config";
@@ -120,10 +121,25 @@ export function useGameLoop() {
 
       birdsRef.current = birdsRef.current
         .map((b) => {
-          const elapsed = now - b.spawnTime;
+          const isLegendary = b.species.status === "critically_endangered";
+          const inBite = isLegendary && now >= b.biteStart && now <= b.biteEnd;
+
+          // Freeze position during bite window: return bird unchanged except
+          // mark biteTriggered = true so we know it has entered the pause
+          if (inBite) {
+            return { ...b, biteTriggered: true };
+          }
+
+          // If the bite window has already passed, discount it from elapsed so the
+          // bird resumes from where it paused (not from where it would've been).
+          const pastBite = isLegendary && b.biteTriggered && now > b.biteEnd;
+          const effectiveElapsed = pastBite
+            ? now - b.spawnTime - LEGENDARY_BITE_DURATION
+            : now - b.spawnTime;
+
           const totalDx = Math.abs(b.endX - b.startX);
           const duration = totalDx / b.speed;
-          const progress = Math.min(1, elapsed / duration);
+          const progress = Math.min(1, effectiveElapsed / duration);
           const t = progress * progress * (3 - 2 * progress);
           const baseX = b.startX + (b.endX - b.startX) * t;
           let y = b.startY + (b.endY - b.startY) * t;
