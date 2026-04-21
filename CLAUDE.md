@@ -19,7 +19,7 @@ Canonical gameplay reference — phase timing, rarity tiers, scoring, combo, mis
 
 "Birds at Golden Hour" is a standalone single-page arcade game (no backend). Static bird data is served from [public/data/birds.json](public/data/birds.json) (~119 Australian species) and fetched at app startup. Each species has a cropped photo in [public/birds/](public/birds/) (`{id}.jpg`, ≤320 px, ~25 KB each).
 
-Regenerating the dataset: `python3 scripts/build-birds.py` — edits the inline `BIRDS` list, fetches Wikipedia REST summary thumbnails, resizes with `sips`, writes `public/data/birds.json`. Existing image files are skipped; delete a file to re-fetch it. The `.claude/skills/add-bird/` skill is a single-entry variant that walks through adding one species interactively.
+Regenerating the dataset: `python3 scripts/build-birds.py` — edits the inline `BIRDS` list, fetches Wikipedia REST summary thumbnails, resizes with `sips`, writes `public/data/birds.json`. Existing image files are skipped; delete a file to re-fetch it. The `.claude/skills/add-bird/` skill is a single-entry variant that walks through adding one species interactively. Range maps (distribution images under [public/birds/maps/](public/birds/maps/)) are fetched separately via `python3 scripts/fetch-range-maps.py` — queries each Wikipedia article's image list, picks the best range-map candidate by filename heuristic, rasterizes SVG to PNG via `rsvg-convert`, writes `rangeMapUrl` into birds.json. `build-birds.py` preserves existing `rangeMapUrl` across rebuilds.
 
 The front-end is a port of a claude.ai/design handoff bundle (see `birds-catcher-handoff/`). Visual style is a "golden hour field journal" aesthetic — paper/ink/ember palette, Fraunces + JetBrains Mono type. Most component styling is inline to match the handoff 1:1; only design tokens, global animations, and shared classes (`.panel`, `.btn`, `.chip`, `.label`) live in [src/index.css](src/index.css).
 
@@ -52,12 +52,13 @@ Spawning ([src/lib/spawner.ts](src/lib/spawner.ts)) uses weighted-random selecti
 
 ### Components
 
-- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `NetCharacter`, `AimArc`, `Net`, `FlyingBird`, `BirdImage`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`
+- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `NetCharacter`, `AimArc`, `Net`, `FlyingBird`, `BirdImage`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`, `BirdDetailModal`, `AustraliaMap`
 - Birds render as real photos via `BirdImage` — cropped JPEGs under [public/birds/](public/birds/) (`{id}.jpg`, ≤320 px). The image is masked inside a rarity-colored circular frame.
+- `FieldGuide` uses `BirdDetailModal` for expanded species info: photo, category, distribution map via `RangeMap` (real Wikipedia map when available under [public/birds/maps/](public/birds/maps/), falling back to the stylized `AustraliaMap` with hand-curated `regions`), population, size, habitats, diet, fun fact. Uncaught entries show the name but are not clickable.
 
 ### Types
 
-- [src/types/bird.ts](src/types/bird.ts) — `BirdSpecies`, `ConservationStatus`
+- [src/types/bird.ts](src/types/bird.ts) — `BirdSpecies`, `ConservationStatus`, `AustralianStateId`
 - [src/types/game.ts](src/types/game.ts) — `GameScreen`, `PhaseId`, `FlightPattern`, `FlyingBird`, `CatchEffectData`, `RevealBird`
 
 ## Conventions

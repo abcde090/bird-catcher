@@ -9,11 +9,19 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act"
+    ],
     "diet": "Carnivore — insects, lizards, mice",
     "funFact": "Their dawn 'laughing' chorus marks territory boundaries.",
     "size": 43,
     "population": "11.3M",
-    "imageUrl": "/birds/kookaburra.jpg"
+    "imageUrl": "/birds/kookaburra.jpg",
+    "rangeMapUrl": "/birds/maps/kookaburra.jpg"
   },
   {
     "id": "magpie",
@@ -25,11 +33,22 @@
       "urban",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — insects, worms, small vertebrates",
     "funFact": "Magpies can recognise up to 100 individual human faces.",
     "size": 40,
     "population": "12.4M",
-    "imageUrl": "/birds/magpie.jpg"
+    "imageUrl": "/birds/magpie.jpg",
+    "rangeMapUrl": "/birds/maps/magpie.png"
   },
   {
     "id": "lorikeet",
@@ -41,6 +60,15 @@
       "urban",
       "forest",
       "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
     ],
     "diet": "Nectarivore — nectar, pollen, fruits",
     "funFact": "Their brush-tipped tongues are specially adapted for nectar.",
@@ -59,11 +87,21 @@
       "urban",
       "desert"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Herbivore — seeds, grains, nuts",
     "funFact": "'Galah' in Aussie slang means acting foolishly — from their playful antics.",
     "size": 35,
     "population": "5.8M",
-    "imageUrl": "/birds/galah.jpg"
+    "imageUrl": "/birds/galah.jpg",
+    "rangeMapUrl": "/birds/maps/galah.png"
   },
   {
     "id": "wagtail",
@@ -76,11 +114,21 @@
       "grassland",
       "wetland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — flying insects, moths",
     "funFact": "Rides on the backs of cattle to catch disturbed insects.",
     "size": 20,
     "population": "7.6M",
-    "imageUrl": "/birds/wagtail.jpg"
+    "imageUrl": "/birds/wagtail.jpg",
+    "rangeMapUrl": "/birds/maps/wagtail.png"
   },
   {
     "id": "fairywren",
@@ -92,11 +140,20 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Insectivore — insects, spiders",
     "funFact": "Males pluck yellow petals as courtship gifts.",
     "size": 14,
     "population": "3.4M",
-    "imageUrl": "/birds/fairywren.jpg"
+    "imageUrl": "/birds/fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/fairywren.png"
   },
   {
     "id": "pelican",
@@ -108,11 +165,22 @@
       "wetland",
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Piscivore — fish, crustaceans",
     "funFact": "Their bill pouch can hold up to 13 litres of water.",
     "size": 170,
     "population": "415K",
-    "imageUrl": "/birds/pelican.jpg"
+    "imageUrl": "/birds/pelican.jpg",
+    "rangeMapUrl": "/birds/maps/pelican.jpg"
   },
   {
     "id": "emu",
@@ -124,11 +192,21 @@
       "grassland",
       "desert"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — seeds, fruits, insects",
     "funFact": "Emus can sprint at 50 km/h and are excellent swimmers.",
     "size": 180,
     "population": "725K",
-    "imageUrl": "/birds/emu.jpg"
+    "imageUrl": "/birds/emu.jpg",
+    "rangeMapUrl": "/birds/maps/emu.png"
   },
   {
     "id": "eagle",
@@ -141,11 +219,22 @@
       "desert",
       "alpine"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Carnivore — rabbits, wallabies, carrion",
     "funFact": "Soars at altitudes over 2,000 metres with a 2.3m wingspan.",
     "size": 100,
     "population": "225K",
-    "imageUrl": "/birds/eagle.jpg"
+    "imageUrl": "/birds/eagle.jpg",
+    "rangeMapUrl": "/birds/maps/eagle.png"
   },
   {
     "id": "cockatoo",
@@ -157,11 +246,21 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Herbivore — seeds, nuts, berries",
     "funFact": "Can live over 80 years and teaches others to open bins.",
     "size": 50,
     "population": "920K",
-    "imageUrl": "/birds/cockatoo.jpg"
+    "imageUrl": "/birds/cockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/cockatoo.png"
   },
   {
     "id": "noisy-miner",
@@ -173,11 +272,19 @@
       "urban",
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act"
+    ],
     "diet": "Omnivore — nectar, insects, fruit",
     "funFact": "Forms aggressive colonies that drive out smaller birds.",
     "size": 26,
     "population": "5M",
-    "imageUrl": "/birds/noisy-miner.jpg"
+    "imageUrl": "/birds/noisy-miner.jpg",
+    "rangeMapUrl": "/birds/maps/noisy-miner.png"
   },
   {
     "id": "white-ibis",
@@ -188,6 +295,16 @@
     "habitats": [
       "urban",
       "wetland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Omnivore — insects, scraps, crustaceans",
     "funFact": "Nicknamed 'bin chicken' for its urban bin-raiding habits.",
@@ -205,11 +322,21 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Omnivore — fruit, nectar, insects",
     "funFact": "Migrates in large flocks along the east coast each autumn.",
     "size": 12,
     "population": "4M",
-    "imageUrl": "/birds/silvereye.jpg"
+    "imageUrl": "/birds/silvereye.jpg",
+    "rangeMapUrl": "/birds/maps/silvereye.png"
   },
   {
     "id": "crimson-rosella",
@@ -221,11 +348,19 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act"
+    ],
     "diet": "Herbivore — seeds, fruit, blossoms",
     "funFact": "Young birds are olive-green for their first two years.",
     "size": 36,
     "population": "1.2M",
-    "imageUrl": "/birds/crimson-rosella.jpg"
+    "imageUrl": "/birds/crimson-rosella.jpg",
+    "rangeMapUrl": "/birds/maps/crimson-rosella.png"
   },
   {
     "id": "eastern-rosella",
@@ -236,6 +371,13 @@
     "habitats": [
       "grassland",
       "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "tas",
+      "act"
     ],
     "diet": "Herbivore — seeds, fruit, insects",
     "funFact": "One of the most brightly-coloured parrots in the world.",
@@ -253,11 +395,19 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Carnivore — insects, reptiles, small birds",
     "funFact": "Considered one of Australia's finest songbirds — melodic flute-like calls.",
     "size": 35,
     "population": "880K",
-    "imageUrl": "/birds/pied-butcherbird.jpg"
+    "imageUrl": "/birds/pied-butcherbird.jpg",
+    "rangeMapUrl": "/birds/maps/pied-butcherbird.png"
   },
   {
     "id": "grey-butcherbird",
@@ -269,11 +419,21 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Carnivore — insects, lizards, small birds",
     "funFact": "Wedges prey in tree forks to 'butcher' it — hence the name.",
     "size": 30,
     "population": "1.1M",
-    "imageUrl": "/birds/grey-butcherbird.jpg"
+    "imageUrl": "/birds/grey-butcherbird.jpg",
+    "rangeMapUrl": "/birds/maps/grey-butcherbird.jpg"
   },
   {
     "id": "raven",
@@ -286,11 +446,19 @@
       "grassland",
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act"
+    ],
     "diet": "Omnivore — carrion, insects, eggs",
     "funFact": "Their slow, drawn-out 'aah-aah-aaaah' call is unmistakable.",
     "size": 51,
     "population": "2.2M",
-    "imageUrl": "/birds/raven.jpg"
+    "imageUrl": "/birds/raven.jpg",
+    "rangeMapUrl": "/birds/maps/raven.png"
   },
   {
     "id": "pied-currawong",
@@ -302,11 +470,18 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "act"
+    ],
     "diet": "Omnivore — fruit, insects, nestlings",
     "funFact": "Famous for their loud 'curra-wong' call echoing through forests.",
     "size": 48,
     "population": "1.8M",
-    "imageUrl": "/birds/pied-currawong.jpg"
+    "imageUrl": "/birds/pied-currawong.jpg",
+    "rangeMapUrl": "/birds/maps/pied-currawong.png"
   },
   {
     "id": "welcome-swallow",
@@ -318,6 +493,16 @@
       "urban",
       "grassland",
       "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Insectivore — flying insects",
     "funFact": "Named for their arrival at the start of spring.",
@@ -336,6 +521,16 @@
       "wetland",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — worms, insects",
     "funFact": "Known for dive-bombing anyone who ventures too near their ground nests.",
     "size": 36,
@@ -352,6 +547,15 @@
       "wetland",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — locusts, grasshoppers",
     "funFact": "Nicknamed 'farmer's friend' for eating swarming locusts.",
     "size": 70,
@@ -367,6 +571,15 @@
     "habitats": [
       "wetland",
       "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
     ],
     "diet": "Piscivore — fish, crustaceans",
     "funFact": "Sweeps its spoon-shaped bill side-to-side through water to feed.",
@@ -385,11 +598,21 @@
       "wetland",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Herbivore — grasses, herbs, grain",
     "funFact": "One of the few ducks that nests in tree hollows.",
     "size": 48,
     "population": "775K",
-    "imageUrl": "/birds/wood-duck.jpg"
+    "imageUrl": "/birds/wood-duck.jpg",
+    "rangeMapUrl": "/birds/maps/wood-duck.png"
   },
   {
     "id": "black-duck",
@@ -401,11 +624,22 @@
       "wetland",
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — aquatic plants, insects",
     "funFact": "Hybridises freely with introduced Mallards, threatening pure populations.",
     "size": 55,
     "population": "1.2M",
-    "imageUrl": "/birds/black-duck.jpg"
+    "imageUrl": "/birds/black-duck.jpg",
+    "rangeMapUrl": "/birds/maps/black-duck.png"
   },
   {
     "id": "chestnut-teal",
@@ -416,6 +650,14 @@
     "habitats": [
       "wetland",
       "coastal"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "tas",
+      "wa",
+      "act"
     ],
     "diet": "Omnivore — plants, insects, seeds",
     "funFact": "Males are iridescent green-headed; females plain speckled brown.",
@@ -431,6 +673,16 @@
     "status": "least_concern",
     "habitats": [
       "wetland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Omnivore — seeds, aquatic invertebrates",
     "funFact": "Nomadic — follows rains across the continent to ephemeral lakes.",
@@ -448,11 +700,21 @@
       "wetland",
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Herbivore — algae, aquatic plants",
     "funFact": "The floral emblem of Western Australia.",
     "size": 140,
     "population": "500K",
-    "imageUrl": "/birds/black-swan.jpg"
+    "imageUrl": "/birds/black-swan.jpg",
+    "rangeMapUrl": "/birds/maps/black-swan.png"
   },
   {
     "id": "little-pied-cormorant",
@@ -464,11 +726,22 @@
       "wetland",
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Piscivore — small fish, yabbies",
     "funFact": "Dives underwater and swims using webbed feet to chase fish.",
     "size": 60,
     "population": "475K",
-    "imageUrl": "/birds/little-pied-cormorant.jpg"
+    "imageUrl": "/birds/little-pied-cormorant.jpg",
+    "rangeMapUrl": "/birds/maps/little-pied-cormorant.jpg"
   },
   {
     "id": "great-cormorant",
@@ -480,11 +753,22 @@
       "wetland",
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Piscivore — fish, eels",
     "funFact": "Its feathers are not fully waterproof — often seen drying wings outstretched.",
     "size": 85,
     "population": "210K",
-    "imageUrl": "/birds/great-cormorant.jpg"
+    "imageUrl": "/birds/great-cormorant.jpg",
+    "rangeMapUrl": "/birds/maps/great-cormorant.png"
   },
   {
     "id": "darter",
@@ -495,11 +779,21 @@
     "habitats": [
       "wetland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Piscivore — fish spearing",
     "funFact": "Swims with only its snake-like neck above water — hence 'snakebird'.",
     "size": 90,
     "population": "135K",
-    "imageUrl": "/birds/darter.jpg"
+    "imageUrl": "/birds/darter.jpg",
+    "rangeMapUrl": "/birds/maps/darter.png"
   },
   {
     "id": "white-faced-heron",
@@ -512,11 +806,22 @@
       "coastal",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Carnivore — fish, frogs, insects",
     "funFact": "The most commonly seen heron in Australia.",
     "size": 68,
     "population": "880K",
-    "imageUrl": "/birds/white-faced-heron.jpg"
+    "imageUrl": "/birds/white-faced-heron.jpg",
+    "rangeMapUrl": "/birds/maps/white-faced-heron.png"
   },
   {
     "id": "cattle-egret",
@@ -528,11 +833,21 @@
       "grassland",
       "wetland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — insects flushed by livestock",
     "funFact": "Self-introduced to Australia in the 1940s from Asia.",
     "size": 51,
     "population": "660K",
-    "imageUrl": "/birds/cattle-egret.jpg"
+    "imageUrl": "/birds/cattle-egret.jpg",
+    "rangeMapUrl": "/birds/maps/cattle-egret.png"
   },
   {
     "id": "tawny-frogmouth",
@@ -543,6 +858,16 @@
     "habitats": [
       "forest",
       "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Carnivore — moths, beetles, small vertebrates",
     "funFact": "Often mistaken for owls — they're actually related to nightjars.",
@@ -560,6 +885,15 @@
       "grassland",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Granivore — seeds, grains",
     "funFact": "Wings produce a whistling sound in flight — a built-in alarm.",
     "size": 34,
@@ -575,11 +909,19 @@
     "habitats": [
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "act"
+    ],
     "diet": "Granivore — seeds, grains",
     "funFact": "Introduced in the 1800s; now common across eastern cities.",
     "size": 30,
     "population": "1.5M",
-    "imageUrl": "/birds/spotted-dove.jpg"
+    "imageUrl": "/birds/spotted-dove.jpg",
+    "rangeMapUrl": "/birds/maps/spotted-dove.jpg"
   },
   {
     "id": "common-bronzewing",
@@ -591,11 +933,22 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Granivore — seeds, fruit",
     "funFact": "Iridescent bronze wing-patches flash in sunlight.",
     "size": 33,
     "population": "3.2M",
-    "imageUrl": "/birds/common-bronzewing.jpg"
+    "imageUrl": "/birds/common-bronzewing.jpg",
+    "rangeMapUrl": "/birds/maps/common-bronzewing.png"
   },
   {
     "id": "bee-eater",
@@ -606,6 +959,15 @@
     "habitats": [
       "grassland",
       "forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
     ],
     "diet": "Insectivore — bees, wasps, dragonflies",
     "funFact": "Whacks stinging insects against a branch to remove the stinger before eating.",
@@ -623,6 +985,15 @@
       "forest",
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Carnivore — insects, lizards, crabs",
     "funFact": "Revered in Polynesian mythology as having control over the seas.",
     "size": 22,
@@ -638,6 +1009,11 @@
     "habitats": [
       "forest",
       "grassland"
+    ],
+    "regions": [
+      "qld",
+      "nt",
+      "wa"
     ],
     "diet": "Carnivore — reptiles, insects, small mammals",
     "funFact": "Has an eerie cackling call very different from its laughing cousin.",
@@ -655,11 +1031,20 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "tas",
+      "act"
+    ],
     "diet": "Nectarivore — nectar, insects, fruit",
     "funFact": "Named for the bright red fleshy wattles beside its eyes.",
     "size": 36,
     "population": "2.3M",
-    "imageUrl": "/birds/red-wattlebird.jpg"
+    "imageUrl": "/birds/red-wattlebird.jpg",
+    "rangeMapUrl": "/birds/maps/red-wattlebird.jpg"
   },
   {
     "id": "little-wattlebird",
@@ -670,6 +1055,14 @@
     "habitats": [
       "coastal",
       "forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "tas",
+      "act"
     ],
     "diet": "Nectarivore — nectar, insects",
     "funFact": "Despite its name, actually lacks wattles entirely.",
@@ -687,11 +1080,19 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — nectar, fruit, insects",
     "funFact": "Named for its bald black head, said to resemble a friar's tonsure.",
     "size": 32,
     "population": "520K",
-    "imageUrl": "/birds/noisy-friarbird.jpg"
+    "imageUrl": "/birds/noisy-friarbird.jpg",
+    "rangeMapUrl": "/birds/maps/noisy-friarbird.png"
   },
   {
     "id": "new-holland-honeyeater",
@@ -704,11 +1105,20 @@
       "urban",
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "tas",
+      "act"
+    ],
     "diet": "Nectarivore — nectar, insects",
     "funFact": "One of the first Australian birds described by European scientists.",
     "size": 18,
     "population": "1.8M",
-    "imageUrl": "/birds/new-holland-honeyeater.jpg"
+    "imageUrl": "/birds/new-holland-honeyeater.jpg",
+    "rangeMapUrl": "/birds/maps/new-holland-honeyeater.jpg"
   },
   {
     "id": "white-plumed-honeyeater",
@@ -720,11 +1130,20 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Nectarivore — nectar, insects",
     "funFact": "The distinctive white neck plume lights up like a paint stroke.",
     "size": 18,
     "population": "2.6M",
-    "imageUrl": "/birds/white-plumed-honeyeater.jpg"
+    "imageUrl": "/birds/white-plumed-honeyeater.jpg",
+    "rangeMapUrl": "/birds/maps/white-plumed-honeyeater.png"
   },
   {
     "id": "eastern-spinebill",
@@ -734,6 +1153,13 @@
     "status": "least_concern",
     "habitats": [
       "forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "tas",
+      "act"
     ],
     "diet": "Nectarivore — nectar, insects",
     "funFact": "One of the few Australian birds that hovers like a hummingbird.",
@@ -750,6 +1176,12 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "act"
+    ],
     "diet": "Omnivore — fruit, leaves, insects",
     "funFact": "Males collect blue objects — pegs, straws, bottle caps — to decorate bowers.",
     "size": 32,
@@ -764,6 +1196,10 @@
     "status": "least_concern",
     "habitats": [
       "rainforest"
+    ],
+    "regions": [
+      "nsw",
+      "qld"
     ],
     "diet": "Omnivore — fruit, insects",
     "funFact": "Males are black with brilliant gold head and wing bands.",
@@ -781,6 +1217,11 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "wa",
+      "nt",
+      "qld"
+    ],
     "diet": "Omnivore — fruit, seeds, insects",
     "funFact": "Builds the largest bower of any species — up to a metre tall.",
     "size": 35,
@@ -796,6 +1237,10 @@
     "habitats": [
       "rainforest",
       "forest"
+    ],
+    "regions": [
+      "nsw",
+      "qld"
     ],
     "diet": "Omnivore — fruit, seeds, insects",
     "funFact": "Males build huge compost-mound nests and control the temperature with their beak.",
@@ -814,11 +1259,22 @@
       "grassland",
       "wetland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — insects, small crustaceans",
     "funFact": "Not a true magpie or lark — builds a unique mud-cup nest.",
     "size": 27,
     "population": "3.6M",
-    "imageUrl": "/birds/magpie-lark.jpg"
+    "imageUrl": "/birds/magpie-lark.jpg",
+    "rangeMapUrl": "/birds/maps/magpie-lark.jpg"
   },
   {
     "id": "grey-fantail",
@@ -829,6 +1285,16 @@
     "habitats": [
       "forest",
       "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Insectivore — flying insects",
     "funFact": "Constantly fans its tail to flush insects from foliage.",
@@ -846,6 +1312,14 @@
       "rainforest",
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — flying insects",
     "funFact": "Migrates thousands of kilometres between summer and winter ranges.",
     "size": 16,
@@ -860,6 +1334,15 @@
     "status": "least_concern",
     "habitats": [
       "forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "act"
     ],
     "diet": "Insectivore — insects, spiders",
     "funFact": "Males have one of the most beautiful whistled songs in Australia.",
@@ -877,6 +1360,15 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — insects",
     "funFact": "Sings its rich 'ee-chong' call throughout the day, even in summer heat.",
     "size": 17,
@@ -893,6 +1385,16 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — insects, small vertebrates",
     "funFact": "Considered one of Australia's most accomplished songsters.",
     "size": 24,
@@ -907,6 +1409,14 @@
     "status": "least_concern",
     "habitats": [
       "forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "tas",
+      "act"
     ],
     "diet": "Insectivore — insects, spiders",
     "funFact": "A tiny bird that lurks in dense undergrowth with harsh scolding calls.",
@@ -924,6 +1434,14 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Insectivore — insects",
     "funFact": "Can mimic the alarm calls of larger birds to scare off predators.",
     "size": 10,
@@ -940,11 +1458,17 @@
       "grassland",
       "desert"
     ],
+    "regions": [
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Insectivore — insects",
     "funFact": "Males turn deep cobalt blue only during the breeding season.",
     "size": 14,
     "population": "380K",
-    "imageUrl": "/birds/splendid-fairywren.jpg"
+    "imageUrl": "/birds/splendid-fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/splendid-fairywren.png"
   },
   {
     "id": "variegated-fairywren",
@@ -956,11 +1480,21 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — insects",
     "funFact": "The most widespread fairy-wren — found across most of the continent.",
     "size": 14,
     "population": "940K",
-    "imageUrl": "/birds/variegated-fairywren.jpg"
+    "imageUrl": "/birds/variegated-fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/variegated-fairywren.png"
   },
   {
     "id": "red-backed-fairywren",
@@ -971,11 +1505,18 @@
     "habitats": [
       "grassland"
     ],
+    "regions": [
+      "qld",
+      "nt",
+      "wa",
+      "nsw"
+    ],
     "diet": "Insectivore — insects",
     "funFact": "Breeding males are jet black with a flame-red saddle.",
     "size": 13,
     "population": "620K",
-    "imageUrl": "/birds/red-backed-fairywren.jpg"
+    "imageUrl": "/birds/red-backed-fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/red-backed-fairywren.png"
   },
   {
     "id": "king-parrot",
@@ -987,11 +1528,18 @@
       "rainforest",
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "act"
+    ],
     "diet": "Herbivore — seeds, nuts, fruit",
     "funFact": "Males have scarlet heads; females have all-green heads.",
     "size": 42,
     "population": "220K",
-    "imageUrl": "/birds/king-parrot.jpg"
+    "imageUrl": "/birds/king-parrot.jpg",
+    "rangeMapUrl": "/birds/maps/king-parrot.png"
   },
   {
     "id": "koel",
@@ -1003,11 +1551,20 @@
       "forest",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "nt",
+      "act"
+    ],
     "diet": "Frugivore — fruit, occasional insects",
     "funFact": "A brood parasite — lays eggs in other birds' nests.",
     "size": 42,
     "population": "165K",
-    "imageUrl": "/birds/koel.jpg"
+    "imageUrl": "/birds/koel.jpg",
+    "rangeMapUrl": "/birds/maps/koel.png"
   },
   {
     "id": "cuckoo-shrike",
@@ -1020,11 +1577,22 @@
       "urban",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — insects, fruit",
     "funFact": "After landing, shuffles its wings in a distinctive 'rearranging' motion.",
     "size": 33,
     "population": "930K",
-    "imageUrl": "/birds/cuckoo-shrike.jpg"
+    "imageUrl": "/birds/cuckoo-shrike.jpg",
+    "rangeMapUrl": "/birds/maps/cuckoo-shrike.png"
   },
   {
     "id": "yellow-robin",
@@ -1035,11 +1603,19 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "act"
+    ],
     "diet": "Insectivore — insects, spiders",
     "funFact": "Perches sideways on tree trunks, waiting to pounce on prey below.",
     "size": 16,
     "population": "520K",
-    "imageUrl": "/birds/yellow-robin.jpg"
+    "imageUrl": "/birds/yellow-robin.jpg",
+    "rangeMapUrl": "/birds/maps/yellow-robin.png"
   },
   {
     "id": "jacky-winter",
@@ -1050,6 +1626,15 @@
     "habitats": [
       "grassland",
       "forest"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
     ],
     "diet": "Insectivore — insects",
     "funFact": "Sings its namesake 'jacky-jacky-jacky' on cold winter mornings.",
@@ -1067,6 +1652,13 @@
       "forest",
       "rainforest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "tas",
+      "act"
+    ],
     "diet": "Omnivore — insects, seeds, fungi",
     "funFact": "Can mimic chainsaws, camera shutters, and car alarms with uncanny accuracy.",
     "size": 100,
@@ -1083,11 +1675,20 @@
       "grassland",
       "desert"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Granivore — grass seeds",
     "funFact": "Forms vast nomadic flocks of thousands across the inland.",
     "size": 18,
     "population": "5M",
-    "imageUrl": "/birds/budgerigar.jpg"
+    "imageUrl": "/birds/budgerigar.jpg",
+    "rangeMapUrl": "/birds/maps/budgerigar.png"
   },
   {
     "id": "cockatiel",
@@ -1099,11 +1700,20 @@
       "grassland",
       "desert"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Granivore — seeds, grains",
     "funFact": "The smallest of Australia's cockatoos.",
     "size": 32,
     "population": "1.2M",
-    "imageUrl": "/birds/cockatiel.jpg"
+    "imageUrl": "/birds/cockatiel.jpg",
+    "rangeMapUrl": "/birds/maps/cockatiel.png"
   },
   {
     "id": "nankeen-kestrel",
@@ -1114,6 +1724,16 @@
     "habitats": [
       "grassland",
       "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Carnivore — mice, lizards, insects",
     "funFact": "Hovers motionless in mid-air while scanning for prey below.",
@@ -1132,11 +1752,22 @@
       "urban",
       "alpine"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Carnivore — birds in flight",
     "funFact": "The fastest animal on Earth — dives at over 300 km/h.",
     "size": 44,
     "population": "9K",
-    "imageUrl": "/birds/peregrine-falcon.jpg"
+    "imageUrl": "/birds/peregrine-falcon.jpg",
+    "rangeMapUrl": "/birds/maps/peregrine-falcon.png"
   },
   {
     "id": "brown-falcon",
@@ -1147,6 +1778,15 @@
     "habitats": [
       "grassland",
       "desert"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
     ],
     "diet": "Carnivore — rodents, reptiles, insects",
     "funFact": "Often hunts at grass fires, snatching escaping prey.",
@@ -1164,6 +1804,15 @@
       "wetland",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Carnivore — carrion, fish, reptiles",
     "funFact": "Named for its loud whistling call given in flight.",
     "size": 55,
@@ -1180,11 +1829,19 @@
       "grassland",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Carnivore — carrion, small animals",
     "funFact": "Known to pick up burning sticks to spread fires and flush prey.",
     "size": 55,
     "population": "580K",
-    "imageUrl": "/birds/black-kite.jpg"
+    "imageUrl": "/birds/black-kite.jpg",
+    "rangeMapUrl": "/birds/maps/black-kite.png"
   },
   {
     "id": "silver-gull",
@@ -1195,6 +1852,16 @@
     "habitats": [
       "coastal",
       "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Omnivore — scraps, crustaceans, fish",
     "funFact": "Australia's most familiar gull — the classic beach 'seagull'.",
@@ -1212,6 +1879,14 @@
       "wetland",
       "rainforest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "nt",
+      "wa",
+      "tas"
+    ],
     "diet": "Piscivore — fish, yabbies",
     "funFact": "A jewel-bright bird the size of a sparrow, rarely seen perched.",
     "size": 18,
@@ -1227,6 +1902,12 @@
     "habitats": [
       "forest",
       "wetland"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "nt",
+      "wa"
     ],
     "diet": "Carnivore — insects, lizards",
     "funFact": "Perches prominently then plunges to the ground for prey.",
@@ -1244,6 +1925,14 @@
       "wetland",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — plants, snails, insects",
     "funFact": "Cooperatively breeds — multiple adults help raise a single brood.",
     "size": 38,
@@ -1259,6 +1948,15 @@
     "habitats": [
       "wetland",
       "urban"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
     ],
     "diet": "Omnivore — plants, insects, eggs",
     "funFact": "Grasps food with one giant red foot while feeding — like a hand.",
@@ -1276,11 +1974,22 @@
       "wetland",
       "urban"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Omnivore — plants, insects",
     "funFact": "Its toes are lobed rather than webbed — a unique adaptation for swimming.",
     "size": 38,
     "population": "640K",
-    "imageUrl": "/birds/eurasian-coot.jpg"
+    "imageUrl": "/birds/eurasian-coot.jpg",
+    "rangeMapUrl": "/birds/maps/eurasian-coot.png"
   },
   {
     "id": "red-capped-plover",
@@ -1291,6 +2000,16 @@
     "habitats": [
       "coastal",
       "wetland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
     ],
     "diet": "Insectivore — small invertebrates",
     "funFact": "Fakes a broken wing to lure predators away from its nest.",
@@ -1307,11 +2026,22 @@
     "habitats": [
       "wetland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "tas",
+      "nt",
+      "act"
+    ],
     "diet": "Carnivore — small fish, insects",
     "funFact": "Carries chicks on its back while swimming between waterways.",
     "size": 25,
     "population": "480K",
-    "imageUrl": "/birds/australasian-grebe.jpg"
+    "imageUrl": "/birds/australasian-grebe.jpg",
+    "rangeMapUrl": "/birds/maps/australasian-grebe.png"
   },
   {
     "id": "striated-thornbill",
@@ -1322,11 +2052,18 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "act"
+    ],
     "diet": "Insectivore — insects",
     "funFact": "Frequently joins mixed-species feeding flocks in winter.",
     "size": 10,
     "population": "380K",
-    "imageUrl": "/birds/striated-thornbill.jpg"
+    "imageUrl": "/birds/striated-thornbill.jpg",
+    "rangeMapUrl": "/birds/maps/striated-thornbill.png"
   },
   {
     "id": "mitchell",
@@ -1338,11 +2075,20 @@
       "desert",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Herbivore — seeds, nuts, roots",
     "funFact": "Mates for life and can live over 75 years in captivity.",
     "size": 36,
     "population": "42K",
-    "imageUrl": "/birds/mitchell.jpg"
+    "imageUrl": "/birds/mitchell.jpg",
+    "rangeMapUrl": "/birds/maps/mitchell.png"
   },
   {
     "id": "blackcockatoo",
@@ -1354,11 +2100,17 @@
       "forest",
       "desert"
     ],
+    "regions": [
+      "qld",
+      "nt",
+      "wa"
+    ],
     "diet": "Herbivore — seeds, nuts",
     "funFact": "Males have brilliant red tail panels visible only in flight.",
     "size": 60,
     "population": "135K",
-    "imageUrl": "/birds/blackcockatoo.jpg"
+    "imageUrl": "/birds/blackcockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/blackcockatoo.jpg"
   },
   {
     "id": "yellow-tailed-blackcockatoo",
@@ -1369,11 +2121,19 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Herbivore — pine seeds, wood-boring grubs",
     "funFact": "Rips apart banksia cones and wood with enormous force.",
     "size": 65,
     "population": "105K",
-    "imageUrl": "/birds/yellow-tailed-blackcockatoo.jpg"
+    "imageUrl": "/birds/yellow-tailed-blackcockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/yellow-tailed-blackcockatoo.png"
   },
   {
     "id": "glossy-blackcockatoo",
@@ -1384,11 +2144,18 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa"
+    ],
     "diet": "Herbivore — she-oak seeds only",
     "funFact": "Feeds almost exclusively on casuarina cones — critically habitat-dependent.",
     "size": 50,
     "population": "11K",
-    "imageUrl": "/birds/glossy-blackcockatoo.jpg"
+    "imageUrl": "/birds/glossy-blackcockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/glossy-blackcockatoo.png"
   },
   {
     "id": "bush-stone-curlew",
@@ -1400,11 +2167,20 @@
       "grassland",
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
+    ],
     "diet": "Insectivore — insects, small reptiles",
     "funFact": "Unnerving night-time wailing calls have earned it ghostly folklore.",
     "size": 55,
     "population": "70K",
-    "imageUrl": "/birds/bush-stone-curlew.jpg"
+    "imageUrl": "/birds/bush-stone-curlew.jpg",
+    "rangeMapUrl": "/birds/maps/bush-stone-curlew.png"
   },
   {
     "id": "brolga",
@@ -1416,11 +2192,19 @@
       "wetland",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "nt"
+    ],
     "diet": "Omnivore — tubers, insects, frogs",
     "funFact": "Famous for its elegant leaping courtship dance.",
     "size": 125,
     "population": "23K",
-    "imageUrl": "/birds/brolga.jpg"
+    "imageUrl": "/birds/brolga.jpg",
+    "rangeMapUrl": "/birds/maps/brolga.png"
   },
   {
     "id": "plumed-whistling-duck",
@@ -1431,6 +2215,12 @@
     "habitats": [
       "wetland",
       "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "nt"
     ],
     "diet": "Herbivore — grass, aquatic plants",
     "funFact": "Forms nomadic flocks of thousands in the tropical north.",
@@ -1447,11 +2237,20 @@
     "habitats": [
       "wetland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "tas",
+      "act"
+    ],
     "diet": "Carnivore — mussels, crustaceans, fish",
     "funFact": "Males have a fleshy black lobe under the bill and a musky odour.",
     "size": 70,
     "population": "45K",
-    "imageUrl": "/birds/musk-duck.jpg"
+    "imageUrl": "/birds/musk-duck.jpg",
+    "rangeMapUrl": "/birds/maps/musk-duck.png"
   },
   {
     "id": "barking-owl",
@@ -1462,6 +2261,15 @@
     "habitats": [
       "forest",
       "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "sa",
+      "nt",
+      "act"
     ],
     "diet": "Carnivore — small mammals, birds, insects",
     "funFact": "Its eerie 'screaming-woman' call has terrified bush travellers for centuries.",
@@ -1478,6 +2286,14 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "wa",
+      "tas",
+      "act"
+    ],
     "diet": "Carnivore — rats, rabbits, possums",
     "funFact": "Tasmanian subspecies is the world's largest Tyto owl.",
     "size": 50,
@@ -1493,11 +2309,19 @@
     "habitats": [
       "coastal"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "tas"
+    ],
     "diet": "Insectivore — beach invertebrates",
     "funFact": "Nests on sand above the high-tide line — extremely vulnerable to disturbance.",
     "size": 22,
     "population": "7K",
-    "imageUrl": "/birds/hooded-plover.jpg"
+    "imageUrl": "/birds/hooded-plover.jpg",
+    "rangeMapUrl": "/birds/maps/hooded-plover.png"
   },
   {
     "id": "rockwarbler",
@@ -1507,6 +2331,9 @@
     "status": "near_threatened",
     "habitats": [
       "forest"
+    ],
+    "regions": [
+      "nsw"
     ],
     "diet": "Insectivore — insects, spiders",
     "funFact": "New South Wales' only endemic bird — restricted to sandstone country.",
@@ -1523,11 +2350,15 @@
     "habitats": [
       "rainforest"
     ],
+    "regions": [
+      "qld"
+    ],
     "diet": "Herbivore — pandanus nuts, seeds",
     "funFact": "The only birds known to use tools as musical instruments, drumming sticks on trees.",
     "size": 60,
     "population": "3.1K",
-    "imageUrl": "/birds/palm.jpg"
+    "imageUrl": "/birds/palm.jpg",
+    "rangeMapUrl": "/birds/maps/palm.png"
   },
   {
     "id": "owl",
@@ -1539,11 +2370,18 @@
       "forest",
       "rainforest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "act"
+    ],
     "diet": "Carnivore — possums, gliders, bats",
     "funFact": "Carries prey back to a favourite perch and holds it all day.",
     "size": 60,
     "population": "7.8K",
-    "imageUrl": "/birds/owl.jpg"
+    "imageUrl": "/birds/owl.jpg",
+    "rangeMapUrl": "/birds/maps/owl.png"
   },
   {
     "id": "bustard",
@@ -1554,6 +2392,13 @@
     "habitats": [
       "grassland",
       "desert"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
     ],
     "diet": "Omnivore — seeds, fruits, small animals",
     "funFact": "Males perform booming courtship displays, inflating throat sacs.",
@@ -1571,11 +2416,18 @@
       "forest",
       "alpine"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "tas",
+      "act"
+    ],
     "diet": "Herbivore — seeds, berries",
     "funFact": "Makes a creaking sound like a rusty hinge when flying.",
     "size": 35,
     "population": "20K",
-    "imageUrl": "/birds/gang-gang.jpg"
+    "imageUrl": "/birds/gang-gang.jpg",
+    "rangeMapUrl": "/birds/maps/gang-gang.png"
   },
   {
     "id": "superb-parrot",
@@ -1586,6 +2438,10 @@
     "habitats": [
       "forest",
       "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic"
     ],
     "diet": "Herbivore — seeds, grains, fruit",
     "funFact": "Restricted to river-red-gum woodlands of the Murray-Murrumbidgee.",
@@ -1603,6 +2459,12 @@
       "desert",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "wa",
+      "sa"
+    ],
     "diet": "Omnivore — seeds, insects, fruit",
     "funFact": "Male tends a compost nest-mound year-round, keeping it at a constant 33°C.",
     "size": 60,
@@ -1619,6 +2481,13 @@
       "desert",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Carnivore — birds, reptiles, mammals",
     "funFact": "One of Australia's rarest birds of prey — possibly fewer than 1,000 pairs.",
     "size": 43,
@@ -1633,6 +2502,11 @@
     "status": "vulnerable",
     "habitats": [
       "desert"
+    ],
+    "regions": [
+      "wa",
+      "sa",
+      "nt"
     ],
     "diet": "Herbivore — seeds, flowers",
     "funFact": "Named after Princess Alexandra — an elusive nomad of the Western Deserts.",
@@ -1650,6 +2524,13 @@
       "grassland",
       "desert"
     ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Carnivore — reptiles, small mammals",
     "funFact": "Drops stones on emu eggs to crack them open — rare tool use in raptors.",
     "size": 55,
@@ -1666,11 +2547,18 @@
       "grassland",
       "desert"
     ],
+    "regions": [
+      "qld",
+      "sa",
+      "wa",
+      "nt"
+    ],
     "diet": "Carnivore — long-haired rats, rodents",
     "funFact": "Unique among raptors for being strictly nocturnal.",
     "size": 36,
     "population": "1K",
-    "imageUrl": "/birds/letter-winged-kite.jpg"
+    "imageUrl": "/birds/letter-winged-kite.jpg",
+    "rangeMapUrl": "/birds/maps/letter-winged-kite.png"
   },
   {
     "id": "cassowary",
@@ -1681,11 +2569,15 @@
     "habitats": [
       "rainforest"
     ],
+    "regions": [
+      "qld"
+    ],
     "diet": "Frugivore — fallen fruits, fungi",
     "funFact": "Considered the most dangerous bird — kicks with dagger-like claws.",
     "size": 170,
     "population": "4.4K",
-    "imageUrl": "/birds/cassowary.jpg"
+    "imageUrl": "/birds/cassowary.jpg",
+    "rangeMapUrl": "/birds/maps/cassowary.png"
   },
   {
     "id": "red-goshawk",
@@ -1696,6 +2588,12 @@
     "habitats": [
       "forest",
       "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "qld",
+      "wa",
+      "nt"
     ],
     "diet": "Carnivore — birds up to parrot-size",
     "funFact": "One of the world's rarest raptors — only a few hundred pairs remain.",
@@ -1711,6 +2609,9 @@
     "status": "endangered",
     "habitats": [
       "forest"
+    ],
+    "regions": [
+      "vic"
     ],
     "diet": "Nectarivore — nectar, insects, manna",
     "funFact": "Victoria's faunal emblem — fewer than 250 wild birds remain.",
@@ -1728,11 +2629,16 @@
       "forest",
       "grassland"
     ],
+    "regions": [
+      "nsw",
+      "vic"
+    ],
     "diet": "Insectivore — insects",
     "funFact": "Prefers running through undergrowth to flying — critically fire-sensitive.",
     "size": 22,
     "population": "2.5K",
-    "imageUrl": "/birds/bristlebird.jpg"
+    "imageUrl": "/birds/bristlebird.jpg",
+    "rangeMapUrl": "/birds/maps/bristlebird.png"
   },
   {
     "id": "mallee-emu-wren",
@@ -1743,11 +2649,16 @@
     "habitats": [
       "desert"
     ],
+    "regions": [
+      "vic",
+      "sa"
+    ],
     "diet": "Insectivore — tiny insects",
     "funFact": "A feather-weight 4-gram bird — one of Australia's smallest.",
     "size": 15,
     "population": "10K",
-    "imageUrl": "/birds/mallee-emu-wren.jpg"
+    "imageUrl": "/birds/mallee-emu-wren.jpg",
+    "rangeMapUrl": "/birds/maps/mallee-emu-wren.png"
   },
   {
     "id": "black-eared-miner",
@@ -1758,11 +2669,17 @@
     "habitats": [
       "desert"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa"
+    ],
     "diet": "Omnivore — nectar, insects, sap",
     "funFact": "Hybridises with Yellow-throated Miners — threatening genetic identity.",
     "size": 25,
     "population": "3K",
-    "imageUrl": "/birds/black-eared-miner.jpg"
+    "imageUrl": "/birds/black-eared-miner.jpg",
+    "rangeMapUrl": "/birds/maps/black-eared-miner.png"
   },
   {
     "id": "golden-shouldered-parrot",
@@ -1772,6 +2689,9 @@
     "status": "endangered",
     "habitats": [
       "grassland"
+    ],
+    "regions": [
+      "qld"
     ],
     "diet": "Granivore — grass seeds",
     "funFact": "Nests only in termite mounds on Cape York savannah.",
@@ -1788,11 +2708,17 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld"
+    ],
     "diet": "Nectarivore — eucalyptus nectar",
     "funFact": "So rare, young males have forgotten their song and mimic other species.",
     "size": 22,
     "population": "<350",
-    "imageUrl": "/birds/regent.jpg"
+    "imageUrl": "/birds/regent.jpg",
+    "rangeMapUrl": "/birds/maps/regent.jpg"
   },
   {
     "id": "nightparrot",
@@ -1804,11 +2730,18 @@
       "desert",
       "grassland"
     ],
+    "regions": [
+      "qld",
+      "wa",
+      "sa",
+      "nt"
+    ],
     "diet": "Granivore — spinifex seeds",
     "funFact": "Presumed extinct for a century — photographed alive only in 2013.",
     "size": 23,
     "population": "<250",
-    "imageUrl": "/birds/nightparrot.jpg"
+    "imageUrl": "/birds/nightparrot.jpg",
+    "rangeMapUrl": "/birds/maps/nightparrot.png"
   },
   {
     "id": "parrot-eng",
@@ -1819,6 +2752,11 @@
     "habitats": [
       "coastal",
       "grassland"
+    ],
+    "regions": [
+      "vic",
+      "sa",
+      "tas"
     ],
     "diet": "Granivore — grass seeds, saltmarsh plants",
     "funFact": "One of only three migratory parrot species — fewer than 70 wild adults.",
@@ -1835,11 +2773,20 @@
     "habitats": [
       "forest"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "qld",
+      "sa",
+      "tas",
+      "act"
+    ],
     "diet": "Nectarivore — blue gum nectar",
     "funFact": "Flies the Bass Strait each year — predated heavily by sugar gliders.",
     "size": 25,
     "population": "750",
-    "imageUrl": "/birds/swift-parrot.jpg"
+    "imageUrl": "/birds/swift-parrot.jpg",
+    "rangeMapUrl": "/birds/maps/swift-parrot.png"
   },
   {
     "id": "plains-wanderer",
@@ -1849,6 +2796,10 @@
     "status": "critically_endangered",
     "habitats": [
       "grassland"
+    ],
+    "regions": [
+      "nsw",
+      "vic"
     ],
     "diet": "Insectivore — insects, seeds",
     "funFact": "A living fossil — the sole member of its ancient family.",
@@ -1866,6 +2817,9 @@
       "coastal",
       "grassland"
     ],
+    "regions": [
+      "wa"
+    ],
     "diet": "Herbivore — seeds, flowers",
     "funFact": "Only around 150 remain in a single Western Australian reserve.",
     "size": 30,
@@ -1881,10 +2835,18 @@
     "habitats": [
       "wetland"
     ],
+    "regions": [
+      "nsw",
+      "vic",
+      "sa",
+      "wa",
+      "tas"
+    ],
     "diet": "Carnivore — fish, frogs, crustaceans",
     "funFact": "Males produce a deep 'booming' call that travels kilometres at dusk.",
     "size": 75,
     "population": "1.5K",
-    "imageUrl": "/birds/australasian-bittern.jpg"
+    "imageUrl": "/birds/australasian-bittern.jpg",
+    "rangeMapUrl": "/birds/maps/australasian-bittern.png"
   }
 ]

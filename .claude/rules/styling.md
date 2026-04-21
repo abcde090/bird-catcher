@@ -53,5 +53,15 @@ Both loaded via Google Fonts link in [index.html](../../index.html).
 - `30` — CatchEffect
 - `50` — GameHUD
 - `60` — MissFlash, CardReveal toast
+- `100` — BirdDetailModal (overlays everything including gameplay if opened mid-round — though it's only reachable from the Field Guide screen today)
 
 Keep new elements aware of this ordering. Net assets are inline SVG matching the paper/ink/ember palette.
+
+## Modal / overlay pattern
+
+Modals (see [`BirdDetailModal`](../../src/components/game/BirdDetailModal.tsx)) use:
+
+- A full-screen fixed backdrop with `rgba(20, 12, 4, 0.65)` + `backdropFilter: blur(4px)`.
+- A `.panel` child centered in the viewport with max-height and `overflow: auto`.
+- Entry animation: existing `card-in` keyframe (0.35 s `cubic-bezier(0.16, 1, 0.3, 1)`) on the panel; `fade-in` on the backdrop.
+- Dismiss paths (all three): click backdrop (outer `onClick`), press Escape (window `keydown` listener in a `useEffect`), click an explicit `×` button in the top-right corner. The inner panel must `stopPropagation()` on click to avoid triggering the backdrop dismiss.

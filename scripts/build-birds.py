@@ -19,6 +19,141 @@ OUT_DIR = os.path.join(ROOT, "public", "birds")
 OUT_JSON = os.path.join(ROOT, "public", "data", "birds.json")
 UA = "bird-catcher/1.0 (local dev build)"
 
+# Per-species Australian state/territory distribution. Hand-curated against
+# general knowledge of each species' range; verify against Wikipedia/eBird
+# per entry if precision matters. IDs that aren't in this dict get an empty
+# list (render as "distribution unknown" in the field guide).
+REGIONS: dict[str, list[str]] = {
+    # --- LEAST CONCERN ---
+    "kookaburra": ["nsw", "vic", "qld", "sa", "act"],
+    "magpie": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "lorikeet": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "galah": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "wagtail": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "fairywren": ["nsw", "vic", "qld", "sa", "tas", "act"],
+    "pelican": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "emu": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "eagle": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "cockatoo": ["nsw", "vic", "qld", "sa", "tas", "nt", "act"],
+    "noisy-miner": ["nsw", "vic", "qld", "sa", "act"],
+    "white-ibis": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "silvereye": ["nsw", "vic", "qld", "wa", "sa", "tas", "act"],
+    "crimson-rosella": ["nsw", "vic", "qld", "sa", "act"],
+    "eastern-rosella": ["nsw", "vic", "qld", "tas", "act"],
+    "pied-butcherbird": ["nsw", "qld", "wa", "sa", "nt"],
+    "grey-butcherbird": ["nsw", "vic", "qld", "wa", "sa", "tas", "act"],
+    "raven": ["nsw", "vic", "qld", "sa", "act"],
+    "pied-currawong": ["nsw", "vic", "qld", "act"],
+    "welcome-swallow": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "masked-lapwing": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "straw-necked-ibis": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "royal-spoonbill": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "wood-duck": ["nsw", "vic", "qld", "wa", "sa", "tas", "act"],
+    "black-duck": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "chestnut-teal": ["nsw", "vic", "sa", "tas", "wa", "act"],
+    "grey-teal": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "black-swan": ["nsw", "vic", "qld", "wa", "sa", "tas", "act"],
+    "little-pied-cormorant": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "great-cormorant": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "darter": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "white-faced-heron": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "cattle-egret": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "tawny-frogmouth": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "crested-pigeon": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "spotted-dove": ["nsw", "vic", "qld", "wa", "act"],
+    "common-bronzewing": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "bee-eater": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "sacred-kingfisher": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "blue-winged-kookaburra": ["qld", "nt", "wa"],
+    "red-wattlebird": ["nsw", "vic", "sa", "wa", "tas", "act"],
+    "little-wattlebird": ["nsw", "vic", "sa", "wa", "tas", "act"],
+    "noisy-friarbird": ["nsw", "vic", "qld", "nt", "act"],
+    "new-holland-honeyeater": ["nsw", "vic", "sa", "wa", "tas", "act"],
+    "white-plumed-honeyeater": ["nsw", "vic", "qld", "wa", "sa", "nt"],
+    "eastern-spinebill": ["nsw", "vic", "qld", "tas", "act"],
+    "satin-bowerbird": ["nsw", "vic", "qld", "act"],
+    "regent-bowerbird": ["nsw", "qld"],
+    "great-bowerbird": ["wa", "nt", "qld"],
+    "brush-turkey": ["nsw", "qld"],
+    "magpie-lark": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "grey-fantail": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "rufous-fantail": ["nsw", "vic", "qld", "wa", "nt", "act"],
+    "golden-whistler": ["nsw", "vic", "qld", "wa", "sa", "tas", "act"],
+    "rufous-whistler": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "shrike-thrush": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "scrubwren": ["nsw", "vic", "qld", "sa", "tas", "act"],
+    "brown-thornbill": ["nsw", "vic", "qld", "sa", "tas", "act"],
+    "splendid-fairywren": ["wa", "sa", "nt"],
+    "variegated-fairywren": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "red-backed-fairywren": ["qld", "nt", "wa", "nsw"],
+    "king-parrot": ["nsw", "vic", "qld", "act"],
+    "koel": ["nsw", "vic", "qld", "wa", "nt", "act"],
+    "cuckoo-shrike": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "yellow-robin": ["nsw", "vic", "qld", "sa", "act"],
+    "jacky-winter": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "superb-lyrebird": ["nsw", "vic", "qld", "tas", "act"],
+    "budgerigar": ["nsw", "vic", "qld", "wa", "sa", "nt"],
+    "cockatiel": ["nsw", "vic", "qld", "wa", "sa", "nt"],
+    "nankeen-kestrel": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "peregrine-falcon": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "brown-falcon": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "whistling-kite": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "black-kite": ["nsw", "qld", "wa", "sa", "nt"],
+    "silver-gull": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "azure-kingfisher": ["nsw", "vic", "qld", "nt", "wa", "tas"],
+    "forest-kingfisher": ["nsw", "qld", "nt", "wa"],
+    "dusky-moorhen": ["nsw", "vic", "qld", "wa", "nt", "act"],
+    "purple-swamphen": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "eurasian-coot": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "red-capped-plover": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "australasian-grebe": ["nsw", "vic", "qld", "wa", "sa", "tas", "nt", "act"],
+    "striated-thornbill": ["nsw", "vic", "sa", "act"],
+
+    # --- NEAR THREATENED ---
+    "mitchell": ["nsw", "vic", "qld", "wa", "sa", "nt"],
+    "blackcockatoo": ["qld", "nt", "wa"],
+    "yellow-tailed-blackcockatoo": ["nsw", "vic", "sa", "tas", "act"],
+    "glossy-blackcockatoo": ["nsw", "vic", "qld", "sa"],
+    "bush-stone-curlew": ["nsw", "qld", "wa", "sa", "nt", "act"],
+    "brolga": ["nsw", "vic", "qld", "wa", "nt"],
+    "plumed-whistling-duck": ["nsw", "qld", "wa", "nt"],
+    "musk-duck": ["nsw", "vic", "sa", "wa", "tas", "act"],
+    "barking-owl": ["nsw", "vic", "qld", "wa", "sa", "nt", "act"],
+    "masked-owl": ["nsw", "vic", "qld", "wa", "tas", "act"],
+    "hooded-plover": ["nsw", "vic", "sa", "wa", "tas"],
+    "rockwarbler": ["nsw"],
+
+    # --- VULNERABLE ---
+    "palm": ["qld"],
+    "owl": ["nsw", "vic", "qld", "act"],
+    "bustard": ["nsw", "qld", "wa", "sa", "nt"],
+    "gang-gang": ["nsw", "vic", "tas", "act"],
+    "superb-parrot": ["nsw", "vic"],
+    "malleefowl": ["nsw", "vic", "wa", "sa"],
+    "grey-falcon": ["nsw", "qld", "wa", "sa", "nt"],
+    "princess-parrot": ["wa", "sa", "nt"],
+    "black-breasted-buzzard": ["nsw", "qld", "wa", "sa", "nt"],
+    "letter-winged-kite": ["qld", "sa", "wa", "nt"],
+
+    # --- ENDANGERED ---
+    "cassowary": ["qld"],
+    "red-goshawk": ["nsw", "qld", "wa", "nt"],
+    "helmeted-honeyeater": ["vic"],
+    "bristlebird": ["nsw", "vic"],
+    "mallee-emu-wren": ["vic", "sa"],
+    "black-eared-miner": ["nsw", "vic", "sa"],
+    "golden-shouldered-parrot": ["qld"],
+
+    # --- CRITICALLY ENDANGERED ---
+    "regent": ["nsw", "vic", "qld"],
+    "nightparrot": ["qld", "wa", "sa", "nt"],
+    "parrot-eng": ["vic", "sa", "tas"],
+    "swift-parrot": ["nsw", "vic", "qld", "sa", "tas", "act"],
+    "plains-wanderer": ["nsw", "vic"],
+    "western-ground-parrot": ["wa"],
+    "australasian-bittern": ["nsw", "vic", "sa", "wa", "tas"],
+}
+
 # (id, name, scientific, category, status, habitats, diet, funFact, size_cm, pop, wiki_title)
 BIRDS: list[tuple] = [
     # ===== LEAST CONCERN (Common) =====
@@ -563,6 +698,22 @@ def ensure_image(bird_id: str, wiki_title: str) -> bool:
 
 def main() -> int:
     os.makedirs(OUT_DIR, exist_ok=True)
+
+    # Preserve any rangeMapUrl from a prior build — populated by
+    # scripts/fetch-range-maps.py — so rebuilding the dataset doesn't drop maps.
+    prior_range_maps: dict[str, str] = {}
+    if os.path.exists(OUT_JSON):
+        try:
+            with open(OUT_JSON) as f:
+                for entry in json.load(f):
+                    url = entry.get("rangeMapUrl")
+                    if url:
+                        local = os.path.join(ROOT, "public", url.lstrip("/"))
+                        if os.path.exists(local):
+                            prior_range_maps[entry["id"]] = url
+        except Exception:
+            pass
+
     # dedupe by id, keeping first
     seen = set()
     unique: list[tuple] = []
@@ -588,19 +739,23 @@ def main() -> int:
                 print(f"[drop] {row[0]}: no image", file=sys.stderr)
                 continue
             bid, name, sci, cat, status, habitats, diet, fact, size, pop, _ = row
-            results[bid] = {
+            entry: dict = {
                 "id": bid,
                 "name": name,
                 "scientific": sci,
                 "category": cat,
                 "status": status,
                 "habitats": habitats,
+                "regions": REGIONS.get(bid, []),
                 "diet": diet,
                 "funFact": fact,
                 "size": size,
                 "population": pop,
                 "imageUrl": f"/birds/{bid}.jpg",
             }
+            if bid in prior_range_maps:
+                entry["rangeMapUrl"] = prior_range_maps[bid]
+            results[bid] = entry
 
     # preserve order of input list
     final = [results[row[0]] for row in unique if row[0] in results]
