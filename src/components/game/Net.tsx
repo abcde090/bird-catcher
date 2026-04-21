@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useGameStore } from "../../stores/useGameStore";
 import {
   NET_CAST_DURATION,
@@ -24,6 +25,21 @@ function arcPoint(
 
 export default function Net() {
   const net = useGameStore((s) => s.net);
+  const [, setTick] = useState(0);
+
+  // Drive per-frame re-render while the net is visibly active, so arc
+  // motion and radius bloom update smoothly (the store only mutates `net`
+  // on phase transitions, not per frame).
+  useEffect(() => {
+    if (net.phase === "idle" || net.phase === "cooldown") return;
+    let raf = 0;
+    const loop = () => {
+      setTick((n) => (n + 1) % 1_000_000);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => cancelAnimationFrame(raf);
+  }, [net.phase]);
 
   if (net.phase === "idle") return null;
 
