@@ -14,12 +14,14 @@ export default function GameScreen() {
   const activeBirds = useGameStore((s) => s.activeBirds);
   const missFlashKey = useGameStore((s) => s.missFlashKey);
   const revealBird = useGameStore((s) => s.revealBird);
+  const setCursor = useGameStore((s) => s.setCursor);
   const { catchBird, closeReveal } = useGameLoop();
 
   const phase = getPhase(time);
 
   return (
     <div
+      onMouseMove={(e) => setCursor(e.clientX, e.clientY)}
       style={{
         position: "absolute",
         inset: 0,
