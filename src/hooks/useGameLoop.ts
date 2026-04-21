@@ -166,9 +166,14 @@ export function useGameLoop() {
           let dodgeX = 0;
           let dodgeY = 0;
           if (now < b.dodgeUntil) {
-            const remaining = b.dodgeUntil - now;
-            dodgeX = b.dodgeDx * remaining;
-            dodgeY = b.dodgeDy * remaining;
+            // Arc the dodge: 0 at trigger, peak (velocity × duration) mid-dodge,
+            // 0 at expiry. Creates a smooth bank-out-and-return, not a snap.
+            const elapsedSinceDodge =
+              EPIC_DODGE_DURATION - (b.dodgeUntil - now);
+            const arcT = elapsedSinceDodge / EPIC_DODGE_DURATION;
+            const shape = Math.sin(arcT * Math.PI);
+            dodgeX = b.dodgeDx * EPIC_DODGE_DURATION * shape;
+            dodgeY = b.dodgeDy * EPIC_DODGE_DURATION * shape;
           }
 
           return {
@@ -322,5 +327,5 @@ export function useGameLoop() {
     return () => cancelAnimationFrame(rafRef.current);
   }, [screen, tick]);
 
-  return { catchBird, closeReveal };
+  return { closeReveal };
 }
