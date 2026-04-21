@@ -1,200 +1,206 @@
-import { useRef, useCallback, useEffect } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useGameStore } from "../stores/useGameStore";
 import { useCollectionStore } from "../stores/useCollectionStore";
 import { useBirdStore } from "../stores/useBirdStore";
 import { spawnBird } from "../lib/spawner";
-import { interpolatePosition } from "../lib/flight-paths";
 import {
-  PHASE_CONFIG,
-  RARITY_CONFIG,
-  FIRST_CATCH_BONUS,
+  MAX_ACTIVE,
   MAX_MISSES,
-  MAX_ACTIVE_BIRDS,
-  COMBO_WINDOW,
-  getPhaseForTime,
-  getComboMultiplier,
+  RARITY,
+  getComboMult,
+  getPhase,
 } from "../lib/game-config";
 import type { FlyingBird } from "../types/game";
 
 export function useGameLoop() {
+  const birdsRef = useRef<FlyingBird[]>([]);
+  const rafRef = useRef(0);
   const lastFrameRef = useRef(0);
   const lastSpawnRef = useRef(0);
-  const rafRef = useRef(0);
-  const birdsRef = useRef<FlyingBird[]>([]);
+  const nextIdRef = useRef(0);
+  const screenRef = useRef<string>("title");
 
   const gameStore = useGameStore;
   const collectionStore = useCollectionStore;
-  const allBirds = useBirdStore((s) => s.birds);
+  const birdStore = useBirdStore;
+
+  const screen = useGameStore((s) => s.screen);
+
+  useEffect(() => {
+    screenRef.current = screen;
+  }, [screen]);
 
   const tick = useCallback(
     (timestamp: number) => {
-      const state = gameStore.getState();
-      if (state.screen !== "playing") return;
+      if (screenRef.current !== "playing") return;
 
+      const state = gameStore.getState();
+      const now = timestamp / 1000;
       const delta =
         lastFrameRef.current === 0
           ? 0.016
-          : (timestamp - lastFrameRef.current) / 1000;
-      lastFrameRef.current = timestamp;
+          : Math.min(0.1, now - lastFrameRef.current);
+      lastFrameRef.current = now;
 
-      const dt = Math.min(delta, 0.1);
+      const timeRemaining = Math.max(0, state.timeRemaining - delta);
+      const phase = getPhase(timeRemaining);
+      const spawnInterval = phase.spawn;
 
-      const newTime = Math.max(0, state.timeRemaining - dt);
-      const newPhase = getPhaseForTime(newTime);
-
-      const now = Date.now();
       if (
-        state.combo > 0 &&
-        (now - state.lastCatchTime) / 1000 > COMBO_WINDOW
-      ) {
-        gameStore.setState({ combo: 0 });
-      }
-
-      const phaseConfig = PHASE_CONFIG[newPhase];
-      const timeSinceSpawn = timestamp / 1000 - lastSpawnRef.current;
-      if (
-        timeSinceSpawn >= phaseConfig.spawnInterval &&
-        birdsRef.current.length < MAX_ACTIVE_BIRDS
+        now - lastSpawnRef.current >= spawnInterval &&
+        birdsRef.current.length < MAX_ACTIVE
       ) {
         const viewport = {
           width: window.innerWidth,
           height: window.innerHeight,
         };
-        const newBird = spawnBird(allBirds, newPhase, viewport);
-        if (newBird) {
-          birdsRef.current = [...birdsRef.current, newBird];
-          lastSpawnRef.current = timestamp / 1000;
+        const nb = spawnBird(
+          birdStore.getState().birds,
+          phase,
+          viewport,
+          nextIdRef.current++,
+        );
+        if (nb) {
+          birdsRef.current = [...birdsRef.current, nb];
+          lastSpawnRef.current = now;
         }
       }
 
-      let missesThisFrame = 0;
-      const currentTime = timestamp / 1000;
-
+      let missed = 0;
       birdsRef.current = birdsRef.current
-        .map((bird) => {
-          const elapsed = currentTime - bird.spawnTime;
-          const totalDistance = Math.sqrt(
-            (bird.endX - bird.startX) ** 2 + (bird.endY - bird.startY) ** 2,
-          );
-          const duration = totalDistance / bird.speed;
-          const progress = Math.min(elapsed / duration, 1);
+        .map((b) => {
+          const elapsed = now - b.spawnTime;
+          const totalDx = Math.abs(b.endX - b.startX);
+          const duration = totalDx / b.speed;
+          const progress = Math.min(1, elapsed / duration);
+          const t = progress * progress * (3 - 2 * progress);
+          const baseX = b.startX + (b.endX - b.startX) * t;
+          let y = b.startY + (b.endY - b.startY) * t;
+          const bob = Math.sin(now * 2.5 + b.startY) * 2.5;
 
-          const pos = interpolatePosition(
-            bird.pattern,
+          if (b.pattern === "arc") {
+            y += -100 * Math.sin(progress * Math.PI);
+          } else if (b.pattern === "zigzag") {
+            y += Math.sin(progress * Math.PI * 2.5) * 35;
+          } else if (b.pattern === "dive") {
+            y = b.startY + (b.endY - b.startY) * (progress * progress);
+          }
+
+          return {
+            ...b,
+            x: baseX,
+            y: y + bob,
             progress,
-            bird.startX,
-            bird.startY,
-            bird.endX,
-            bird.endY,
-            currentTime,
-          );
-
-          return { ...bird, x: pos.x, y: pos.y, progress };
+            wobble: Math.sin(now * 3 + b.startY) * 1.5,
+          };
         })
-        .filter((bird) => {
-          if (bird.progress >= 1) {
-            missesThisFrame++;
+        .filter((b) => {
+          if (b.progress >= 1) {
+            missed++;
             return false;
           }
           return true;
         });
 
-      const totalMisses = state.misses + missesThisFrame;
-      const isGameOver = newTime <= 0 || totalMisses >= MAX_MISSES;
+      // Combo expiry
+      let combo = state.combo;
+      if (combo > 0 && Date.now() - state.lastCatchTime > 2500) {
+        combo = 0;
+      }
+
+      const totalMisses = state.misses + missed;
+      const missFlashKey = missed > 0 ? Date.now() : state.missFlashKey;
+      const comboAfterMiss = missed > 0 ? 0 : combo;
+
+      const gameOver = timeRemaining <= 0 || totalMisses >= MAX_MISSES;
 
       gameStore.setState({
-        timeRemaining: newTime,
-        currentPhase: newPhase,
-        activeBirds: birdsRef.current,
+        timeRemaining,
         misses: totalMisses,
+        combo: comboAfterMiss,
+        activeBirds: birdsRef.current,
+        missFlashKey,
       });
 
-      if (isGameOver) {
+      if (gameOver) {
         const finalScore = gameStore.getState().score;
-        if (finalScore > state.highScore) {
-          gameStore.getState().setHighScore(finalScore);
-        }
-        collectionStore.getState().addGame();
-        gameStore.setState({ screen: "results" });
+        const { highScore, setHighScore } = collectionStore.getState();
+        if (finalScore > highScore) setHighScore(finalScore);
         birdsRef.current = [];
+        gameStore.setState({ activeBirds: [], screen: "results" });
+        cancelAnimationFrame(rafRef.current);
         return;
       }
 
       rafRef.current = requestAnimationFrame(tick);
     },
-    [allBirds, gameStore, collectionStore],
+    [gameStore, collectionStore, birdStore],
   );
 
-  const start = useCallback(() => {
-    lastFrameRef.current = 0;
-    lastSpawnRef.current = 0;
-    birdsRef.current = [];
-    rafRef.current = requestAnimationFrame(tick);
-  }, [tick]);
-
-  const stop = useCallback(() => {
-    if (rafRef.current) cancelAnimationFrame(rafRef.current);
-  }, []);
-
   const catchBird = useCallback(
-    (birdId: string, clickX: number, clickY: number) => {
+    (id: string, cx: number, cy: number) => {
       const state = gameStore.getState();
-      const bird = birdsRef.current.find((b) => b.id === birdId);
+      const bird = birdsRef.current.find((b) => b.id === id);
       if (!bird) return;
 
-      birdsRef.current = birdsRef.current.filter((b) => b.id !== birdId);
-
-      const rarityConfig = RARITY_CONFIG[bird.species.conservationStatus];
+      birdsRef.current = birdsRef.current.filter((b) => b.id !== id);
+      const rarity = RARITY[bird.species.status];
       const isNew = !collectionStore.getState().isDiscovered(bird.species.id);
-      const basePoints =
-        rarityConfig.basePoints + (isNew ? FIRST_CATCH_BONUS : 0);
 
-      gameStore.getState().incrementCombo();
-      const comboMultiplier = getComboMultiplier(state.combo + 1);
-      const totalPoints = basePoints * comboMultiplier;
+      const nextCombo = state.combo + 1;
+      const mult = getComboMult(nextCombo);
+      const points = Math.round((rarity.points + (isNew ? 50 : 0)) * mult);
 
-      gameStore.getState().addScore(totalPoints);
-      gameStore.getState().addCatch(bird.species.id, isNew);
-      collectionStore.getState().addCatch();
+      const fxId = `fx${Date.now()}${Math.random()}`;
+      const newEffect = {
+        id: fxId,
+        x: cx,
+        y: cy,
+        points,
+        name: bird.species.name,
+        color: rarity.ring,
+      };
+
+      gameStore.setState({
+        score: state.score + points,
+        combo: nextCombo,
+        lastCatchTime: Date.now(),
+        catches: [...state.catches, bird.species],
+        catchEffects: [...state.catchEffects, newEffect],
+        activeBirds: birdsRef.current,
+        newDiscoveries: state.newDiscoveries + (isNew ? 1 : 0),
+        revealBird: isNew
+          ? { species: bird.species, shownAt: performance.now() }
+          : state.revealBird,
+      });
 
       if (isNew) {
         collectionStore.getState().discoverBird(bird.species.id);
       }
 
-      gameStore.getState().addCatchEffect({
-        id: `effect-${Date.now()}`,
-        x: clickX,
-        y: clickY,
-        score: totalPoints,
-        birdName: bird.species.commonName,
-        spawnTime: Date.now(),
-      });
-
-      if (isNew) {
+      setTimeout(() => {
+        const s = gameStore.getState();
         gameStore.setState({
-          screen: "card-reveal",
-          revealBirdId: bird.species.id,
-          activeBirds: birdsRef.current,
+          catchEffects: s.catchEffects.filter((e) => e.id !== fxId),
         });
-        stop();
-      } else {
-        gameStore.setState({ activeBirds: birdsRef.current });
-      }
+      }, 800);
     },
-    [gameStore, collectionStore, stop],
+    [gameStore, collectionStore],
   );
 
-  const resumeAfterReveal = useCallback(() => {
-    gameStore.setState({ screen: "playing", revealBirdId: null });
-    lastFrameRef.current = 0;
-    rafRef.current = requestAnimationFrame(tick);
-  }, [gameStore, tick]);
+  const closeReveal = useCallback(() => {
+    gameStore.setState({ revealBird: null });
+  }, [gameStore]);
 
   useEffect(() => {
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    };
-  }, []);
+    if (screen !== "playing") return;
+    birdsRef.current = [];
+    nextIdRef.current = 0;
+    lastFrameRef.current = 0;
+    lastSpawnRef.current = performance.now() / 1000;
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [screen, tick]);
 
-  return { start, stop, catchBird, resumeAfterReveal };
+  return { catchBird, closeReveal };
 }

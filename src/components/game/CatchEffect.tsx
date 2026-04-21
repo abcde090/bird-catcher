@@ -1,46 +1,49 @@
-import { useEffect } from "react";
 import { useGameStore } from "../../stores/useGameStore";
-import { CATCH_EFFECT_DURATION } from "../../lib/game-config";
 
 export default function CatchEffect() {
-  const effects = useGameStore((s) => s.catchEffects);
-  const removeCatchEffect = useGameStore((s) => s.removeCatchEffect);
-
-  useEffect(() => {
-    if (effects.length === 0) return;
-
-    const timer = setTimeout(() => {
-      const now = Date.now();
-      effects.forEach((effect) => {
-        if (now - effect.spawnTime > CATCH_EFFECT_DURATION) {
-          removeCatchEffect(effect.id);
-        }
-      });
-    }, CATCH_EFFECT_DURATION);
-
-    return () => clearTimeout(timer);
-  }, [effects, removeCatchEffect]);
-
+  const catchEffects = useGameStore((s) => s.catchEffects);
   return (
-    <div className="pointer-events-none absolute inset-0 z-20">
-      {effects.map((effect) => (
+    <>
+      {catchEffects.map((fx) => (
         <div
-          key={effect.id}
-          className="absolute animate-score-float text-center"
+          key={fx.id}
           style={{
-            left: effect.x,
-            top: effect.y,
-            transform: "translate(-50%, -50%)",
+            position: "absolute",
+            left: fx.x,
+            top: fx.y,
+            pointerEvents: "none",
+            transform: "translate(-50%,-50%)",
+            animation: "catch-pop 0.8s ease-out forwards",
+            zIndex: 30,
           }}
         >
-          <div className="font-mono text-xl font-bold text-outback-gold drop-shadow-lg">
-            +{effect.score}
+          <div
+            style={{
+              fontFamily: "'Fraunces', serif",
+              fontSize: 32,
+              fontWeight: 600,
+              color: "#fff",
+              textShadow: `0 0 12px ${fx.color}, 0 3px 8px rgba(0,0,0,0.6)`,
+            }}
+          >
+            +{fx.points}
           </div>
-          <div className="text-xs font-medium text-white drop-shadow-lg">
-            {effect.birdName}
+          <div
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 10,
+              letterSpacing: "0.15em",
+              color: "#fff",
+              textAlign: "center",
+              marginTop: 2,
+              textTransform: "uppercase",
+              textShadow: "0 2px 4px rgba(0,0,0,0.7)",
+            }}
+          >
+            {fx.name}
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

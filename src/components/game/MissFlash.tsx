@@ -1,29 +1,20 @@
-import { useEffect, useState, useRef } from "react";
-
-interface Props {
-  misses: number;
+interface MissFlashProps {
+  trigger: number;
 }
 
-export default function MissFlash({ misses }: Props) {
-  const [flash, setFlash] = useState(false);
-  const prevMissesRef = useRef(misses);
-
-  useEffect(() => {
-    if (misses > prevMissesRef.current) {
-      setFlash(true);
-      const timer = setTimeout(() => setFlash(false), 300);
-      prevMissesRef.current = misses;
-      return () => clearTimeout(timer);
-    }
-    prevMissesRef.current = misses;
-  }, [misses]);
-
-  if (!flash) return null;
-
+export default function MissFlash({ trigger }: MissFlashProps) {
+  if (!trigger) return null;
   return (
-    <div className="pointer-events-none absolute inset-0 z-20 animate-screen-shake">
-      <div className="absolute inset-0 border-4 border-red-500/60" />
-      <div className="absolute inset-0 bg-red-500/10" />
-    </div>
+    <div
+      key={trigger}
+      style={{
+        position: "absolute",
+        inset: 0,
+        zIndex: 60,
+        pointerEvents: "none",
+        boxShadow: "inset 0 0 120px 30px rgba(196,69,42,0.5)",
+        animation: "miss-flash 0.4s ease-out forwards",
+      }}
+    />
   );
 }

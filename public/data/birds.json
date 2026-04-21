@@ -1,1613 +1,1890 @@
 [
   {
-    "id": "emu",
-    "commonName": "Emu",
-    "scientificName": "Dromaius novaehollandiae",
-    "family": "Casuariidae",
-    "order": "Casuariiformes",
-    "category": "Flightless Birds",
-    "description": "The Emu is Australia's largest native bird and the second-tallest living bird in the world. These flightless birds roam vast distances across the Australian mainland, feeding on plants, insects, and small animals.",
-    "conservationStatus": "least_concern",
+    "id": "kookaburra",
+    "name": "Laughing Kookaburra",
+    "scientific": "Dacelo novaeguineae",
+    "category": "Kingfisher",
+    "status": "least_concern",
     "habitats": [
-      "grassland",
-      "desert",
-      "eucalyptus_forest"
+      "forest",
+      "urban"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "nt"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/405_61_emu.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — seeds, fruits, flowers, insects, and small vertebrates",
-    "size": {
-      "lengthCm": 180,
-      "wingspanCm": 20,
-      "weightG": 45000
-    },
-    "funFact": "Emus can sprint at speeds up to 50 km/h and are excellent swimmers.",
-    "population": {
-      "current": 725000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -31.95,
-      "lng": 141.47
-    }
+    "diet": "Carnivore — insects, lizards, mice",
+    "funFact": "Their dawn 'laughing' chorus marks territory boundaries.",
+    "size": 43,
+    "population": "11.3M",
+    "imageUrl": "/birds/kookaburra.jpg"
   },
   {
-    "id": "southern-cassowary",
-    "commonName": "Southern Cassowary",
-    "scientificName": "Casuarius casuarius",
-    "family": "Casuariidae",
-    "order": "Casuariiformes",
-    "category": "Flightless Birds",
-    "description": "The Southern Cassowary is a large, flightless bird with a distinctive blue neck and a prominent casque on its head. Found in the tropical rainforests of Far North Queensland, it plays a vital role in seed dispersal.",
-    "conservationStatus": "endangered",
+    "id": "magpie",
+    "name": "Australian Magpie",
+    "scientific": "Gymnorhina tibicen",
+    "category": "Songbird",
+    "status": "least_concern",
     "habitats": [
-      "rainforest",
-      "mangrove"
-    ],
-    "regions": [
-      "qld"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/southern_cassowary.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Frugivore — primarily fallen fruits, also fungi, snails, and small vertebrates",
-    "size": {
-      "lengthCm": 170,
-      "wingspanCm": 18,
-      "weightG": 58500
-    },
-    "funFact": "Cassowaries are considered the most dangerous bird in the world due to their powerful kick and dagger-like claws.",
-    "population": {
-      "current": 4400,
-      "trend": "decreasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -16.25,
-      "lng": 145.47
-    }
-  },
-  {
-    "id": "laughing-kookaburra",
-    "commonName": "Laughing Kookaburra",
-    "scientificName": "Dacelo novaeguineae",
-    "family": "Alcedinidae",
-    "order": "Coraciiformes",
-    "category": "Kingfishers & Kookaburras",
-    "description": "Famous for its unmistakable laughing call, the Laughing Kookaburra is the largest member of the kingfisher family. It is a beloved icon of the Australian bush, often seen perched on fence posts and branches.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
       "urban",
       "grassland"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "wa",
-      "tas"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/img_6094_kookaburra_imp.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — insects, lizards, snakes, mice, and small birds",
-    "size": {
-      "lengthCm": 43,
-      "wingspanCm": 56,
-      "weightG": 345
-    },
-    "funFact": "Kookaburras are territorial and their laughing chorus at dawn and dusk marks their territory boundaries.",
-    "population": {
-      "current": 11340000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -33.72,
-      "lng": 150.31
-    }
+    "diet": "Omnivore — insects, worms, small vertebrates",
+    "funFact": "Magpies can recognise up to 100 individual human faces.",
+    "size": 40,
+    "population": "12.4M",
+    "imageUrl": "/birds/magpie.jpg"
   },
   {
-    "id": "rainbow-lorikeet",
-    "commonName": "Rainbow Lorikeet",
-    "scientificName": "Trichoglossus moluccanus",
-    "family": "Psittaculidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Rainbow Lorikeet is one of Australia's most colourful birds, with bright plumage of blue, green, orange, and red. These energetic parrots are commonly seen in noisy flocks feeding on nectar and pollen in urban gardens and bushland.",
-    "conservationStatus": "least_concern",
+    "id": "lorikeet",
+    "name": "Rainbow Lorikeet",
+    "scientific": "Trichoglossus moluccanus",
+    "category": "Parrot",
+    "status": "least_concern",
     "habitats": [
-      "eucalyptus_forest",
       "urban",
-      "rainforest",
+      "forest",
       "coastal"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "wa"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg/330px-Rainbow_lorikeet_%28Trichoglossus_moluccanus_moluccanus%29_Sydney.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Nectarivore — nectar, pollen, fruits, seeds, and occasional insects",
-    "size": {
-      "lengthCm": 30,
-      "wingspanCm": 46,
-      "weightG": 133
-    },
-    "funFact": "Rainbow Lorikeets have a brush-tipped tongue specially adapted for extracting nectar from flowers.",
-    "population": {
-      "current": 5190000,
-      "trend": "increasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -27.47,
-      "lng": 153.03
-    }
-  },
-  {
-    "id": "sulphur-crested-cockatoo",
-    "commonName": "Sulphur-crested Cockatoo",
-    "scientificName": "Cacatua galerita",
-    "family": "Cacatuidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Sulphur-crested Cockatoo is a large white parrot with a distinctive yellow crest that it raises when excited or alarmed. Highly intelligent and social, these birds are found across eastern and northern Australia.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
-      "urban",
-      "rainforest"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "tas",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/sulphur-crested_cockatoo.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — seeds, nuts, berries, flowers, roots, and grubs",
-    "size": {
-      "lengthCm": 50,
-      "wingspanCm": 95,
-      "weightG": 880
-    },
-    "funFact": "These cockatoos can live over 80 years and have been observed teaching each other to open garbage bins.",
-    "population": {
-      "current": 920000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -33.87,
-      "lng": 151.21
-    }
+    "diet": "Nectarivore — nectar, pollen, fruits",
+    "funFact": "Their brush-tipped tongues are specially adapted for nectar.",
+    "size": 30,
+    "population": "5.2M",
+    "imageUrl": "/birds/lorikeet.jpg"
   },
   {
     "id": "galah",
-    "commonName": "Galah",
-    "scientificName": "Eolophus roseicapilla",
-    "family": "Cacatuidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Galah is one of the most abundant and widespread cockatoos in Australia, easily recognised by its pink and grey plumage. Often seen in large, noisy flocks, it has adapted well to both rural and urban environments.",
-    "conservationStatus": "least_concern",
+    "name": "Galah",
+    "scientific": "Eolophus roseicapilla",
+    "category": "Cockatoo",
+    "status": "least_concern",
     "habitats": [
       "grassland",
       "urban",
-      "eucalyptus_forest",
       "desert"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Eolophus_roseicapilla_-Brisbane%2C_Queensland%2C_Australia-8.jpg/330px-Eolophus_roseicapilla_-Brisbane%2C_Queensland%2C_Australia-8.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — seeds, grains, nuts, berries, and roots",
-    "size": {
-      "lengthCm": 35,
-      "wingspanCm": 75,
-      "weightG": 345
-    },
-    "funFact": "In Australian slang, 'galah' is used to describe someone acting foolishly, owing to the bird's playful antics.",
-    "population": {
-      "current": 5800000,
-      "trend": "increasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -29.05,
-      "lng": 134.75
-    }
+    "diet": "Herbivore — seeds, grains, nuts",
+    "funFact": "'Galah' in Aussie slang means acting foolishly — from their playful antics.",
+    "size": 35,
+    "population": "5.8M",
+    "imageUrl": "/birds/galah.jpg"
   },
   {
-    "id": "budgerigar",
-    "commonName": "Budgerigar",
-    "scientificName": "Melopsittacus undulatus",
-    "family": "Psittaculidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Budgerigar is a small, nomadic parrot native to Australia's arid interior. Wild budgies are green and yellow with black barring, forming massive flocks that swirl like clouds over the outback.",
-    "conservationStatus": "least_concern",
+    "id": "wagtail",
+    "name": "Willie Wagtail",
+    "scientific": "Rhipidura leucophrys",
+    "category": "Songbird",
+    "status": "least_concern",
     "habitats": [
+      "urban",
       "grassland",
-      "desert"
-    ],
-    "regions": [
-      "nsw",
-      "qld",
-      "wa",
-      "sa",
-      "nt"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/budgerigar_imp.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Granivore — grass seeds and cereal grains",
-    "size": {
-      "lengthCm": 18,
-      "wingspanCm": 30,
-      "weightG": 32
-    },
-    "funFact": "Budgerigars are the third most popular pet in the world, after dogs and cats.",
-    "population": {
-      "current": 5000000,
-      "trend": "stable",
-      "lastSurveyYear": 2021
-    },
-    "coordinates": {
-      "lat": -23.7,
-      "lng": 133.88
-    }
-  },
-  {
-    "id": "cockatiel",
-    "commonName": "Cockatiel",
-    "scientificName": "Nymphicus hollandicus",
-    "family": "Cacatuidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Cockatiel is a small, graceful cockatoo with a distinctive pointed crest and orange cheek patches. Native to the Australian outback, it is a highly social bird found near water sources in arid regions.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "grassland",
-      "desert",
       "wetland"
     ],
-    "regions": [
-      "nsw",
-      "qld",
-      "wa",
-      "sa",
-      "nt"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/cockatiel_improved.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Granivore — seeds, grains, and fruits",
-    "size": {
-      "lengthCm": 32,
-      "wingspanCm": 40,
-      "weightG": 90
-    },
-    "funFact": "Cockatiels are the smallest members of the cockatoo family and are the most popular pet bird in Australia.",
-    "population": {
-      "current": 1200000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -26.5,
-      "lng": 148.78
-    }
+    "diet": "Insectivore — flying insects, moths",
+    "funFact": "Rides on the backs of cattle to catch disturbed insects.",
+    "size": 20,
+    "population": "7.6M",
+    "imageUrl": "/birds/wagtail.jpg"
   },
   {
-    "id": "king-parrot",
-    "commonName": "Australian King Parrot",
-    "scientificName": "Alisterus scapularis",
-    "family": "Psittaculidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Australian King Parrot is a striking bird with vivid red and green plumage. Males have an entirely red head and breast, while females are green with a red belly. They inhabit dense rainforests and wet eucalyptus forests along the east coast.",
-    "conservationStatus": "least_concern",
+    "id": "fairywren",
+    "name": "Superb Fairy-wren",
+    "scientific": "Malurus cyaneus",
+    "category": "Songbird",
+    "status": "least_concern",
     "habitats": [
-      "rainforest",
-      "eucalyptus_forest"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_4431%28male%29.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — fruits, seeds, nuts, berries, and blossoms",
-    "size": {
-      "lengthCm": 43,
-      "wingspanCm": 52,
-      "weightG": 230
-    },
-    "funFact": "King Parrots are one of the few parrots where males and females look completely different.",
-    "population": {
-      "current": 256000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -30.45,
-      "lng": 152.84
-    }
-  },
-  {
-    "id": "crimson-rosella",
-    "commonName": "Crimson Rosella",
-    "scientificName": "Platycercus elegans",
-    "family": "Psittaculidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Crimson Rosella is a medium-sized parrot with rich crimson plumage and bright blue cheeks and tail feathers. Found in forests and gardens of southeastern Australia, it is a common visitor to bird feeders.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
-      "rainforest",
+      "forest",
       "urban"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "act",
-      "tas"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Crimson%20Rosella.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — seeds, fruits, flowers, nectar, and insects",
-    "size": {
-      "lengthCm": 36,
-      "wingspanCm": 52,
-      "weightG": 145
-    },
-    "funFact": "Juvenile Crimson Rosellas are mostly green and gradually moult into their red adult plumage over two years.",
-    "population": {
-      "current": 830000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -35.28,
-      "lng": 149.13
-    }
+    "diet": "Insectivore — insects, spiders",
+    "funFact": "Males pluck yellow petals as courtship gifts.",
+    "size": 14,
+    "population": "3.4M",
+    "imageUrl": "/birds/fairywren.jpg"
   },
   {
-    "id": "major-mitchells-cockatoo",
-    "commonName": "Major Mitchell's Cockatoo",
-    "scientificName": "Lophochroa leadbeateri",
-    "family": "Cacatuidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "Major Mitchell's Cockatoo is considered one of the most beautiful cockatoos with its soft pink and white plumage and striking red and yellow banded crest. It inhabits arid and semi-arid woodlands across inland Australia.",
-    "conservationStatus": "near_threatened",
+    "id": "pelican",
+    "name": "Australian Pelican",
+    "scientific": "Pelecanus conspicillatus",
+    "category": "Waterbird",
+    "status": "least_concern",
     "habitats": [
-      "desert",
+      "wetland",
+      "coastal"
+    ],
+    "diet": "Piscivore — fish, crustaceans",
+    "funFact": "Their bill pouch can hold up to 13 litres of water.",
+    "size": 170,
+    "population": "415K",
+    "imageUrl": "/birds/pelican.jpg"
+  },
+  {
+    "id": "emu",
+    "name": "Emu",
+    "scientific": "Dromaius novaehollandiae",
+    "category": "Ratite",
+    "status": "least_concern",
+    "habitats": [
       "grassland",
-      "eucalyptus_forest"
+      "desert"
     ],
-    "regions": [
-      "nsw",
-      "qld",
-      "wa",
-      "sa",
-      "nt"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Major%20Mitchell%20Cockatoo%2005.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — seeds, nuts, roots, and fruit",
-    "size": {
-      "lengthCm": 36,
-      "wingspanCm": 75,
-      "weightG": 425
-    },
-    "funFact": "These cockatoos mate for life and can live over 75 years in captivity.",
-    "population": {
-      "current": 42000,
-      "trend": "decreasing",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -30.97,
-      "lng": 136.52
-    }
+    "diet": "Omnivore — seeds, fruits, insects",
+    "funFact": "Emus can sprint at 50 km/h and are excellent swimmers.",
+    "size": 180,
+    "population": "725K",
+    "imageUrl": "/birds/emu.jpg"
   },
   {
-    "id": "palm-cockatoo",
-    "commonName": "Palm Cockatoo",
-    "scientificName": "Probosciger aterrimus",
-    "family": "Cacatuidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Palm Cockatoo is a large, smoky-grey cockatoo with a massive bill and prominent red cheek patches. Found in the Cape York Peninsula, it is famous for using sticks to drum on hollow trees.",
-    "conservationStatus": "vulnerable",
-    "habitats": [
-      "rainforest",
-      "eucalyptus_forest"
-    ],
-    "regions": [
-      "qld"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Palm_Cockatoo_0A2A7769.jpg/330px-Palm_Cockatoo_0A2A7769.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — pandanus nuts, seeds, and fruits",
-    "size": {
-      "lengthCm": 60,
-      "wingspanCm": 80,
-      "weightG": 910
-    },
-    "funFact": "Palm Cockatoos are the only birds known to use tools as musical instruments, drumming sticks against trees.",
-    "population": {
-      "current": 3150,
-      "trend": "decreasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -13.76,
-      "lng": 143.4
-    }
-  },
-  {
-    "id": "wedge-tailed-eagle",
-    "commonName": "Wedge-tailed Eagle",
-    "scientificName": "Aquila audax",
-    "family": "Accipitridae",
-    "order": "Accipitriformes",
-    "category": "Raptors",
-    "description": "Australia's largest bird of prey, the Wedge-tailed Eagle has a wingspan of up to 2.3 metres and a distinctive wedge-shaped tail. It soars effortlessly on thermal currents, scanning the landscape for prey.",
-    "conservationStatus": "least_concern",
+    "id": "eagle",
+    "name": "Wedge-tailed Eagle",
+    "scientific": "Aquila audax",
+    "category": "Raptor",
+    "status": "least_concern",
     "habitats": [
       "grassland",
       "desert",
-      "eucalyptus_forest",
       "alpine"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Wedge-tailed%20eagle%202%20Judy%20Harrington.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — rabbits, hares, wallabies, reptiles, and carrion",
-    "size": {
-      "lengthCm": 100,
-      "wingspanCm": 230,
-      "weightG": 4200
-    },
-    "funFact": "Wedge-tailed Eagles have been recorded soaring at altitudes over 2,000 metres.",
-    "population": {
-      "current": 225000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -25.75,
-      "lng": 134.2
-    }
+    "diet": "Carnivore — rabbits, wallabies, carrion",
+    "funFact": "Soars at altitudes over 2,000 metres with a 2.3m wingspan.",
+    "size": 100,
+    "population": "225K",
+    "imageUrl": "/birds/eagle.jpg"
   },
   {
-    "id": "peregrine-falcon",
-    "commonName": "Peregrine Falcon",
-    "scientificName": "Falco peregrinus",
-    "family": "Falconidae",
-    "order": "Falconiformes",
-    "category": "Raptors",
-    "description": "The Peregrine Falcon is the fastest animal on Earth, reaching speeds over 380 km/h during its hunting stoop. In Australia, it is found across diverse habitats from coastal cliffs to city skyscrapers.",
-    "conservationStatus": "least_concern",
+    "id": "cockatoo",
+    "name": "Sulphur-crested Cockatoo",
+    "scientific": "Cacatua galerita",
+    "category": "Cockatoo",
+    "status": "least_concern",
     "habitats": [
-      "coastal",
-      "alpine",
-      "urban",
-      "grassland"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/405038_peregrinefalcon_male.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — medium-sized birds, bats, and occasionally small mammals",
-    "size": {
-      "lengthCm": 45,
-      "wingspanCm": 105,
-      "weightG": 850
-    },
-    "funFact": "Peregrine Falcons have a third eyelid to protect their eyes and special baffles in their nostrils to breathe during high-speed dives.",
-    "population": {
-      "current": 14700,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -37.82,
-      "lng": 144.97
-    }
-  },
-  {
-    "id": "powerful-owl",
-    "commonName": "Powerful Owl",
-    "scientificName": "Ninox strenua",
-    "family": "Strigidae",
-    "order": "Strigiformes",
-    "category": "Raptors",
-    "description": "Australia's largest owl, the Powerful Owl has piercing yellow eyes and is a formidable nocturnal predator. It inhabits dense forests along the eastern seaboard, hunting possums and gliders at night.",
-    "conservationStatus": "vulnerable",
-    "habitats": [
-      "eucalyptus_forest",
-      "rainforest"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/powerful_owl_tquested.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — possums, gliders, flying foxes, and birds",
-    "size": {
-      "lengthCm": 60,
-      "wingspanCm": 135,
-      "weightG": 1450
-    },
-    "funFact": "Powerful Owls are known to carry their prey back to a favourite perch and hold it in their talons all day.",
-    "population": {
-      "current": 7800,
-      "trend": "decreasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -33.6,
-      "lng": 150.65
-    }
-  },
-  {
-    "id": "nankeen-kestrel",
-    "commonName": "Nankeen Kestrel",
-    "scientificName": "Falco cenchroides",
-    "family": "Falconidae",
-    "order": "Falconiformes",
-    "category": "Raptors",
-    "description": "The Nankeen Kestrel is a small, graceful falcon known for its habit of hovering motionless in the wind while scanning the ground for prey. Its rufous-brown plumage and pointed wings make it easy to identify.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "grassland",
-      "desert",
+      "forest",
       "urban"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/nankeen_kestrel.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — insects, mice, lizards, and small birds",
-    "size": {
-      "lengthCm": 33,
-      "wingspanCm": 73,
-      "weightG": 160
-    },
-    "funFact": "Nankeen Kestrels can see ultraviolet light, which helps them detect rodent urine trails that glow under UV.",
-    "population": {
-      "current": 345000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -34.93,
-      "lng": 138.6
-    }
-  },
-  {
-    "id": "white-bellied-sea-eagle",
-    "commonName": "White-bellied Sea Eagle",
-    "scientificName": "Haliaeetus leucogaster",
-    "family": "Accipitridae",
-    "order": "Accipitriformes",
-    "category": "Raptors",
-    "description": "The White-bellied Sea Eagle is a majestic raptor found along Australian coastlines, rivers, and large inland waterways. With its white head and belly contrasting dark grey wings, it is an iconic coastal predator.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "coastal",
-      "wetland",
-      "mangrove"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/White-bellied%20Sea-eagle.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — fish, sea snakes, turtles, waterbirds, and carrion",
-    "size": {
-      "lengthCm": 80,
-      "wingspanCm": 210,
-      "weightG": 3700
-    },
-    "funFact": "Mating pairs perform spectacular aerial courtship displays, locking talons and cartwheeling through the sky.",
-    "population": {
-      "current": 18500,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -16.92,
-      "lng": 145.78
-    }
-  },
-  {
-    "id": "black-swan",
-    "commonName": "Black Swan",
-    "scientificName": "Cygnus atratus",
-    "family": "Anatidae",
-    "order": "Anseriformes",
-    "category": "Waterbirds",
-    "description": "The Black Swan is an elegant waterbird unique to Australia, with striking black plumage and a bright red bill. It is the state bird of Western Australia and is found on lakes, rivers, and estuaries across the continent.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "wetland",
-      "coastal"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/byb_319.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — aquatic plants, algae, and grasses",
-    "size": {
-      "lengthCm": 130,
-      "wingspanCm": 190,
-      "weightG": 6200
-    },
-    "funFact": "Before the discovery of Australia, Europeans believed all swans were white, making the Black Swan a symbol of the unexpected.",
-    "population": {
-      "current": 310000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -31.95,
-      "lng": 115.86
-    }
-  },
-  {
-    "id": "australian-pelican",
-    "commonName": "Australian Pelican",
-    "scientificName": "Pelecanus conspicillatus",
-    "family": "Pelecanidae",
-    "order": "Pelecaniformes",
-    "category": "Waterbirds",
-    "description": "The Australian Pelican has the longest bill of any living bird, up to 50 cm long. These large waterbirds are found across Australia wherever there is water, from coastal shores to inland lakes and rivers.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "wetland",
-      "coastal"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/byb_236.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Piscivore — fish, crustaceans, and occasionally small waterbirds",
-    "size": {
-      "lengthCm": 170,
-      "wingspanCm": 250,
-      "weightG": 6800
-    },
-    "funFact": "Their bill pouch can hold up to 13 litres of water, which they use to scoop up fish.",
-    "population": {
-      "current": 415000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -28.77,
-      "lng": 153.61
-    }
-  },
-  {
-    "id": "brolga",
-    "commonName": "Brolga",
-    "scientificName": "Antigone rubicunda",
-    "family": "Gruidae",
-    "order": "Gruiformes",
-    "category": "Waterbirds",
-    "description": "The Brolga is a tall, elegant crane renowned for its intricate mating dance. Standing over a metre tall with a distinctive red head patch, it inhabits wetlands and grasslands across northern and eastern Australia.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "wetland",
-      "grassland"
-    ],
-    "regions": [
-      "nsw",
-      "qld",
-      "wa",
-      "sa",
-      "nt"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Brolga_%2829920460794%29.jpg/330px-Brolga_%2829920460794%29.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — tubers, seeds, insects, molluscs, and frogs",
-    "size": {
-      "lengthCm": 130,
-      "wingspanCm": 200,
-      "weightG": 6500
-    },
-    "funFact": "The Brolga's elaborate dance, involving leaping, wing-stretching, and head-bobbing, has inspired Aboriginal Dreamtime stories.",
-    "population": {
-      "current": 52000,
-      "trend": "decreasing",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -19.92,
-      "lng": 148.78
-    }
-  },
-  {
-    "id": "royal-spoonbill",
-    "commonName": "Royal Spoonbill",
-    "scientificName": "Platalea regia",
-    "family": "Threskiornithidae",
-    "order": "Pelecaniformes",
-    "category": "Waterbirds",
-    "description": "The Royal Spoonbill is a large white wading bird with a distinctive black, spoon-shaped bill. It feeds by sweeping its bill side to side through shallow water to catch fish and crustaceans.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "wetland",
-      "coastal",
-      "mangrove"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "wa",
-      "tas"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_3337.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — fish, shrimp, crabs, and aquatic insects",
-    "size": {
-      "lengthCm": 77,
-      "wingspanCm": 120,
-      "weightG": 1700
-    },
-    "funFact": "During breeding season, Royal Spoonbills grow long white plumes on the back of their heads.",
-    "population": {
-      "current": 28000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -36.05,
-      "lng": 146.96
-    }
-  },
-  {
-    "id": "australian-wood-duck",
-    "commonName": "Australian Wood Duck",
-    "scientificName": "Chenonetta jubata",
-    "family": "Anatidae",
-    "order": "Anseriformes",
-    "category": "Waterbirds",
-    "description": "The Australian Wood Duck is a medium-sized duck with a distinctive maned appearance. Unlike most ducks, it grazes on grassland and is often seen far from water, perching in trees near farm dams.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "wetland",
-      "grassland",
-      "urban"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "act",
-      "tas"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/img_9024austwoodduck.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Herbivore — grasses, clover, and aquatic vegetation",
-    "size": {
-      "lengthCm": 48,
-      "wingspanCm": 80,
-      "weightG": 815
-    },
-    "funFact": "Australian Wood Ducks nest in tree hollows, sometimes up to 10 metres above the ground, and their ducklings jump down to join their parents.",
-    "population": {
-      "current": 1950000,
-      "trend": "increasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -34.75,
-      "lng": 149.7
-    }
-  },
-  {
-    "id": "superb-fairy-wren",
-    "commonName": "Superb Fairy-wren",
-    "scientificName": "Malurus cyaneus",
-    "family": "Maluridae",
-    "order": "Passeriformes",
-    "category": "Songbirds",
-    "description": "The Superb Fairy-wren is a tiny, energetic bird where breeding males display a brilliant iridescent blue plumage. These social birds live in family groups and are one of the most recognised small birds in Australia.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
-      "urban",
-      "grassland"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "act",
-      "tas"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_5804%28breedingmale%29.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore — insects, spiders, and small seeds",
-    "size": {
-      "lengthCm": 14,
-      "wingspanCm": 18,
-      "weightG": 10
-    },
-    "funFact": "Male Superb Fairy-wrens pluck yellow petals to present to females as part of their courtship display.",
-    "population": {
-      "current": 3400000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -37.81,
-      "lng": 144.96
-    }
-  },
-  {
-    "id": "australian-magpie",
-    "commonName": "Australian Magpie",
-    "scientificName": "Gymnorhina tibicen",
-    "family": "Artamidae",
-    "order": "Passeriformes",
-    "category": "Songbirds",
-    "description": "The Australian Magpie is one of the most recognised and beloved birds in Australia, known for its melodious carolling song. Black and white plumaged, intelligent, and bold, it thrives in suburban areas across the country.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "urban",
-      "grassland",
-      "eucalyptus_forest"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Australian_Magpie%2C_Majura_Nature_Reserve%2C_ACT.jpg/330px-Australian_Magpie%2C_Majura_Nature_Reserve%2C_ACT.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — insects, larvae, worms, snails, and small vertebrates",
-    "size": {
-      "lengthCm": 40,
-      "wingspanCm": 55,
-      "weightG": 330
-    },
-    "funFact": "Magpies can recognise up to 100 individual human faces and remember those who have threatened them.",
-    "population": {
-      "current": 12450000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -33.87,
-      "lng": 151.21
-    }
-  },
-  {
-    "id": "magpie-lark",
-    "commonName": "Australian Magpie-lark",
-    "scientificName": "Grallina cyanoleuca",
-    "family": "Monarchidae",
-    "order": "Passeriformes",
-    "category": "Songbirds",
-    "description": "Also known as the Peewee or Mudlark, the Magpie-lark is a bold black and white bird commonly seen across Australia. It builds distinctive mud nests on horizontal branches and is known for its territorial displays.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "urban",
-      "grassland",
-      "wetland"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/byb_85.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore — insects, larvae, earthworms, and freshwater invertebrates",
-    "size": {
-      "lengthCm": 28,
-      "wingspanCm": 42,
-      "weightG": 85
-    },
-    "funFact": "Magpie-larks often attack their own reflection in windows, thinking it is a rival bird.",
-    "population": {
-      "current": 8920000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -27.47,
-      "lng": 153.03
-    }
-  },
-  {
-    "id": "willie-wagtail",
-    "commonName": "Willie Wagtail",
-    "scientificName": "Rhipidura leucophrys",
-    "family": "Rhipiduridae",
-    "order": "Passeriformes",
-    "category": "Songbirds",
-    "description": "The Willie Wagtail is a small, fearless bird easily identified by its constant tail-wagging behaviour and black and white plumage. Despite its small size, it boldly defends its territory against much larger birds.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "urban",
-      "grassland",
-      "eucalyptus_forest",
-      "wetland"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_6139.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore — flying insects, beetles, moths, and spiders",
-    "size": {
-      "lengthCm": 20,
-      "wingspanCm": 28,
-      "weightG": 18
-    },
-    "funFact": "Willie Wagtails have been seen riding on the backs of cattle and horses to catch insects disturbed by their movement.",
-    "population": {
-      "current": 7650000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -31.95,
-      "lng": 115.86
-    }
-  },
-  {
-    "id": "splendid-fairy-wren",
-    "commonName": "Splendid Fairy-wren",
-    "scientificName": "Malurus splendens",
-    "family": "Maluridae",
-    "order": "Passeriformes",
-    "category": "Songbirds",
-    "description": "The Splendid Fairy-wren is a tiny bird where breeding males display an intense cobalt-blue plumage that is among the most vivid of any Australian bird. Found mainly in Western and South Australia in scrubby habitats.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
-      "desert",
-      "grassland"
-    ],
-    "regions": [
-      "wa",
-      "sa"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/splendid%20fairy-wren.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore — insects, spiders, and small seeds",
-    "size": {
-      "lengthCm": 14,
-      "wingspanCm": 17,
-      "weightG": 10
-    },
-    "funFact": "Splendid Fairy-wrens are socially monogamous but genetically promiscuous, with most chicks fathered by males outside the pair.",
-    "population": {
-      "current": 1830000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -31.95,
-      "lng": 115.86
-    }
-  },
-  {
-    "id": "satin-bowerbird",
-    "commonName": "Satin Bowerbird",
-    "scientificName": "Ptilonorhynchus violaceus",
-    "family": "Ptilonorhynchidae",
-    "order": "Passeriformes",
-    "category": "Songbirds",
-    "description": "The male Satin Bowerbird has glossy blue-black plumage with striking violet-blue eyes. Famous for building elaborate bowers decorated with blue objects to attract females, it is one of nature's most creative architects.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "rainforest",
-      "eucalyptus_forest"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/bowermale6_improved.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — fruits, flowers, leaves, seeds, and insects",
-    "size": {
-      "lengthCm": 32,
-      "wingspanCm": 48,
-      "weightG": 210
-    },
-    "funFact": "Male bowerbirds collect blue objects including bottle caps, straws, and pegs to decorate their bowers and impress females.",
-    "population": {
-      "current": 185000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -30.31,
-      "lng": 153.14
-    }
-  },
-  {
-    "id": "blue-winged-kookaburra",
-    "commonName": "Blue-winged Kookaburra",
-    "scientificName": "Dacelo leachii",
-    "family": "Alcedinidae",
-    "order": "Coraciiformes",
-    "category": "Kingfishers & Kookaburras",
-    "description": "The Blue-winged Kookaburra is the tropical cousin of the Laughing Kookaburra, with striking blue wing patches and a lighter, more maniacal call. Found across northern Australia in open woodlands and paperbarks.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
-      "mangrove",
-      "wetland"
-    ],
-    "regions": [
-      "qld",
-      "nt",
-      "wa"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/40515_bluewingedkookaburra.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — insects, lizards, frogs, fish, and crustaceans",
-    "size": {
-      "lengthCm": 40,
-      "wingspanCm": 55,
-      "weightG": 330
-    },
-    "funFact": "Unlike Laughing Kookaburras, Blue-winged Kookaburras have a harsh, cackling call that sounds quite different.",
-    "population": {
-      "current": 780000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -16.92,
-      "lng": 145.78
-    }
-  },
-  {
-    "id": "sacred-kingfisher",
-    "commonName": "Sacred Kingfisher",
-    "scientificName": "Todiramphus sanctus",
-    "family": "Alcedinidae",
-    "order": "Coraciiformes",
-    "category": "Kingfishers & Kookaburras",
-    "description": "The Sacred Kingfisher is a medium-sized kingfisher with turquoise-blue and buff plumage. Despite its name, it often hunts far from water, catching insects and small reptiles in open woodland.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
-      "mangrove",
-      "wetland",
-      "coastal"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/Kingfisher_Sacred_filtered.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Carnivore — insects, crustaceans, lizards, and small fish",
-    "size": {
-      "lengthCm": 22,
-      "wingspanCm": 33,
-      "weightG": 45
-    },
-    "funFact": "Sacred Kingfishers nest in termite mounds, tree hollows, and even earthen banks.",
-    "population": {
-      "current": 620000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -33.87,
-      "lng": 151.21
-    }
-  },
-  {
-    "id": "azure-kingfisher",
-    "commonName": "Azure Kingfisher",
-    "scientificName": "Ceyx azureus",
-    "family": "Alcedinidae",
-    "order": "Coraciiformes",
-    "category": "Kingfishers & Kookaburras",
-    "description": "The Azure Kingfisher is a small, jewel-like bird with vivid blue upperparts and a rich orange breast. It perches low over freshwater streams and rivers, diving with remarkable speed to catch small fish.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "wetland",
-      "rainforest",
-      "mangrove"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "nt"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/405-016_azurekingfisher.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Piscivore — small fish, crustaceans, and aquatic insects",
-    "size": {
-      "lengthCm": 18,
-      "wingspanCm": 26,
-      "weightG": 32
-    },
-    "funFact": "Azure Kingfishers can plunge-dive into water from a perch at speeds that would stun most small birds.",
-    "population": {
-      "current": 95000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -28.64,
-      "lng": 153.35
-    }
+    "diet": "Herbivore — seeds, nuts, berries",
+    "funFact": "Can live over 80 years and teaches others to open bins.",
+    "size": 50,
+    "population": "920K",
+    "imageUrl": "/birds/cockatoo.jpg"
   },
   {
     "id": "noisy-miner",
-    "commonName": "Noisy Miner",
-    "scientificName": "Manorina melanocephala",
-    "family": "Meliphagidae",
-    "order": "Passeriformes",
-    "category": "Honeyeaters",
-    "description": "The Noisy Miner is an assertive grey honeyeater with a yellow bill, eye patch, and feet. Living in large communal groups, they aggressively mob larger birds and other species, dominating their territory.",
-    "conservationStatus": "least_concern",
+    "name": "Noisy Miner",
+    "scientific": "Manorina melanocephala",
+    "category": "Honeyeater",
+    "status": "least_concern",
     "habitats": [
-      "eucalyptus_forest",
-      "urban"
+      "urban",
+      "forest"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "act",
-      "tas"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Noisy_Miner_%28Manorina_melanocephala%29.jpg/330px-Noisy_Miner_%28Manorina_melanocephala%29.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — nectar, fruits, insects, and lerps",
-    "size": {
-      "lengthCm": 27,
-      "wingspanCm": 36,
-      "weightG": 75
-    },
-    "funFact": "Noisy Miners are so aggressive that they can drive away all other bird species from an area, reducing local biodiversity.",
-    "population": {
-      "current": 9870000,
-      "trend": "increasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -33.87,
-      "lng": 151.21
-    }
+    "diet": "Omnivore — nectar, insects, fruit",
+    "funFact": "Forms aggressive colonies that drive out smaller birds.",
+    "size": 26,
+    "population": "5M",
+    "imageUrl": "/birds/noisy-miner.jpg"
   },
   {
-    "id": "new-holland-honeyeater",
-    "commonName": "New Holland Honeyeater",
-    "scientificName": "Phylidonyris novaehollandiae",
-    "family": "Meliphagidae",
-    "order": "Passeriformes",
-    "category": "Honeyeaters",
-    "description": "The New Holland Honeyeater is a striking black and white bird with yellow wing patches. Active and vocal, it is one of the first birds described from Australia, collected during Captain Cook's voyage in 1770.",
-    "conservationStatus": "least_concern",
+    "id": "white-ibis",
+    "name": "Australian White Ibis",
+    "scientific": "Threskiornis molucca",
+    "category": "Waterbird",
+    "status": "least_concern",
     "habitats": [
-      "eucalyptus_forest",
+      "urban",
+      "wetland"
+    ],
+    "diet": "Omnivore — insects, scraps, crustaceans",
+    "funFact": "Nicknamed 'bin chicken' for its urban bin-raiding habits.",
+    "size": 70,
+    "population": "330K",
+    "imageUrl": "/birds/white-ibis.jpg"
+  },
+  {
+    "id": "silvereye",
+    "name": "Silvereye",
+    "scientific": "Zosterops lateralis",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Omnivore — fruit, nectar, insects",
+    "funFact": "Migrates in large flocks along the east coast each autumn.",
+    "size": 12,
+    "population": "4M",
+    "imageUrl": "/birds/silvereye.jpg"
+  },
+  {
+    "id": "crimson-rosella",
+    "name": "Crimson Rosella",
+    "scientific": "Platycercus elegans",
+    "category": "Parrot",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Herbivore — seeds, fruit, blossoms",
+    "funFact": "Young birds are olive-green for their first two years.",
+    "size": 36,
+    "population": "1.2M",
+    "imageUrl": "/birds/crimson-rosella.jpg"
+  },
+  {
+    "id": "eastern-rosella",
+    "name": "Eastern Rosella",
+    "scientific": "Platycercus eximius",
+    "category": "Parrot",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "urban"
+    ],
+    "diet": "Herbivore — seeds, fruit, insects",
+    "funFact": "One of the most brightly-coloured parrots in the world.",
+    "size": 30,
+    "population": "1.5M",
+    "imageUrl": "/birds/eastern-rosella.jpg"
+  },
+  {
+    "id": "pied-butcherbird",
+    "name": "Pied Butcherbird",
+    "scientific": "Cracticus nigrogularis",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Carnivore — insects, reptiles, small birds",
+    "funFact": "Considered one of Australia's finest songbirds — melodic flute-like calls.",
+    "size": 35,
+    "population": "880K",
+    "imageUrl": "/birds/pied-butcherbird.jpg"
+  },
+  {
+    "id": "grey-butcherbird",
+    "name": "Grey Butcherbird",
+    "scientific": "Cracticus torquatus",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Carnivore — insects, lizards, small birds",
+    "funFact": "Wedges prey in tree forks to 'butcher' it — hence the name.",
+    "size": 30,
+    "population": "1.1M",
+    "imageUrl": "/birds/grey-butcherbird.jpg"
+  },
+  {
+    "id": "raven",
+    "name": "Australian Raven",
+    "scientific": "Corvus coronoides",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "urban",
+      "grassland",
+      "forest"
+    ],
+    "diet": "Omnivore — carrion, insects, eggs",
+    "funFact": "Their slow, drawn-out 'aah-aah-aaaah' call is unmistakable.",
+    "size": 51,
+    "population": "2.2M",
+    "imageUrl": "/birds/raven.jpg"
+  },
+  {
+    "id": "pied-currawong",
+    "name": "Pied Currawong",
+    "scientific": "Strepera graculina",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Omnivore — fruit, insects, nestlings",
+    "funFact": "Famous for their loud 'curra-wong' call echoing through forests.",
+    "size": 48,
+    "population": "1.8M",
+    "imageUrl": "/birds/pied-currawong.jpg"
+  },
+  {
+    "id": "welcome-swallow",
+    "name": "Welcome Swallow",
+    "scientific": "Hirundo neoxena",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "urban",
+      "grassland",
+      "coastal"
+    ],
+    "diet": "Insectivore — flying insects",
+    "funFact": "Named for their arrival at the start of spring.",
+    "size": 15,
+    "population": "2.4M",
+    "imageUrl": "/birds/welcome-swallow.jpg"
+  },
+  {
+    "id": "masked-lapwing",
+    "name": "Masked Lapwing",
+    "scientific": "Vanellus miles",
+    "category": "Shorebird",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "wetland",
+      "urban"
+    ],
+    "diet": "Insectivore — worms, insects",
+    "funFact": "Known for dive-bombing anyone who ventures too near their ground nests.",
+    "size": 36,
+    "population": "1.6M",
+    "imageUrl": "/birds/masked-lapwing.jpg"
+  },
+  {
+    "id": "straw-necked-ibis",
+    "name": "Straw-necked Ibis",
+    "scientific": "Threskiornis spinicollis",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "grassland"
+    ],
+    "diet": "Insectivore — locusts, grasshoppers",
+    "funFact": "Nicknamed 'farmer's friend' for eating swarming locusts.",
+    "size": 70,
+    "population": "250K",
+    "imageUrl": "/birds/straw-necked-ibis.jpg"
+  },
+  {
+    "id": "royal-spoonbill",
+    "name": "Royal Spoonbill",
+    "scientific": "Platalea regia",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "diet": "Piscivore — fish, crustaceans",
+    "funFact": "Sweeps its spoon-shaped bill side-to-side through water to feed.",
+    "size": 80,
+    "population": "45K",
+    "imageUrl": "/birds/royal-spoonbill.jpg"
+  },
+  {
+    "id": "wood-duck",
+    "name": "Australian Wood Duck",
+    "scientific": "Chenonetta jubata",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "wetland",
+      "urban"
+    ],
+    "diet": "Herbivore — grasses, herbs, grain",
+    "funFact": "One of the few ducks that nests in tree hollows.",
+    "size": 48,
+    "population": "775K",
+    "imageUrl": "/birds/wood-duck.jpg"
+  },
+  {
+    "id": "black-duck",
+    "name": "Pacific Black Duck",
+    "scientific": "Anas superciliosa",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "diet": "Omnivore — aquatic plants, insects",
+    "funFact": "Hybridises freely with introduced Mallards, threatening pure populations.",
+    "size": 55,
+    "population": "1.2M",
+    "imageUrl": "/birds/black-duck.jpg"
+  },
+  {
+    "id": "chestnut-teal",
+    "name": "Chestnut Teal",
+    "scientific": "Anas castanea",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "diet": "Omnivore — plants, insects, seeds",
+    "funFact": "Males are iridescent green-headed; females plain speckled brown.",
+    "size": 42,
+    "population": "240K",
+    "imageUrl": "/birds/chestnut-teal.jpg"
+  },
+  {
+    "id": "grey-teal",
+    "name": "Grey Teal",
+    "scientific": "Anas gracilis",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland"
+    ],
+    "diet": "Omnivore — seeds, aquatic invertebrates",
+    "funFact": "Nomadic — follows rains across the continent to ephemeral lakes.",
+    "size": 43,
+    "population": "1.3M",
+    "imageUrl": "/birds/grey-teal.jpg"
+  },
+  {
+    "id": "black-swan",
+    "name": "Black Swan",
+    "scientific": "Cygnus atratus",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "diet": "Herbivore — algae, aquatic plants",
+    "funFact": "The floral emblem of Western Australia.",
+    "size": 140,
+    "population": "500K",
+    "imageUrl": "/birds/black-swan.jpg"
+  },
+  {
+    "id": "little-pied-cormorant",
+    "name": "Little Pied Cormorant",
+    "scientific": "Microcarbo melanoleucos",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "diet": "Piscivore — small fish, yabbies",
+    "funFact": "Dives underwater and swims using webbed feet to chase fish.",
+    "size": 60,
+    "population": "475K",
+    "imageUrl": "/birds/little-pied-cormorant.jpg"
+  },
+  {
+    "id": "great-cormorant",
+    "name": "Great Cormorant",
+    "scientific": "Phalacrocorax carbo",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "coastal"
+    ],
+    "diet": "Piscivore — fish, eels",
+    "funFact": "Its feathers are not fully waterproof — often seen drying wings outstretched.",
+    "size": 85,
+    "population": "210K",
+    "imageUrl": "/birds/great-cormorant.jpg"
+  },
+  {
+    "id": "darter",
+    "name": "Australasian Darter",
+    "scientific": "Anhinga novaehollandiae",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland"
+    ],
+    "diet": "Piscivore — fish spearing",
+    "funFact": "Swims with only its snake-like neck above water — hence 'snakebird'.",
+    "size": 90,
+    "population": "135K",
+    "imageUrl": "/birds/darter.jpg"
+  },
+  {
+    "id": "white-faced-heron",
+    "name": "White-faced Heron",
+    "scientific": "Egretta novaehollandiae",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
       "coastal",
       "urban"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "sa",
-      "wa",
-      "tas"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/newhollandhoneyeater.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Nectarivore — nectar, pollen, fruits, and insects",
-    "size": {
-      "lengthCm": 18,
-      "wingspanCm": 25,
-      "weightG": 20
-    },
-    "funFact": "New Holland Honeyeaters were one of the first Australian bird species to be scientifically described by Europeans.",
-    "population": {
-      "current": 2150000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -38.14,
-      "lng": 144.36
-    }
+    "diet": "Carnivore — fish, frogs, insects",
+    "funFact": "The most commonly seen heron in Australia.",
+    "size": 68,
+    "population": "880K",
+    "imageUrl": "/birds/white-faced-heron.jpg"
   },
   {
-    "id": "eastern-spinebill",
-    "commonName": "Eastern Spinebill",
-    "scientificName": "Acanthorhynchus tenuirostris",
-    "family": "Meliphagidae",
-    "order": "Passeriformes",
-    "category": "Honeyeaters",
-    "description": "The Eastern Spinebill is a small, elegant honeyeater with a long, curved bill perfectly adapted for probing flowers. With its rufous, black, and white plumage, it resembles a tiny hummingbird as it hovers at flowers.",
-    "conservationStatus": "least_concern",
+    "id": "cattle-egret",
+    "name": "Cattle Egret",
+    "scientific": "Bubulcus ibis",
+    "category": "Waterbird",
+    "status": "least_concern",
     "habitats": [
-      "eucalyptus_forest",
-      "rainforest",
-      "urban"
+      "grassland",
+      "wetland"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "act",
-      "tas"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg/330px-Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Nectarivore — nectar from native flowers, insects, and spiders",
-    "size": {
-      "lengthCm": 16,
-      "wingspanCm": 22,
-      "weightG": 11
-    },
-    "funFact": "Eastern Spinebills can hover like hummingbirds while feeding, a rare ability among Australian birds.",
-    "population": {
-      "current": 1460000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -37.81,
-      "lng": 144.96
-    }
-  },
-  {
-    "id": "red-wattlebird",
-    "commonName": "Red Wattlebird",
-    "scientificName": "Anthochaera carunculata",
-    "family": "Meliphagidae",
-    "order": "Passeriformes",
-    "category": "Honeyeaters",
-    "description": "The Red Wattlebird is one of Australia's largest honeyeaters, with grey-brown plumage, prominent yellow belly patch, and distinctive red wattles on the neck. It has a loud, raucous call and is common in eucalyptus woodland.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "eucalyptus_forest",
-      "urban",
-      "coastal"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "sa",
-      "wa",
-      "qld",
-      "act",
-      "tas"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_3027%21%21.JPG%20Red%20W%2314B531.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — nectar, fruits, insects, and small vertebrates",
-    "size": {
-      "lengthCm": 35,
-      "wingspanCm": 48,
-      "weightG": 110
-    },
-    "funFact": "Red Wattlebirds are important pollinators of native plants, especially banksia and eucalyptus species.",
-    "population": {
-      "current": 2730000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -34.93,
-      "lng": 138.6
-    }
+    "diet": "Insectivore — insects flushed by livestock",
+    "funFact": "Self-introduced to Australia in the 1940s from Asia.",
+    "size": 51,
+    "population": "660K",
+    "imageUrl": "/birds/cattle-egret.jpg"
   },
   {
     "id": "tawny-frogmouth",
-    "commonName": "Tawny Frogmouth",
-    "scientificName": "Podargus strigoides",
-    "family": "Podargidae",
-    "order": "Caprimulgiformes",
-    "category": "Nocturnal Birds",
-    "description": "The Tawny Frogmouth is a master of camouflage, resembling a broken tree branch when roosting during the day. Often mistaken for an owl, this nocturnal bird has a wide, frog-like mouth used for snapping up insects.",
-    "conservationStatus": "least_concern",
+    "name": "Tawny Frogmouth",
+    "scientific": "Podargus strigoides",
+    "category": "Nocturnal",
+    "status": "least_concern",
     "habitats": [
-      "eucalyptus_forest",
-      "urban",
-      "grassland"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "wa",
-      "sa",
-      "tas",
-      "nt",
-      "act"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Podargus_strigoides_Bonorong.jpg/330px-Podargus_strigoides_Bonorong.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore — moths, beetles, spiders, worms, slugs, and small frogs",
-    "size": {
-      "lengthCm": 45,
-      "wingspanCm": 65,
-      "weightG": 350
-    },
-    "funFact": "Tawny Frogmouths are frequently voted Australia's favourite bird in popular surveys.",
-    "population": {
-      "current": 1320000,
-      "trend": "stable",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -33.87,
-      "lng": 151.21
-    }
-  },
-  {
-    "id": "superb-lyrebird",
-    "commonName": "Superb Lyrebird",
-    "scientificName": "Menura novaehollandiae",
-    "family": "Menuridae",
-    "order": "Passeriformes",
-    "category": "Songbirds",
-    "description": "The Superb Lyrebird is one of the world's greatest vocal mimics, able to perfectly imitate the calls of other birds, chainsaws, car alarms, and camera shutters. Males have an elaborate lyre-shaped tail used in courtship displays.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "rainforest",
-      "eucalyptus_forest"
-    ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "act"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/superb_lyrebird_at_nest_a_%20Selby.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Insectivore — insects, spiders, worms, and small crustaceans found by raking leaf litter",
-    "size": {
-      "lengthCm": 95,
-      "wingspanCm": 78,
-      "weightG": 1100
-    },
-    "funFact": "A lyrebird's mimicry is so accurate that it can fool even the species it is imitating.",
-    "population": {
-      "current": 142000,
-      "trend": "stable",
-      "lastSurveyYear": 2022
-    },
-    "coordinates": {
-      "lat": -37.3,
-      "lng": 149.08
-    }
-  },
-  {
-    "id": "australian-brush-turkey",
-    "commonName": "Australian Brush-turkey",
-    "scientificName": "Alectura lathami",
-    "family": "Megapodiidae",
-    "order": "Galliformes",
-    "category": "Megapodes",
-    "description": "The Australian Brush-turkey is a large, ground-dwelling bird with black plumage, a bare red head, and a bright yellow wattle. Males build massive mound nests of decomposing vegetation to incubate their eggs using the heat generated.",
-    "conservationStatus": "least_concern",
-    "habitats": [
-      "rainforest",
-      "eucalyptus_forest",
+      "forest",
       "urban"
     ],
-    "regions": [
-      "nsw",
-      "qld"
-    ],
-    "imageUrl": "https://www.birdsinbackyards.net/sites/www.birdsinbackyards.net/files/factsheets/images/hero/IMG_4529.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — seeds, fruits, insects, and fallen fruit",
-    "size": {
-      "lengthCm": 70,
-      "wingspanCm": 85,
-      "weightG": 2200
-    },
-    "funFact": "Brush-turkey mound nests can be up to 4 metres wide and 1.5 metres tall, weighing several tonnes.",
-    "population": {
-      "current": 376000,
-      "trend": "increasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -27.47,
-      "lng": 153.03
-    }
+    "diet": "Carnivore — moths, beetles, small vertebrates",
+    "funFact": "Often mistaken for owls — they're actually related to nightjars.",
+    "size": 45,
+    "population": "1.1M",
+    "imageUrl": "/birds/tawny-frogmouth.jpg"
   },
   {
-    "id": "eclectus-parrot",
-    "commonName": "Eclectus Parrot",
-    "scientificName": "Eclectus roratus",
-    "family": "Psittaculidae",
-    "order": "Psittaciformes",
-    "category": "Parrots & Cockatoos",
-    "description": "The Eclectus Parrot is remarkable for its extreme sexual dimorphism — males are bright green while females are vivid red and purple. Found in the rainforests of Cape York Peninsula, it is one of Australia's most colourful parrots.",
-    "conservationStatus": "vulnerable",
+    "id": "crested-pigeon",
+    "name": "Crested Pigeon",
+    "scientific": "Ocyphaps lophotes",
+    "category": "Dove",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "urban"
+    ],
+    "diet": "Granivore — seeds, grains",
+    "funFact": "Wings produce a whistling sound in flight — a built-in alarm.",
+    "size": 34,
+    "population": "2.8M",
+    "imageUrl": "/birds/crested-pigeon.jpg"
+  },
+  {
+    "id": "spotted-dove",
+    "name": "Spotted Dove",
+    "scientific": "Spilopelia chinensis",
+    "category": "Dove",
+    "status": "least_concern",
+    "habitats": [
+      "urban"
+    ],
+    "diet": "Granivore — seeds, grains",
+    "funFact": "Introduced in the 1800s; now common across eastern cities.",
+    "size": 30,
+    "population": "1.5M",
+    "imageUrl": "/birds/spotted-dove.jpg"
+  },
+  {
+    "id": "common-bronzewing",
+    "name": "Common Bronzewing",
+    "scientific": "Phaps chalcoptera",
+    "category": "Dove",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Granivore — seeds, fruit",
+    "funFact": "Iridescent bronze wing-patches flash in sunlight.",
+    "size": 33,
+    "population": "3.2M",
+    "imageUrl": "/birds/common-bronzewing.jpg"
+  },
+  {
+    "id": "bee-eater",
+    "name": "Rainbow Bee-eater",
+    "scientific": "Merops ornatus",
+    "category": "Insectivore",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "forest"
+    ],
+    "diet": "Insectivore — bees, wasps, dragonflies",
+    "funFact": "Whacks stinging insects against a branch to remove the stinger before eating.",
+    "size": 25,
+    "population": "1M",
+    "imageUrl": "/birds/bee-eater.jpg"
+  },
+  {
+    "id": "sacred-kingfisher",
+    "name": "Sacred Kingfisher",
+    "scientific": "Todiramphus sanctus",
+    "category": "Kingfisher",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "coastal"
+    ],
+    "diet": "Carnivore — insects, lizards, crabs",
+    "funFact": "Revered in Polynesian mythology as having control over the seas.",
+    "size": 22,
+    "population": "890K",
+    "imageUrl": "/birds/sacred-kingfisher.jpg"
+  },
+  {
+    "id": "blue-winged-kookaburra",
+    "name": "Blue-winged Kookaburra",
+    "scientific": "Dacelo leachii",
+    "category": "Kingfisher",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Carnivore — reptiles, insects, small mammals",
+    "funFact": "Has an eerie cackling call very different from its laughing cousin.",
+    "size": 40,
+    "population": "720K",
+    "imageUrl": "/birds/blue-winged-kookaburra.jpg"
+  },
+  {
+    "id": "red-wattlebird",
+    "name": "Red Wattlebird",
+    "scientific": "Anthochaera carunculata",
+    "category": "Honeyeater",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Nectarivore — nectar, insects, fruit",
+    "funFact": "Named for the bright red fleshy wattles beside its eyes.",
+    "size": 36,
+    "population": "2.3M",
+    "imageUrl": "/birds/red-wattlebird.jpg"
+  },
+  {
+    "id": "little-wattlebird",
+    "name": "Little Wattlebird",
+    "scientific": "Anthochaera chrysoptera",
+    "category": "Honeyeater",
+    "status": "least_concern",
+    "habitats": [
+      "coastal",
+      "forest"
+    ],
+    "diet": "Nectarivore — nectar, insects",
+    "funFact": "Despite its name, actually lacks wattles entirely.",
+    "size": 30,
+    "population": "680K",
+    "imageUrl": "/birds/little-wattlebird.jpg"
+  },
+  {
+    "id": "noisy-friarbird",
+    "name": "Noisy Friarbird",
+    "scientific": "Philemon corniculatus",
+    "category": "Honeyeater",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Omnivore — nectar, fruit, insects",
+    "funFact": "Named for its bald black head, said to resemble a friar's tonsure.",
+    "size": 32,
+    "population": "520K",
+    "imageUrl": "/birds/noisy-friarbird.jpg"
+  },
+  {
+    "id": "new-holland-honeyeater",
+    "name": "New Holland Honeyeater",
+    "scientific": "Phylidonyris novaehollandiae",
+    "category": "Honeyeater",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban",
+      "coastal"
+    ],
+    "diet": "Nectarivore — nectar, insects",
+    "funFact": "One of the first Australian birds described by European scientists.",
+    "size": 18,
+    "population": "1.8M",
+    "imageUrl": "/birds/new-holland-honeyeater.jpg"
+  },
+  {
+    "id": "white-plumed-honeyeater",
+    "name": "White-plumed Honeyeater",
+    "scientific": "Ptilotula penicillata",
+    "category": "Honeyeater",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Nectarivore — nectar, insects",
+    "funFact": "The distinctive white neck plume lights up like a paint stroke.",
+    "size": 18,
+    "population": "2.6M",
+    "imageUrl": "/birds/white-plumed-honeyeater.jpg"
+  },
+  {
+    "id": "eastern-spinebill",
+    "name": "Eastern Spinebill",
+    "scientific": "Acanthorhynchus tenuirostris",
+    "category": "Honeyeater",
+    "status": "least_concern",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Nectarivore — nectar, insects",
+    "funFact": "One of the few Australian birds that hovers like a hummingbird.",
+    "size": 15,
+    "population": "760K",
+    "imageUrl": "/birds/eastern-spinebill.jpg"
+  },
+  {
+    "id": "satin-bowerbird",
+    "name": "Satin Bowerbird",
+    "scientific": "Ptilonorhynchus violaceus",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Omnivore — fruit, leaves, insects",
+    "funFact": "Males collect blue objects — pegs, straws, bottle caps — to decorate bowers.",
+    "size": 32,
+    "population": "140K",
+    "imageUrl": "/birds/satin-bowerbird.jpg"
+  },
+  {
+    "id": "regent-bowerbird",
+    "name": "Regent Bowerbird",
+    "scientific": "Sericulus chrysocephalus",
+    "category": "Songbird",
+    "status": "least_concern",
     "habitats": [
       "rainforest"
     ],
-    "regions": [
-      "qld"
-    ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Eclectus_roratus-20030511.jpg/330px-Eclectus_roratus-20030511.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Frugivore — fruits, flowers, nuts, seeds, and leaf buds",
-    "size": {
-      "lengthCm": 35,
-      "wingspanCm": 60,
-      "weightG": 450
-    },
-    "funFact": "Male and female Eclectus Parrots look so different that they were once classified as separate species.",
-    "population": {
-      "current": 8200,
-      "trend": "decreasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -12.46,
-      "lng": 142.55
-    }
+    "diet": "Omnivore — fruit, insects",
+    "funFact": "Males are black with brilliant gold head and wing bands.",
+    "size": 25,
+    "population": "55K",
+    "imageUrl": "/birds/regent-bowerbird.jpg"
   },
   {
-    "id": "australian-white-ibis",
-    "commonName": "Australian White Ibis",
-    "scientificName": "Threskiornis moluccus",
-    "family": "Threskiornithidae",
-    "order": "Pelecaniformes",
-    "category": "Waterbirds",
-    "description": "The Australian White Ibis, affectionately nicknamed the \"bin chicken\", is a large white wading bird with a distinctive curved black bill and bald black head. Once mainly found in wetlands, it has adapted remarkably to urban environments.",
-    "conservationStatus": "least_concern",
+    "id": "great-bowerbird",
+    "name": "Great Bowerbird",
+    "scientific": "Chlamydera nuchalis",
+    "category": "Songbird",
+    "status": "least_concern",
     "habitats": [
-      "wetland",
+      "forest",
+      "grassland"
+    ],
+    "diet": "Omnivore — fruit, seeds, insects",
+    "funFact": "Builds the largest bower of any species — up to a metre tall.",
+    "size": 35,
+    "population": "180K",
+    "imageUrl": "/birds/great-bowerbird.jpg"
+  },
+  {
+    "id": "brush-turkey",
+    "name": "Australian Brush-turkey",
+    "scientific": "Alectura lathami",
+    "category": "Ground Bird",
+    "status": "least_concern",
+    "habitats": [
+      "rainforest",
+      "forest"
+    ],
+    "diet": "Omnivore — fruit, seeds, insects",
+    "funFact": "Males build huge compost-mound nests and control the temperature with their beak.",
+    "size": 70,
+    "population": "530K",
+    "imageUrl": "/birds/brush-turkey.jpg"
+  },
+  {
+    "id": "magpie-lark",
+    "name": "Magpie-lark",
+    "scientific": "Grallina cyanoleuca",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "urban",
+      "grassland",
+      "wetland"
+    ],
+    "diet": "Insectivore — insects, small crustaceans",
+    "funFact": "Not a true magpie or lark — builds a unique mud-cup nest.",
+    "size": 27,
+    "population": "3.6M",
+    "imageUrl": "/birds/magpie-lark.jpg"
+  },
+  {
+    "id": "grey-fantail",
+    "name": "Grey Fantail",
+    "scientific": "Rhipidura albiscapa",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Insectivore — flying insects",
+    "funFact": "Constantly fans its tail to flush insects from foliage.",
+    "size": 16,
+    "population": "2M",
+    "imageUrl": "/birds/grey-fantail.jpg"
+  },
+  {
+    "id": "rufous-fantail",
+    "name": "Rufous Fantail",
+    "scientific": "Rhipidura rufifrons",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "rainforest",
+      "forest"
+    ],
+    "diet": "Insectivore — flying insects",
+    "funFact": "Migrates thousands of kilometres between summer and winter ranges.",
+    "size": 16,
+    "population": "460K",
+    "imageUrl": "/birds/rufous-fantail.jpg"
+  },
+  {
+    "id": "golden-whistler",
+    "name": "Golden Whistler",
+    "scientific": "Pachycephala pectoralis",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Insectivore — insects, spiders",
+    "funFact": "Males have one of the most beautiful whistled songs in Australia.",
+    "size": 17,
+    "population": "1.4M",
+    "imageUrl": "/birds/golden-whistler.jpg"
+  },
+  {
+    "id": "rufous-whistler",
+    "name": "Rufous Whistler",
+    "scientific": "Pachycephala rufiventris",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "Sings its rich 'ee-chong' call throughout the day, even in summer heat.",
+    "size": 17,
+    "population": "1.1M",
+    "imageUrl": "/birds/rufous-whistler.jpg"
+  },
+  {
+    "id": "shrike-thrush",
+    "name": "Grey Shrike-thrush",
+    "scientific": "Colluricincla harmonica",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Omnivore — insects, small vertebrates",
+    "funFact": "Considered one of Australia's most accomplished songsters.",
+    "size": 24,
+    "population": "950K",
+    "imageUrl": "/birds/shrike-thrush.jpg"
+  },
+  {
+    "id": "scrubwren",
+    "name": "White-browed Scrubwren",
+    "scientific": "Sericornis frontalis",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Insectivore — insects, spiders",
+    "funFact": "A tiny bird that lurks in dense undergrowth with harsh scolding calls.",
+    "size": 12,
+    "population": "780K",
+    "imageUrl": "/birds/scrubwren.jpg"
+  },
+  {
+    "id": "brown-thornbill",
+    "name": "Brown Thornbill",
+    "scientific": "Acanthiza pusilla",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "Can mimic the alarm calls of larger birds to scare off predators.",
+    "size": 10,
+    "population": "620K",
+    "imageUrl": "/birds/brown-thornbill.jpg"
+  },
+  {
+    "id": "splendid-fairywren",
+    "name": "Splendid Fairy-wren",
+    "scientific": "Malurus splendens",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "Males turn deep cobalt blue only during the breeding season.",
+    "size": 14,
+    "population": "380K",
+    "imageUrl": "/birds/splendid-fairywren.jpg"
+  },
+  {
+    "id": "variegated-fairywren",
+    "name": "Variegated Fairy-wren",
+    "scientific": "Malurus lamberti",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "The most widespread fairy-wren — found across most of the continent.",
+    "size": 14,
+    "population": "940K",
+    "imageUrl": "/birds/variegated-fairywren.jpg"
+  },
+  {
+    "id": "red-backed-fairywren",
+    "name": "Red-backed Fairy-wren",
+    "scientific": "Malurus melanocephalus",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "grassland"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "Breeding males are jet black with a flame-red saddle.",
+    "size": 13,
+    "population": "620K",
+    "imageUrl": "/birds/red-backed-fairywren.jpg"
+  },
+  {
+    "id": "king-parrot",
+    "name": "Australian King-Parrot",
+    "scientific": "Alisterus scapularis",
+    "category": "Parrot",
+    "status": "least_concern",
+    "habitats": [
+      "rainforest",
+      "forest"
+    ],
+    "diet": "Herbivore — seeds, nuts, fruit",
+    "funFact": "Males have scarlet heads; females have all-green heads.",
+    "size": 42,
+    "population": "220K",
+    "imageUrl": "/birds/king-parrot.jpg"
+  },
+  {
+    "id": "koel",
+    "name": "Eastern Koel",
+    "scientific": "Eudynamys orientalis",
+    "category": "Cuckoo",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "urban"
+    ],
+    "diet": "Frugivore — fruit, occasional insects",
+    "funFact": "A brood parasite — lays eggs in other birds' nests.",
+    "size": 42,
+    "population": "165K",
+    "imageUrl": "/birds/koel.jpg"
+  },
+  {
+    "id": "cuckoo-shrike",
+    "name": "Black-faced Cuckoo-shrike",
+    "scientific": "Coracina novaehollandiae",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
       "urban",
       "grassland"
     ],
-    "regions": [
-      "nsw",
-      "vic",
-      "qld",
-      "sa",
-      "wa",
-      "act"
+    "diet": "Omnivore — insects, fruit",
+    "funFact": "After landing, shuffles its wings in a distinctive 'rearranging' motion.",
+    "size": 33,
+    "population": "930K",
+    "imageUrl": "/birds/cuckoo-shrike.jpg"
+  },
+  {
+    "id": "yellow-robin",
+    "name": "Eastern Yellow Robin",
+    "scientific": "Eopsaltria australis",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest"
     ],
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Threskiornis_molucca_-_Perth.jpg/330px-Threskiornis_molucca_-_Perth.jpg",
-    "imageCredit": "Wikimedia Commons",
-    "diet": "Omnivore — insects, crustaceans, food scraps, and waste in urban areas",
-    "size": {
-      "lengthCm": 75,
-      "wingspanCm": 123,
-      "weightG": 1800
-    },
-    "funFact": "The Australian White Ibis has become an internet meme known as the \"bin chicken\" for its scavenging habits in city bins.",
-    "population": {
-      "current": 1170000,
-      "trend": "increasing",
-      "lastSurveyYear": 2023
-    },
-    "coordinates": {
-      "lat": -33.87,
-      "lng": 151.21
-    }
+    "diet": "Insectivore — insects, spiders",
+    "funFact": "Perches sideways on tree trunks, waiting to pounce on prey below.",
+    "size": 16,
+    "population": "520K",
+    "imageUrl": "/birds/yellow-robin.jpg"
+  },
+  {
+    "id": "jacky-winter",
+    "name": "Jacky Winter",
+    "scientific": "Microeca fascinans",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "forest"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "Sings its namesake 'jacky-jacky-jacky' on cold winter mornings.",
+    "size": 13,
+    "population": "610K",
+    "imageUrl": "/birds/jacky-winter.jpg"
+  },
+  {
+    "id": "superb-lyrebird",
+    "name": "Superb Lyrebird",
+    "scientific": "Menura novaehollandiae",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "rainforest"
+    ],
+    "diet": "Omnivore — insects, seeds, fungi",
+    "funFact": "Can mimic chainsaws, camera shutters, and car alarms with uncanny accuracy.",
+    "size": 100,
+    "population": "185K",
+    "imageUrl": "/birds/superb-lyrebird.jpg"
+  },
+  {
+    "id": "budgerigar",
+    "name": "Budgerigar",
+    "scientific": "Melopsittacus undulatus",
+    "category": "Parrot",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "diet": "Granivore — grass seeds",
+    "funFact": "Forms vast nomadic flocks of thousands across the inland.",
+    "size": 18,
+    "population": "5M",
+    "imageUrl": "/birds/budgerigar.jpg"
+  },
+  {
+    "id": "cockatiel",
+    "name": "Cockatiel",
+    "scientific": "Nymphicus hollandicus",
+    "category": "Cockatoo",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "diet": "Granivore — seeds, grains",
+    "funFact": "The smallest of Australia's cockatoos.",
+    "size": 32,
+    "population": "1.2M",
+    "imageUrl": "/birds/cockatiel.jpg"
+  },
+  {
+    "id": "nankeen-kestrel",
+    "name": "Nankeen Kestrel",
+    "scientific": "Falco cenchroides",
+    "category": "Raptor",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "urban"
+    ],
+    "diet": "Carnivore — mice, lizards, insects",
+    "funFact": "Hovers motionless in mid-air while scanning for prey below.",
+    "size": 33,
+    "population": "340K",
+    "imageUrl": "/birds/nankeen-kestrel.jpg"
+  },
+  {
+    "id": "peregrine-falcon",
+    "name": "Peregrine Falcon",
+    "scientific": "Falco peregrinus",
+    "category": "Raptor",
+    "status": "least_concern",
+    "habitats": [
+      "coastal",
+      "urban",
+      "alpine"
+    ],
+    "diet": "Carnivore — birds in flight",
+    "funFact": "The fastest animal on Earth — dives at over 300 km/h.",
+    "size": 44,
+    "population": "9K",
+    "imageUrl": "/birds/peregrine-falcon.jpg"
+  },
+  {
+    "id": "brown-falcon",
+    "name": "Brown Falcon",
+    "scientific": "Falco berigora",
+    "category": "Raptor",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "diet": "Carnivore — rodents, reptiles, insects",
+    "funFact": "Often hunts at grass fires, snatching escaping prey.",
+    "size": 50,
+    "population": "315K",
+    "imageUrl": "/birds/brown-falcon.jpg"
+  },
+  {
+    "id": "whistling-kite",
+    "name": "Whistling Kite",
+    "scientific": "Haliastur sphenurus",
+    "category": "Raptor",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "grassland"
+    ],
+    "diet": "Carnivore — carrion, fish, reptiles",
+    "funFact": "Named for its loud whistling call given in flight.",
+    "size": 55,
+    "population": "240K",
+    "imageUrl": "/birds/whistling-kite.jpg"
+  },
+  {
+    "id": "black-kite",
+    "name": "Black Kite",
+    "scientific": "Milvus migrans",
+    "category": "Raptor",
+    "status": "least_concern",
+    "habitats": [
+      "grassland",
+      "urban"
+    ],
+    "diet": "Carnivore — carrion, small animals",
+    "funFact": "Known to pick up burning sticks to spread fires and flush prey.",
+    "size": 55,
+    "population": "580K",
+    "imageUrl": "/birds/black-kite.jpg"
+  },
+  {
+    "id": "silver-gull",
+    "name": "Silver Gull",
+    "scientific": "Chroicocephalus novaehollandiae",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "coastal",
+      "urban"
+    ],
+    "diet": "Omnivore — scraps, crustaceans, fish",
+    "funFact": "Australia's most familiar gull — the classic beach 'seagull'.",
+    "size": 40,
+    "population": "2.4M",
+    "imageUrl": "/birds/silver-gull.jpg"
+  },
+  {
+    "id": "azure-kingfisher",
+    "name": "Azure Kingfisher",
+    "scientific": "Ceyx azureus",
+    "category": "Kingfisher",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "rainforest"
+    ],
+    "diet": "Piscivore — fish, yabbies",
+    "funFact": "A jewel-bright bird the size of a sparrow, rarely seen perched.",
+    "size": 18,
+    "population": "135K",
+    "imageUrl": "/birds/azure-kingfisher.jpg"
+  },
+  {
+    "id": "forest-kingfisher",
+    "name": "Forest Kingfisher",
+    "scientific": "Todiramphus macleayii",
+    "category": "Kingfisher",
+    "status": "least_concern",
+    "habitats": [
+      "forest",
+      "wetland"
+    ],
+    "diet": "Carnivore — insects, lizards",
+    "funFact": "Perches prominently then plunges to the ground for prey.",
+    "size": 20,
+    "population": "210K",
+    "imageUrl": "/birds/forest-kingfisher.jpg"
+  },
+  {
+    "id": "dusky-moorhen",
+    "name": "Dusky Moorhen",
+    "scientific": "Gallinula tenebrosa",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "urban"
+    ],
+    "diet": "Omnivore — plants, snails, insects",
+    "funFact": "Cooperatively breeds — multiple adults help raise a single brood.",
+    "size": 38,
+    "population": "410K",
+    "imageUrl": "/birds/dusky-moorhen.jpg"
+  },
+  {
+    "id": "purple-swamphen",
+    "name": "Australasian Swamphen",
+    "scientific": "Porphyrio melanotus",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "urban"
+    ],
+    "diet": "Omnivore — plants, insects, eggs",
+    "funFact": "Grasps food with one giant red foot while feeding — like a hand.",
+    "size": 46,
+    "population": "340K",
+    "imageUrl": "/birds/purple-swamphen.jpg"
+  },
+  {
+    "id": "eurasian-coot",
+    "name": "Eurasian Coot",
+    "scientific": "Fulica atra",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland",
+      "urban"
+    ],
+    "diet": "Omnivore — plants, insects",
+    "funFact": "Its toes are lobed rather than webbed — a unique adaptation for swimming.",
+    "size": 38,
+    "population": "640K",
+    "imageUrl": "/birds/eurasian-coot.jpg"
+  },
+  {
+    "id": "red-capped-plover",
+    "name": "Red-capped Plover",
+    "scientific": "Charadrius ruficapillus",
+    "category": "Shorebird",
+    "status": "least_concern",
+    "habitats": [
+      "coastal",
+      "wetland"
+    ],
+    "diet": "Insectivore — small invertebrates",
+    "funFact": "Fakes a broken wing to lure predators away from its nest.",
+    "size": 16,
+    "population": "93K",
+    "imageUrl": "/birds/red-capped-plover.jpg"
+  },
+  {
+    "id": "australasian-grebe",
+    "name": "Australasian Grebe",
+    "scientific": "Tachybaptus novaehollandiae",
+    "category": "Waterbird",
+    "status": "least_concern",
+    "habitats": [
+      "wetland"
+    ],
+    "diet": "Carnivore — small fish, insects",
+    "funFact": "Carries chicks on its back while swimming between waterways.",
+    "size": 25,
+    "population": "480K",
+    "imageUrl": "/birds/australasian-grebe.jpg"
+  },
+  {
+    "id": "striated-thornbill",
+    "name": "Striated Thornbill",
+    "scientific": "Acanthiza lineata",
+    "category": "Songbird",
+    "status": "least_concern",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "Frequently joins mixed-species feeding flocks in winter.",
+    "size": 10,
+    "population": "380K",
+    "imageUrl": "/birds/striated-thornbill.jpg"
+  },
+  {
+    "id": "mitchell",
+    "name": "Major Mitchell's Cockatoo",
+    "scientific": "Lophochroa leadbeateri",
+    "category": "Cockatoo",
+    "status": "near_threatened",
+    "habitats": [
+      "desert",
+      "grassland"
+    ],
+    "diet": "Herbivore — seeds, nuts, roots",
+    "funFact": "Mates for life and can live over 75 years in captivity.",
+    "size": 36,
+    "population": "42K",
+    "imageUrl": "/birds/mitchell.jpg"
+  },
+  {
+    "id": "blackcockatoo",
+    "name": "Red-tailed Black Cockatoo",
+    "scientific": "Calyptorhynchus banksii",
+    "category": "Cockatoo",
+    "status": "near_threatened",
+    "habitats": [
+      "forest",
+      "desert"
+    ],
+    "diet": "Herbivore — seeds, nuts",
+    "funFact": "Males have brilliant red tail panels visible only in flight.",
+    "size": 60,
+    "population": "135K",
+    "imageUrl": "/birds/blackcockatoo.jpg"
+  },
+  {
+    "id": "yellow-tailed-blackcockatoo",
+    "name": "Yellow-tailed Black Cockatoo",
+    "scientific": "Zanda funerea",
+    "category": "Cockatoo",
+    "status": "near_threatened",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Herbivore — pine seeds, wood-boring grubs",
+    "funFact": "Rips apart banksia cones and wood with enormous force.",
+    "size": 65,
+    "population": "105K",
+    "imageUrl": "/birds/yellow-tailed-blackcockatoo.jpg"
+  },
+  {
+    "id": "glossy-blackcockatoo",
+    "name": "Glossy Black Cockatoo",
+    "scientific": "Calyptorhynchus lathami",
+    "category": "Cockatoo",
+    "status": "near_threatened",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Herbivore — she-oak seeds only",
+    "funFact": "Feeds almost exclusively on casuarina cones — critically habitat-dependent.",
+    "size": 50,
+    "population": "11K",
+    "imageUrl": "/birds/glossy-blackcockatoo.jpg"
+  },
+  {
+    "id": "bush-stone-curlew",
+    "name": "Bush Stone-curlew",
+    "scientific": "Burhinus grallarius",
+    "category": "Ground Bird",
+    "status": "near_threatened",
+    "habitats": [
+      "grassland",
+      "forest"
+    ],
+    "diet": "Insectivore — insects, small reptiles",
+    "funFact": "Unnerving night-time wailing calls have earned it ghostly folklore.",
+    "size": 55,
+    "population": "70K",
+    "imageUrl": "/birds/bush-stone-curlew.jpg"
+  },
+  {
+    "id": "brolga",
+    "name": "Brolga",
+    "scientific": "Antigone rubicunda",
+    "category": "Ground Bird",
+    "status": "near_threatened",
+    "habitats": [
+      "wetland",
+      "grassland"
+    ],
+    "diet": "Omnivore — tubers, insects, frogs",
+    "funFact": "Famous for its elegant leaping courtship dance.",
+    "size": 125,
+    "population": "23K",
+    "imageUrl": "/birds/brolga.jpg"
+  },
+  {
+    "id": "plumed-whistling-duck",
+    "name": "Plumed Whistling Duck",
+    "scientific": "Dendrocygna eytoni",
+    "category": "Waterbird",
+    "status": "near_threatened",
+    "habitats": [
+      "wetland",
+      "grassland"
+    ],
+    "diet": "Herbivore — grass, aquatic plants",
+    "funFact": "Forms nomadic flocks of thousands in the tropical north.",
+    "size": 55,
+    "population": "180K",
+    "imageUrl": "/birds/plumed-whistling-duck.jpg"
+  },
+  {
+    "id": "musk-duck",
+    "name": "Musk Duck",
+    "scientific": "Biziura lobata",
+    "category": "Waterbird",
+    "status": "near_threatened",
+    "habitats": [
+      "wetland"
+    ],
+    "diet": "Carnivore — mussels, crustaceans, fish",
+    "funFact": "Males have a fleshy black lobe under the bill and a musky odour.",
+    "size": 70,
+    "population": "45K",
+    "imageUrl": "/birds/musk-duck.jpg"
+  },
+  {
+    "id": "barking-owl",
+    "name": "Barking Owl",
+    "scientific": "Ninox connivens",
+    "category": "Raptor",
+    "status": "near_threatened",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Carnivore — small mammals, birds, insects",
+    "funFact": "Its eerie 'screaming-woman' call has terrified bush travellers for centuries.",
+    "size": 45,
+    "population": "16K",
+    "imageUrl": "/birds/barking-owl.jpg"
+  },
+  {
+    "id": "masked-owl",
+    "name": "Australian Masked Owl",
+    "scientific": "Tyto novaehollandiae",
+    "category": "Raptor",
+    "status": "near_threatened",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Carnivore — rats, rabbits, possums",
+    "funFact": "Tasmanian subspecies is the world's largest Tyto owl.",
+    "size": 50,
+    "population": "8K",
+    "imageUrl": "/birds/masked-owl.jpg"
+  },
+  {
+    "id": "hooded-plover",
+    "name": "Hooded Plover",
+    "scientific": "Thinornis cucullatus",
+    "category": "Shorebird",
+    "status": "near_threatened",
+    "habitats": [
+      "coastal"
+    ],
+    "diet": "Insectivore — beach invertebrates",
+    "funFact": "Nests on sand above the high-tide line — extremely vulnerable to disturbance.",
+    "size": 22,
+    "population": "7K",
+    "imageUrl": "/birds/hooded-plover.jpg"
+  },
+  {
+    "id": "rockwarbler",
+    "name": "Rockwarbler",
+    "scientific": "Origma solitaria",
+    "category": "Songbird",
+    "status": "near_threatened",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Insectivore — insects, spiders",
+    "funFact": "New South Wales' only endemic bird — restricted to sandstone country.",
+    "size": 14,
+    "population": "35K",
+    "imageUrl": "/birds/rockwarbler.jpg"
+  },
+  {
+    "id": "palm",
+    "name": "Palm Cockatoo",
+    "scientific": "Probosciger aterrimus",
+    "category": "Cockatoo",
+    "status": "vulnerable",
+    "habitats": [
+      "rainforest"
+    ],
+    "diet": "Herbivore — pandanus nuts, seeds",
+    "funFact": "The only birds known to use tools as musical instruments, drumming sticks on trees.",
+    "size": 60,
+    "population": "3.1K",
+    "imageUrl": "/birds/palm.jpg"
+  },
+  {
+    "id": "owl",
+    "name": "Powerful Owl",
+    "scientific": "Ninox strenua",
+    "category": "Raptor",
+    "status": "vulnerable",
+    "habitats": [
+      "forest",
+      "rainforest"
+    ],
+    "diet": "Carnivore — possums, gliders, bats",
+    "funFact": "Carries prey back to a favourite perch and holds it all day.",
+    "size": 60,
+    "population": "7.8K",
+    "imageUrl": "/birds/owl.jpg"
+  },
+  {
+    "id": "bustard",
+    "name": "Australian Bustard",
+    "scientific": "Ardeotis australis",
+    "category": "Ground Bird",
+    "status": "vulnerable",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "diet": "Omnivore — seeds, fruits, small animals",
+    "funFact": "Males perform booming courtship displays, inflating throat sacs.",
+    "size": 120,
+    "population": "48K",
+    "imageUrl": "/birds/bustard.jpg"
+  },
+  {
+    "id": "gang-gang",
+    "name": "Gang-gang Cockatoo",
+    "scientific": "Callocephalon fimbriatum",
+    "category": "Cockatoo",
+    "status": "vulnerable",
+    "habitats": [
+      "forest",
+      "alpine"
+    ],
+    "diet": "Herbivore — seeds, berries",
+    "funFact": "Makes a creaking sound like a rusty hinge when flying.",
+    "size": 35,
+    "population": "20K",
+    "imageUrl": "/birds/gang-gang.jpg"
+  },
+  {
+    "id": "superb-parrot",
+    "name": "Superb Parrot",
+    "scientific": "Polytelis swainsonii",
+    "category": "Parrot",
+    "status": "vulnerable",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Herbivore — seeds, grains, fruit",
+    "funFact": "Restricted to river-red-gum woodlands of the Murray-Murrumbidgee.",
+    "size": 40,
+    "population": "6K",
+    "imageUrl": "/birds/superb-parrot.jpg"
+  },
+  {
+    "id": "malleefowl",
+    "name": "Malleefowl",
+    "scientific": "Leipoa ocellata",
+    "category": "Ground Bird",
+    "status": "vulnerable",
+    "habitats": [
+      "desert",
+      "grassland"
+    ],
+    "diet": "Omnivore — seeds, insects, fruit",
+    "funFact": "Male tends a compost nest-mound year-round, keeping it at a constant 33°C.",
+    "size": 60,
+    "population": "75K",
+    "imageUrl": "/birds/malleefowl.jpg"
+  },
+  {
+    "id": "grey-falcon",
+    "name": "Grey Falcon",
+    "scientific": "Falco hypoleucos",
+    "category": "Raptor",
+    "status": "vulnerable",
+    "habitats": [
+      "desert",
+      "grassland"
+    ],
+    "diet": "Carnivore — birds, reptiles, mammals",
+    "funFact": "One of Australia's rarest birds of prey — possibly fewer than 1,000 pairs.",
+    "size": 43,
+    "population": "2K",
+    "imageUrl": "/birds/grey-falcon.jpg"
+  },
+  {
+    "id": "princess-parrot",
+    "name": "Princess Parrot",
+    "scientific": "Polytelis alexandrae",
+    "category": "Parrot",
+    "status": "vulnerable",
+    "habitats": [
+      "desert"
+    ],
+    "diet": "Herbivore — seeds, flowers",
+    "funFact": "Named after Princess Alexandra — an elusive nomad of the Western Deserts.",
+    "size": 46,
+    "population": "5K",
+    "imageUrl": "/birds/princess-parrot.jpg"
+  },
+  {
+    "id": "black-breasted-buzzard",
+    "name": "Black-breasted Buzzard",
+    "scientific": "Hamirostra melanosternon",
+    "category": "Raptor",
+    "status": "vulnerable",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "diet": "Carnivore — reptiles, small mammals",
+    "funFact": "Drops stones on emu eggs to crack them open — rare tool use in raptors.",
+    "size": 55,
+    "population": "5K",
+    "imageUrl": "/birds/black-breasted-buzzard.jpg"
+  },
+  {
+    "id": "letter-winged-kite",
+    "name": "Letter-winged Kite",
+    "scientific": "Elanus scriptus",
+    "category": "Raptor",
+    "status": "vulnerable",
+    "habitats": [
+      "grassland",
+      "desert"
+    ],
+    "diet": "Carnivore — long-haired rats, rodents",
+    "funFact": "Unique among raptors for being strictly nocturnal.",
+    "size": 36,
+    "population": "1K",
+    "imageUrl": "/birds/letter-winged-kite.jpg"
+  },
+  {
+    "id": "cassowary",
+    "name": "Southern Cassowary",
+    "scientific": "Casuarius casuarius",
+    "category": "Ratite",
+    "status": "endangered",
+    "habitats": [
+      "rainforest"
+    ],
+    "diet": "Frugivore — fallen fruits, fungi",
+    "funFact": "Considered the most dangerous bird — kicks with dagger-like claws.",
+    "size": 170,
+    "population": "4.4K",
+    "imageUrl": "/birds/cassowary.jpg"
+  },
+  {
+    "id": "red-goshawk",
+    "name": "Red Goshawk",
+    "scientific": "Erythrotriorchis radiatus",
+    "category": "Raptor",
+    "status": "endangered",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Carnivore — birds up to parrot-size",
+    "funFact": "One of the world's rarest raptors — only a few hundred pairs remain.",
+    "size": 55,
+    "population": "1K",
+    "imageUrl": "/birds/red-goshawk.jpg"
+  },
+  {
+    "id": "helmeted-honeyeater",
+    "name": "Helmeted Honeyeater",
+    "scientific": "Lichenostomus melanops cassidix",
+    "category": "Honeyeater",
+    "status": "endangered",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Nectarivore — nectar, insects, manna",
+    "funFact": "Victoria's faunal emblem — fewer than 250 wild birds remain.",
+    "size": 23,
+    "population": "230",
+    "imageUrl": "/birds/helmeted-honeyeater.jpg"
+  },
+  {
+    "id": "bristlebird",
+    "name": "Eastern Bristlebird",
+    "scientific": "Dasyornis brachypterus",
+    "category": "Songbird",
+    "status": "endangered",
+    "habitats": [
+      "forest",
+      "grassland"
+    ],
+    "diet": "Insectivore — insects",
+    "funFact": "Prefers running through undergrowth to flying — critically fire-sensitive.",
+    "size": 22,
+    "population": "2.5K",
+    "imageUrl": "/birds/bristlebird.jpg"
+  },
+  {
+    "id": "mallee-emu-wren",
+    "name": "Mallee Emu-wren",
+    "scientific": "Stipiturus mallee",
+    "category": "Songbird",
+    "status": "endangered",
+    "habitats": [
+      "desert"
+    ],
+    "diet": "Insectivore — tiny insects",
+    "funFact": "A feather-weight 4-gram bird — one of Australia's smallest.",
+    "size": 15,
+    "population": "10K",
+    "imageUrl": "/birds/mallee-emu-wren.jpg"
+  },
+  {
+    "id": "black-eared-miner",
+    "name": "Black-eared Miner",
+    "scientific": "Manorina melanotis",
+    "category": "Honeyeater",
+    "status": "endangered",
+    "habitats": [
+      "desert"
+    ],
+    "diet": "Omnivore — nectar, insects, sap",
+    "funFact": "Hybridises with Yellow-throated Miners — threatening genetic identity.",
+    "size": 25,
+    "population": "3K",
+    "imageUrl": "/birds/black-eared-miner.jpg"
+  },
+  {
+    "id": "golden-shouldered-parrot",
+    "name": "Golden-shouldered Parrot",
+    "scientific": "Psephotellus chrysopterygius",
+    "category": "Parrot",
+    "status": "endangered",
+    "habitats": [
+      "grassland"
+    ],
+    "diet": "Granivore — grass seeds",
+    "funFact": "Nests only in termite mounds on Cape York savannah.",
+    "size": 26,
+    "population": "2K",
+    "imageUrl": "/birds/golden-shouldered-parrot.jpg"
+  },
+  {
+    "id": "regent",
+    "name": "Regent Honeyeater",
+    "scientific": "Anthochaera phrygia",
+    "category": "Honeyeater",
+    "status": "critically_endangered",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Nectarivore — eucalyptus nectar",
+    "funFact": "So rare, young males have forgotten their song and mimic other species.",
+    "size": 22,
+    "population": "<350",
+    "imageUrl": "/birds/regent.jpg"
+  },
+  {
+    "id": "nightparrot",
+    "name": "Night Parrot",
+    "scientific": "Pezoporus occidentalis",
+    "category": "Parrot",
+    "status": "critically_endangered",
+    "habitats": [
+      "desert",
+      "grassland"
+    ],
+    "diet": "Granivore — spinifex seeds",
+    "funFact": "Presumed extinct for a century — photographed alive only in 2013.",
+    "size": 23,
+    "population": "<250",
+    "imageUrl": "/birds/nightparrot.jpg"
+  },
+  {
+    "id": "parrot-eng",
+    "name": "Orange-bellied Parrot",
+    "scientific": "Neophema chrysogaster",
+    "category": "Parrot",
+    "status": "critically_endangered",
+    "habitats": [
+      "coastal",
+      "grassland"
+    ],
+    "diet": "Granivore — grass seeds, saltmarsh plants",
+    "funFact": "One of only three migratory parrot species — fewer than 70 wild adults.",
+    "size": 21,
+    "population": "<100",
+    "imageUrl": "/birds/parrot-eng.jpg"
+  },
+  {
+    "id": "swift-parrot",
+    "name": "Swift Parrot",
+    "scientific": "Lathamus discolor",
+    "category": "Parrot",
+    "status": "critically_endangered",
+    "habitats": [
+      "forest"
+    ],
+    "diet": "Nectarivore — blue gum nectar",
+    "funFact": "Flies the Bass Strait each year — predated heavily by sugar gliders.",
+    "size": 25,
+    "population": "750",
+    "imageUrl": "/birds/swift-parrot.jpg"
+  },
+  {
+    "id": "plains-wanderer",
+    "name": "Plains-wanderer",
+    "scientific": "Pedionomus torquatus",
+    "category": "Ground Bird",
+    "status": "critically_endangered",
+    "habitats": [
+      "grassland"
+    ],
+    "diet": "Insectivore — insects, seeds",
+    "funFact": "A living fossil — the sole member of its ancient family.",
+    "size": 18,
+    "population": "1K",
+    "imageUrl": "/birds/plains-wanderer.jpg"
+  },
+  {
+    "id": "western-ground-parrot",
+    "name": "Western Ground Parrot",
+    "scientific": "Pezoporus flaviventris",
+    "category": "Parrot",
+    "status": "critically_endangered",
+    "habitats": [
+      "coastal",
+      "grassland"
+    ],
+    "diet": "Herbivore — seeds, flowers",
+    "funFact": "Only around 150 remain in a single Western Australian reserve.",
+    "size": 30,
+    "population": "<150",
+    "imageUrl": "/birds/western-ground-parrot.jpg"
+  },
+  {
+    "id": "australasian-bittern",
+    "name": "Australasian Bittern",
+    "scientific": "Botaurus poiciloptilus",
+    "category": "Waterbird",
+    "status": "endangered",
+    "habitats": [
+      "wetland"
+    ],
+    "diet": "Carnivore — fish, frogs, crustaceans",
+    "funFact": "Males produce a deep 'booming' call that travels kilometres at dusk.",
+    "size": 75,
+    "population": "1.5K",
+    "imageUrl": "/birds/australasian-bittern.jpg"
   }
 ]

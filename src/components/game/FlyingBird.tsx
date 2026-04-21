@@ -1,43 +1,54 @@
 import type { FlyingBird as FlyingBirdType } from "../../types/game";
-import { RARITY_CONFIG } from "../../lib/game-config";
+import { RARITY } from "../../lib/game-config";
+import BirdImage from "./BirdImage";
 
-interface Props {
+interface FlyingBirdProps {
   bird: FlyingBirdType;
-  onClick: (birdId: string, x: number, y: number) => void;
+  onCatch: (id: string, x: number, y: number) => void;
 }
 
-export default function FlyingBird({ bird, onClick }: Props) {
-  const rarity = RARITY_CONFIG[bird.species.conservationStatus];
-  const size = rarity.size;
-  const rotation = bird.direction === 1 ? 8 : -8;
-
-  // Scale down slightly on mobile
-  const displaySize = window.innerWidth < 768 ? Math.round(size * 0.8) : size;
-
+export default function FlyingBird({ bird, onCatch }: FlyingBirdProps) {
+  const rarity = RARITY[bird.species.status];
+  const size = 80 * rarity.sizeScale;
   return (
-    <button
-      className="absolute cursor-pointer border-none bg-transparent p-0"
-      style={{
-        transform: `translate(${bird.x - displaySize / 2}px, ${bird.y - displaySize / 2}px) rotate(${rotation}deg)`,
-        width: displaySize,
-        height: displaySize,
-        willChange: "transform",
-      }}
+    <div
       onClick={(e) => {
         e.stopPropagation();
-        onClick(bird.id, e.clientX, e.clientY);
+        onCatch(bird.id, e.clientX, e.clientY);
       }}
-      aria-label={`Catch ${bird.species.commonName}`}
+      style={{
+        position: "absolute",
+        left: bird.x - size / 2,
+        top: bird.y - size / 2,
+        width: size,
+        height: size,
+        cursor: "crosshair",
+        transform: `rotate(${bird.wobble}deg)`,
+        willChange: "transform",
+      }}
     >
-      <img
-        src={bird.species.imageUrl}
-        alt={bird.species.commonName}
-        className="h-full w-full rounded-full object-cover ring-2 ring-white/30"
+      <div
         style={{
-          boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
+          position: "absolute",
+          inset: -12,
+          borderRadius: "50%",
+          background: `radial-gradient(circle, ${rarity.ring}55 0%, transparent 70%)`,
+          animation:
+            rarity.label !== "Common"
+              ? "bird-glow 1.5s ease-in-out infinite alternate"
+              : undefined,
         }}
-        draggable={false}
       />
-    </button>
+      <div
+        style={{ animation: "bird-flap 0.25s ease-in-out infinite alternate" }}
+      >
+        <BirdImage
+          bird={bird.species}
+          size={size}
+          facing={bird.direction}
+          ring={rarity.ring}
+        />
+      </div>
+    </div>
   );
 }

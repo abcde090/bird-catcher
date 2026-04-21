@@ -1,58 +1,230 @@
-import { useGameStore } from "../../stores/useGameStore";
+import { useState } from "react";
+import { useBirdStore } from "../../stores/useBirdStore";
 import { useCollectionStore } from "../../stores/useCollectionStore";
+import { useGameStore } from "../../stores/useGameStore";
+import BirdImage from "./BirdImage";
 
-interface Props {
-  onPlay: () => void;
-  onFieldGuide: () => void;
-  imagesLoaded: boolean;
+interface DriftBird {
+  i: number;
+  bird: ReturnType<typeof useBirdStore.getState>["birds"][number];
+  top: number;
+  dur: number;
+  delay: number;
+  scale: number;
+  dir: 1 | -1;
 }
 
-export default function TitleScreen({
-  onPlay,
-  onFieldGuide,
-  imagesLoaded,
-}: Props) {
-  const highScore = useGameStore((s) => s.highScore);
-  const discoveredCount = useCollectionStore((s) => s.discoveredBirdIds.length);
+export default function TitleScreen() {
+  const birds = useBirdStore((s) => s.birds);
+  const highScore = useCollectionStore((s) => s.highScore);
+  const discovered = useCollectionStore((s) => s.discovered);
+  const startRound = useGameStore((s) => s.startRound);
+  const setScreen = useGameStore((s) => s.setScreen);
+
+  const [drift] = useState<DriftBird[]>(() =>
+    birds.length === 0
+      ? []
+      : Array.from({ length: 8 }).map((_, i) => ({
+          i,
+          bird: birds[Math.floor(Math.random() * birds.length)],
+          top: 15 + Math.random() * 60,
+          dur: 14 + Math.random() * 10,
+          delay: -Math.random() * 20,
+          scale: 0.4 + Math.random() * 0.4,
+          dir: Math.random() > 0.5 ? 1 : -1,
+        })),
+  );
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-outback-gold to-outback-orange px-6">
-      <h1 className="font-serif text-6xl font-bold text-deep-bark md:text-8xl">
-        Bird Catcher
-      </h1>
-      <p className="mt-2 text-lg text-deep-bark/70">
-        Catch Australian birds before they fly away!
-      </p>
+    <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to bottom, #f5d6a0 0%, #f0a86a 30%, #d8785a 55%, #8a4a5a 80%, #3a2838 100%)",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: "35%",
+          transform: "translate(-50%,-50%)",
+          width: 180,
+          height: 180,
+          borderRadius: "50%",
+          background:
+            "radial-gradient(circle, #fde8b8 0%, #f5a85a 40%, transparent 70%)",
+          boxShadow: "0 0 200px #f5a85a",
+        }}
+      />
 
-      <div className="mt-8 flex flex-col items-center gap-4">
-        <button
-          onClick={onPlay}
-          disabled={!imagesLoaded}
-          className="rounded-full bg-deep-bark px-12 py-4 text-xl font-bold text-outback-gold transition-transform hover:scale-105 disabled:opacity-50"
+      {drift.map((b) => (
+        <div
+          key={b.i}
+          style={{
+            position: "absolute",
+            top: `${b.top}%`,
+            left: b.dir > 0 ? "-100px" : "calc(100% + 100px)",
+            animation: `title-drift-${b.dir > 0 ? "r" : "l"} ${b.dur}s linear infinite`,
+            animationDelay: `${b.delay}s`,
+            transform: `scale(${b.scale})`,
+            opacity: 0.7,
+          }}
         >
-          {imagesLoaded ? "Play" : "Loading..."}
-        </button>
-
-        <button
-          onClick={onFieldGuide}
-          className="rounded-full border-2 border-deep-bark/30 px-8 py-3 font-semibold text-deep-bark transition-colors hover:bg-deep-bark/10"
-        >
-          Field Guide
-        </button>
-      </div>
-
-      <div className="mt-8 flex gap-8 text-center">
-        <div>
-          <p className="font-mono text-2xl font-bold text-deep-bark">
-            {highScore.toLocaleString()}
-          </p>
-          <p className="text-sm text-deep-bark/60">High Score</p>
+          <BirdImage bird={b.bird} size={72} facing={b.dir} />
         </div>
-        <div>
-          <p className="font-mono text-2xl font-bold text-deep-bark">
-            {discoveredCount}/40
-          </p>
-          <p className="text-sm text-deep-bark/60">Discovered</p>
+      ))}
+
+      <svg
+        viewBox="0 0 1200 200"
+        preserveAspectRatio="none"
+        style={{
+          position: "absolute",
+          bottom: "18%",
+          width: "100%",
+          height: "28%",
+          opacity: 0.9,
+        }}
+      >
+        <path
+          d="M0 200 L0 130 L100 60 L200 120 L320 70 L440 130 L560 50 L700 125 L840 80 L980 130 L1100 90 L1200 115 L1200 200 Z"
+          fill="#1a0e1a"
+        />
+      </svg>
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "18%",
+          background: "linear-gradient(to bottom, #0a0510, #000)",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          gap: 40,
+          zIndex: 10,
+        }}
+      >
+        <div style={{ textAlign: "center", maxWidth: "90vw" }}>
+          <div
+            style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 12,
+              letterSpacing: "0.4em",
+              color: "#fde8b8",
+              textTransform: "uppercase",
+              marginBottom: 16,
+              textShadow: "0 2px 8px rgba(0,0,0,0.6)",
+            }}
+          >
+            An Australian Field Study
+          </div>
+          <h1
+            style={{
+              fontFamily: "'Fraunces', serif",
+              fontSize: "clamp(56px, 10vw, 112px)",
+              fontWeight: 400,
+              color: "#fff4e0",
+              margin: 0,
+              lineHeight: 0.95,
+              letterSpacing: "-0.04em",
+              whiteSpace: "nowrap",
+              fontVariationSettings: "'opsz' 144, 'SOFT' 100",
+              textShadow:
+                "0 6px 40px rgba(0,0,0,0.5), 0 2px 0 rgba(255,255,255,0.1)",
+            }}
+          >
+            Birds at
+          </h1>
+          <h1
+            style={{
+              fontFamily: "'Fraunces', serif",
+              fontSize: "clamp(56px, 10vw, 112px)",
+              fontWeight: 300,
+              color: "#fde8b8",
+              margin: 0,
+              lineHeight: 0.95,
+              letterSpacing: "-0.04em",
+              fontStyle: "italic",
+              whiteSpace: "nowrap",
+              fontVariationSettings: "'opsz' 144",
+              textShadow: "0 6px 40px rgba(0,0,0,0.5)",
+            }}
+          >
+            Golden Hour
+          </h1>
+          <div
+            style={{
+              marginTop: 20,
+              fontFamily: "'Fraunces', serif",
+              fontStyle: "italic",
+              color: "#fff4e0cc",
+              fontSize: 18,
+              maxWidth: 520,
+              margin: "20px auto 0",
+              textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+            }}
+          >
+            Catch native birds as they cross the sky. Study them. Fill the
+            journal before dusk fades to night.
+          </div>
+        </div>
+
+        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+          <button className="btn btn-primary" onClick={startRound}>
+            <span>Begin Round</span>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+            >
+              <path d="M5 12h14M13 5l7 7-7 7" />
+            </svg>
+          </button>
+          <button
+            className="btn btn-ghost"
+            onClick={() => setScreen("guide")}
+          >
+            Field Journal
+          </button>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 40,
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: 11,
+            letterSpacing: "0.2em",
+            color: "#fff4e0cc",
+            textTransform: "uppercase",
+            textShadow: "0 2px 4px rgba(0,0,0,0.5)",
+          }}
+        >
+          <div>
+            <span style={{ opacity: 0.6 }}>Best</span>{" "}
+            {highScore.toLocaleString()}
+          </div>
+          <div style={{ opacity: 0.3 }}>·</div>
+          <div>
+            <span style={{ opacity: 0.6 }}>Discovered</span> {discovered.size}/
+            {birds.length}
+          </div>
         </div>
       </div>
     </div>

@@ -1,149 +1,158 @@
 import type { ConservationStatus } from "../types/bird";
-import type { DayPhase, FlightPattern } from "../types/game";
+import type { PhaseId } from "../types/game";
 
-export const ROUND_DURATION = 180;
+export const ROUND_DURATION = 90;
+export const MAX_MISSES = 10;
+export const MAX_ACTIVE = 6;
 
-export const PHASE_CONFIG: Record<
-  DayPhase,
-  {
-    startTime: number;
-    endTime: number;
-    label: string;
-    emoji: string;
-    spawnInterval: number;
-    speedMultiplier: number;
-    gradientFrom: string;
-    gradientTo: string;
-    allowedStatuses: ConservationStatus[];
-  }
-> = {
-  dawn: {
-    startTime: 180,
-    endTime: 135,
-    label: "Dawn",
-    emoji: "🌅",
-    spawnInterval: 1.8,
-    speedMultiplier: 1.0,
-    gradientFrom: "#fde68a",
-    gradientTo: "#f59e0b",
-    allowedStatuses: ["least_concern"],
-  },
-  noon: {
-    startTime: 135,
-    endTime: 90,
-    label: "Noon",
-    emoji: "☀️",
-    spawnInterval: 1.2,
-    speedMultiplier: 1.4,
-    gradientFrom: "#7dd3fc",
-    gradientTo: "#bae6fd",
-    allowedStatuses: ["least_concern", "near_threatened"],
-  },
-  dusk: {
-    startTime: 90,
-    endTime: 45,
-    label: "Dusk",
-    emoji: "🌆",
-    spawnInterval: 0.8,
-    speedMultiplier: 1.9,
-    gradientFrom: "#ea580c",
-    gradientTo: "#dc2626",
-    allowedStatuses: [
-      "least_concern",
-      "near_threatened",
-      "vulnerable",
-      "endangered",
-      "critically_endangered",
-    ],
-  },
-  night: {
-    startTime: 45,
-    endTime: 0,
-    label: "Night",
-    emoji: "🌙",
-    spawnInterval: 0.6,
-    speedMultiplier: 2.5,
-    gradientFrom: "#1e293b",
-    gradientTo: "#0f172a",
-    allowedStatuses: [
-      "least_concern",
-      "near_threatened",
-      "vulnerable",
-      "endangered",
-      "critically_endangered",
-    ],
-  },
-};
-
-export const RARITY_CONFIG: Record<
-  ConservationStatus,
-  {
-    basePoints: number;
-    speedMultiplier: number;
-    spawnWeight: number;
-    size: number;
-  }
-> = {
-  least_concern: {
-    basePoints: 50,
-    speedMultiplier: 1.0,
-    spawnWeight: 10,
-    size: 60,
-  },
-  near_threatened: {
-    basePoints: 100,
-    speedMultiplier: 1.3,
-    spawnWeight: 5,
-    size: 52,
-  },
-  vulnerable: {
-    basePoints: 150,
-    speedMultiplier: 1.6,
-    spawnWeight: 3,
-    size: 44,
-  },
-  endangered: {
-    basePoints: 250,
-    speedMultiplier: 2.0,
-    spawnWeight: 1,
-    size: 36,
-  },
-  critically_endangered: {
-    basePoints: 300,
-    speedMultiplier: 2.4,
-    spawnWeight: 1,
-    size: 32,
-  },
-  extinct: { basePoints: 0, speedMultiplier: 0, spawnWeight: 0, size: 0 },
-};
-
-export const FIRST_CATCH_BONUS = 50;
-export const MAX_MISSES = 5;
-export const MAX_ACTIVE_BIRDS = 8;
-export const COMBO_WINDOW = 2;
-export const COMBO_THRESHOLDS = [2, 3, 5, 8] as const;
-export const BASE_BIRD_SPEED = 200;
-export const CATCH_EFFECT_DURATION = 500;
-export const CARD_REVEAL_DURATION = 3000;
-
-export const FLIGHT_PATTERNS: FlightPattern[] = [
-  "straight",
-  "arc",
-  "dive",
-  "zigzag",
-];
-
-export function getPhaseForTime(timeRemaining: number): DayPhase {
-  if (timeRemaining > 135) return "dawn";
-  if (timeRemaining > 90) return "noon";
-  if (timeRemaining > 45) return "dusk";
-  return "night";
+export interface RarityConfig {
+  label: string;
+  points: number;
+  weight: number;
+  sizeScale: number;
+  speed: number;
+  color: string;
+  ring: string;
 }
 
-export function getComboMultiplier(combo: number): number {
-  if (combo >= 8) return 8;
-  if (combo >= 5) return 5;
-  if (combo >= 3) return 3;
-  if (combo >= 2) return 2;
+export const RARITY: Record<ConservationStatus, RarityConfig> = {
+  least_concern: {
+    label: "Common",
+    points: 50,
+    weight: 10,
+    sizeScale: 1.1,
+    speed: 0.85,
+    color: "#6a8a3c",
+    ring: "#9cb662",
+  },
+  near_threatened: {
+    label: "Uncommon",
+    points: 100,
+    weight: 5,
+    sizeScale: 1.0,
+    speed: 1.0,
+    color: "#d4a43a",
+    ring: "#e8c260",
+  },
+  vulnerable: {
+    label: "Rare",
+    points: 150,
+    weight: 3,
+    sizeScale: 0.95,
+    speed: 1.2,
+    color: "#e08a3a",
+    ring: "#f2a860",
+  },
+  endangered: {
+    label: "Epic",
+    points: 250,
+    weight: 1,
+    sizeScale: 0.9,
+    speed: 1.4,
+    color: "#c85530",
+    ring: "#e87860",
+  },
+  critically_endangered: {
+    label: "Legendary",
+    points: 400,
+    weight: 0.6,
+    sizeScale: 0.85,
+    speed: 1.6,
+    color: "#9c3a70",
+    ring: "#c85d96",
+  },
+};
+
+export interface PhaseConfig {
+  id: PhaseId;
+  label: string;
+  start: number;
+  end: number;
+  sky: [string, string, string, string];
+  sun: string;
+  horizon: string;
+  allowed: ConservationStatus[];
+  spawn: number;
+}
+
+export const PHASES: PhaseConfig[] = [
+  {
+    id: "dawn",
+    label: "Dawn",
+    start: 90,
+    end: 67,
+    sky: ["#f5d6a0", "#f0a86a", "#d8785a", "#6a4a5a"],
+    sun: "#f5a85a",
+    horizon: "#2a3138",
+    allowed: ["least_concern"],
+    spawn: 1.6,
+  },
+  {
+    id: "noon",
+    label: "Midday",
+    start: 67,
+    end: 45,
+    sky: ["#a8d4e8", "#7fb8d4", "#c8e0e8", "#e8d4b0"],
+    sun: "#f5f0d8",
+    horizon: "#4a5a48",
+    allowed: ["least_concern", "near_threatened"],
+    spawn: 1.2,
+  },
+  {
+    id: "dusk",
+    label: "Dusk",
+    start: 45,
+    end: 22,
+    sky: ["#d87030", "#b8452a", "#6a2840", "#2a1a3a"],
+    sun: "#e85a30",
+    horizon: "#1a1018",
+    allowed: [
+      "least_concern",
+      "near_threatened",
+      "vulnerable",
+      "endangered",
+    ],
+    spawn: 0.9,
+  },
+  {
+    id: "night",
+    label: "Night",
+    start: 22,
+    end: 0,
+    sky: ["#1a1a2e", "#0f0f22", "#2a2040", "#050510"],
+    sun: "#e8d4a0",
+    horizon: "#000000",
+    allowed: [
+      "least_concern",
+      "near_threatened",
+      "vulnerable",
+      "endangered",
+      "critically_endangered",
+    ],
+    spawn: 0.7,
+  },
+];
+
+export function getPhase(t: number): PhaseConfig {
+  return (
+    PHASES.find((p) => t <= p.start && t > p.end) ?? PHASES[PHASES.length - 1]
+  );
+}
+
+export function getComboMult(c: number): number {
+  if (c >= 8) return 4;
+  if (c >= 5) return 3;
+  if (c >= 3) return 2;
+  if (c >= 2) return 1.5;
   return 1;
+}
+
+export function weightedPick<T>(items: T[], getW: (item: T) => number): T {
+  const total = items.reduce((s, i) => s + getW(i), 0);
+  let r = Math.random() * total;
+  for (const it of items) {
+    r -= getW(it);
+    if (r <= 0) return it;
+  }
+  return items[items.length - 1];
 }

@@ -1,30 +1,30 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { BirdSpecies } from "../types/bird";
 
-export function useImagePreloader(birds: BirdSpecies[]): {
-  loaded: boolean;
-  progress: number;
-} {
+export function useImagePreloader(birds: BirdSpecies[]): { loaded: boolean } {
   const [loadedCount, setLoadedCount] = useState(0);
-  const total = birds.length;
 
   useEffect(() => {
-    if (total === 0) return;
+    if (birds.length === 0) return;
 
-    let count = 0;
+    let cancelled = false;
 
-    birds.forEach((bird) => {
+    const done = () => {
+      if (cancelled) return;
+      setLoadedCount((n) => n + 1);
+    };
+
+    for (const b of birds) {
       const img = new Image();
-      img.onload = img.onerror = () => {
-        count++;
-        setLoadedCount(count);
-      };
-      img.src = bird.imageUrl;
-    });
-  }, [birds, total]);
+      img.onload = done;
+      img.onerror = done;
+      img.src = b.imageUrl;
+    }
 
-  return {
-    loaded: total > 0 && loadedCount >= total,
-    progress: total > 0 ? loadedCount / total : 0,
-  };
+    return () => {
+      cancelled = true;
+    };
+  }, [birds]);
+
+  return { loaded: birds.length > 0 && loadedCount >= birds.length };
 }

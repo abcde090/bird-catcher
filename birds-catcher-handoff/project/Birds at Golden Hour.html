@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Birds at Golden Hour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --paper: #fdf6e8;
+    --paper-warm: #f0e2c4;
+    --ink: #2a1a0a;
+    --ink-muted: #6a4a2a;
+    --ember: #c85530;
+    --gold: #c89a3a;
+    --forest: #3a4a2a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; height:100%; overflow:hidden;
+    font-family: 'Fraunces', Georgia, serif; background:#1a1a2e; color:var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  #root { position:fixed; inset:0; }
+
+  .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em;
+    color: var(--ink-muted); text-transform: uppercase; font-weight: 500;
+  }
+
+  .panel {
+    background: linear-gradient(170deg, #fdf6e8 0%, #f0e2c4 100%);
+    border: 1.5px solid rgba(138,94,32,0.35);
+    border-radius: 4px;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.6) inset,
+      0 8px 28px rgba(0,0,0,0.35),
+      0 2px 8px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  .panel::before {
+    content: ""; position: absolute; inset: 3px; border-radius: 3px;
+    border: 1px solid rgba(138,94,32,0.15); pointer-events: none;
+  }
+
+  .timer-low {
+    animation: pulse-red 0.8s ease-in-out infinite alternate;
+  }
+
+  .btn {
+    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500;
+    padding: 14px 28px; border-radius: 4px; cursor: pointer; border: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    letter-spacing: 0.01em; transition: all 0.2s;
+    position: relative;
+  }
+  .btn-primary {
+    background: linear-gradient(180deg, #3a2818, #1f140a);
+    color: #fde8b8;
+    border: 1.5px solid #8a5e20;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5), inset 0 1px 0 rgba(253,232,184,0.2);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(253,232,184,0.3);
+  }
+  .btn-ghost {
+    background: transparent; color: #fde8b8;
+    border: 1.5px solid rgba(253,232,184,0.4);
+    backdrop-filter: blur(8px);
+  }
+  .btn-ghost:hover {
+    background: rgba(253,232,184,0.1); border-color: #fde8b8;
+  }
+  /* For use on cream/light panels */
+  .btn-outline {
+    background: transparent; color: #2a1a0a;
+    border: 1.5px solid rgba(58,40,24,0.4);
+    font-family: 'Fraunces', serif; font-weight: 500;
+  }
+  .btn-outline:hover {
+    background: rgba(58,40,24,0.08); border-color: #2a1a0a;
+  }
+
+  .chip {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 2px;
+    background: transparent; border: 1px solid rgba(138,94,32,0.35);
+    color: var(--ink-muted); cursor: pointer; transition: all 0.15s;
+  }
+  .chip:hover { border-color: var(--ink); color: var(--ink); }
+  .chip-active { background: var(--ink); color: #fde8b8; border-color: var(--ink); }
+
+  /* Tweaks panel */
+  .tweaks-panel {
+    position: fixed; bottom: 20px; right: 20px; width: 280px; z-index: 200;
+    background: linear-gradient(170deg, #fdf6e8, #f0e2c4);
+    border: 1.5px solid rgba(138,94,32,0.5);
+    border-radius: 4px; padding: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    font-family: 'Fraunces', serif;
+  }
+  .tweaks-panel h3 {
+    font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; margin: 0 0 4px;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
+  .tweak-row { display: flex; flex-direction: column; gap: 4px; margin-top: 14px; }
+  .tweak-row input[type="range"] { width: 100%; accent-color: var(--ember); }
+  .tweak-row select { font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 4px;
+    background: #fdf6e8; border: 1px solid rgba(138,94,32,0.35); border-radius: 2px; color: var(--ink);}
+  .tweak-toggle-group { display: flex; gap: 4px; }
+  .tweak-toggle-group button {
+    flex: 1; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 6px; border: 1px solid rgba(138,94,32,0.35);
+    background: transparent; color: var(--ink-muted); cursor: pointer; border-radius: 2px;
+  }
+  .tweak-toggle-group button.active { background: var(--ink); color: #fde8b8; border-color: var(--ink); }
+
+  /* Animations */
+  @keyframes cloud-drift {
+    from { transform: translateX(0) scale(var(--s, 1)); }
+    to { transform: translateX(calc(100vw + 400px)) scale(var(--s, 1)); }
+  }
+  @keyframes title-drift-r {
+    from { transform: translateX(0) scale(var(--s,1)); }
+    to { transform: translateX(calc(100vw + 200px)) scale(var(--s,1)); }
+  }
+  @keyframes title-drift-l {
+    from { transform: translateX(0) scale(var(--s,1)); }
+    to { transform: translateX(calc(-100vw - 200px)) scale(var(--s,1)); }
+  }
+  @keyframes twinkle { from { opacity: 0.3 } to { opacity: 1 } }
+  @keyframes combo-pulse {
+    0% { transform: translateX(-50%) scale(0.4); opacity: 0; }
+    40% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+    100% { transform: translateX(-50%) scale(1); opacity: 1; }
+  }
+  @keyframes catch-pop {
+    0% { transform: translate(-50%,-50%) scale(0.5); opacity: 0; }
+    20% { transform: translate(-50%,-50%) scale(1.3); opacity: 1; }
+    100% { transform: translate(-50%, calc(-50% - 80px)) scale(1); opacity: 0; }
+  }
+  @keyframes miss-flash {
+    0%,100% { opacity: 0; }
+    40% { opacity: 1; }
+  }
+  @keyframes bird-flap {
+    from { transform: scaleY(1) translateY(0); }
+    to { transform: scaleY(0.92) translateY(-2px); }
+  }
+  @keyframes bird-glow {
+    from { opacity: 0.4; } to { opacity: 1; }
+  }
+  @keyframes pulse-red {
+    from { box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 8px 28px rgba(196,69,42,0.3); }
+    to { box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset, 0 8px 28px rgba(196,69,42,0.8); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0 } to { opacity: 1 }
+  }
+  @keyframes card-in {
+    0% { opacity: 0; transform: translateY(40px) rotateX(-20deg) scale(0.9); }
+    100% { opacity: 1; transform: translateY(0) rotateX(0) scale(1); }
+  }
+  @keyframes toast-in {
+    0% { opacity: 0; transform: translateX(30px) translateY(-8px); }
+    100% { opacity: 1; transform: translateX(0) translateY(0); }
+  }
+  }
+
+  button:focus { outline: none; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: rgba(138,94,32,0.1); }
+  ::-webkit-scrollbar-thumb { background: rgba(138,94,32,0.4); border-radius: 4px; }
+</style>
+</head>
+<body data-screen-label="birds-catcher">
+  <div id="root"></div>
+
+  <script>
+    // Tweakable defaults
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "roundDuration": 90,
+      "spawnRate": 1.0,
+      "accent": "ember"
+    }/*EDITMODE-END*/;
+    window.__TWEAKS = { ...TWEAK_DEFAULTS };
+
+    // Edit-mode host integration
+    window.addEventListener("message", (e) => {
+      if (!e.data || !e.data.type) return;
+      if (e.data.type === "__activate_edit_mode") window.__showTweaks?.();
+      if (e.data.type === "__deactivate_edit_mode") window.__hideTweaks?.();
+    });
+    setTimeout(() => {
+      try { window.parent.postMessage({ type: "__edit_mode_available" }, "*"); } catch {}
+    }, 100);
+  </script>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script src="birds-data.js"></script>
+  <script type="text/babel" src="game-core.jsx"></script>
+  <script type="text/babel" src="game-sky.jsx"></script>
+  <script type="text/babel" src="game-hud.jsx"></script>
+  <script type="text/babel" src="game-screens.jsx"></script>
+  <script type="text/babel" src="game-app.jsx"></script>
+
+  <script type="text/babel">
+    // Tweaks UI — mounts as separate React tree into a portal
+    const { useState: tS, useEffect: tE } = React;
+    function TweaksPanel() {
+      const [visible, setVisible] = tS(false);
+      const [t, setT] = tS(window.__TWEAKS);
+
+      tE(() => {
+        window.__showTweaks = () => setVisible(true);
+        window.__hideTweaks = () => setVisible(false);
+      }, []);
+
+      const update = (k, v) => {
+        const nt = { ...t, [k]: v };
+        setT(nt);
+        window.__TWEAKS = nt;
+        // apply
+        if (k === "roundDuration") window.ROUND_DURATION = v;
+        if (k === "accent") {
+          const map = { ember:"#c85530", gold:"#c89a3a", forest:"#3a6a3a", violet:"#8a3a8a" };
+          document.documentElement.style.setProperty("--ember", map[v]);
+        }
+        try {
+          window.parent.postMessage({ type: "__edit_mode_set_keys", edits: { [k]: v } }, "*");
+        } catch {}
+      };
+
+      if (!visible) return null;
+      return (
+        <div className="tweaks-panel">
+          <div className="label" style={{marginBottom:2}}>Controls</div>
+          <h3>Tweaks</h3>
+          <div style={{fontSize:12, fontStyle:"italic", color:"var(--ink-muted)", marginTop:2}}>
+            Tune the round on the fly.
+          </div>
+
+          <div className="tweak-row">
+            <div style={{display:"flex", justifyContent:"space-between"}}>
+              <span className="label">Round length</span>
+              <span style={{fontFamily:"'JetBrains Mono',monospace", fontSize:11, color:"var(--ink)"}}>{t.roundDuration}s</span>
+            </div>
+            <input type="range" min="30" max="180" step="15" value={t.roundDuration}
+              onChange={e => update("roundDuration", +e.target.value)}/>
+          </div>
+
+          <div className="tweak-row">
+            <div style={{display:"flex", justifyContent:"space-between"}}>
+              <span className="label">Spawn rate</span>
+              <span style={{fontFamily:"'JetBrains Mono',monospace", fontSize:11, color:"var(--ink)"}}>×{t.spawnRate.toFixed(1)}</span>
+            </div>
+            <input type="range" min="0.5" max="2.0" step="0.1" value={t.spawnRate}
+              onChange={e => update("spawnRate", +e.target.value)}/>
+          </div>
+
+          <div className="tweak-row">
+            <span className="label">Accent</span>
+            <div className="tweak-toggle-group">
+              {["ember","gold","forest","violet"].map(a => (
+                <button key={a} className={t.accent===a?"active":""}
+                  onClick={() => update("accent", a)}>{a}</button>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+    const tweaksEl = document.createElement("div");
+    document.body.appendChild(tweaksEl);
+    ReactDOM.createRoot(tweaksEl).render(<TweaksPanel/>);
+  </script>
+</body>
+</html>

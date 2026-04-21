@@ -1,67 +1,42 @@
 import type { BirdSpecies } from "../types/bird";
-import type { DayPhase, FlyingBird, FlightPattern } from "../types/game";
-import {
-  PHASE_CONFIG,
-  RARITY_CONFIG,
-  BASE_BIRD_SPEED,
-  FLIGHT_PATTERNS,
-} from "./game-config";
-import { generateFlightEndpoints } from "./flight-paths";
-
-let nextId = 0;
-
-function pickWeightedRandom<T>(items: T[], weights: number[]): T {
-  const total = weights.reduce((sum, w) => sum + w, 0);
-  let roll = Math.random() * total;
-  for (let i = 0; i < items.length; i++) {
-    roll -= weights[i];
-    if (roll <= 0) return items[i];
-  }
-  return items[items.length - 1];
-}
+import type { FlyingBird, FlightPattern } from "../types/game";
+import { RARITY, weightedPick, type PhaseConfig } from "./game-config";
 
 export function spawnBird(
   birds: BirdSpecies[],
-  phase: DayPhase,
+  phase: PhaseConfig,
   viewport: { width: number; height: number },
+  nextId: number,
 ): FlyingBird | null {
-  const config = PHASE_CONFIG[phase];
-  const eligible = birds.filter((b) =>
-    config.allowedStatuses.includes(b.conservationStatus),
-  );
+  const eligible = birds.filter((b) => phase.allowed.includes(b.status));
   if (eligible.length === 0) return null;
 
-  const weights = eligible.map(
-    (b) => RARITY_CONFIG[b.conservationStatus].spawnWeight,
-  );
-  const species = pickWeightedRandom(eligible, weights);
-  const rarityConfig = RARITY_CONFIG[species.conservationStatus];
-
-  const pattern: FlightPattern = pickWeightedRandom(
-    FLIGHT_PATTERNS,
-    species.conservationStatus === "least_concern"
-      ? [10, 5, 3, 0]
-      : [5, 5, 5, 5],
-  );
-
+  const species = weightedPick(eligible, (b) => RARITY[b.status].weight);
   const direction: 1 | -1 = Math.random() > 0.5 ? 1 : -1;
-  const endpoints = generateFlightEndpoints(pattern, direction, viewport);
-  const speed =
-    BASE_BIRD_SPEED * config.speedMultiplier * rarityConfig.speedMultiplier;
+
+  const r = Math.random();
+  const pattern: FlightPattern =
+    r < 0.55 ? "straight" : r < 0.85 ? "arc" : r < 0.95 ? "dive" : "zigzag";
+
+  const startX = direction > 0 ? -120 : viewport.width + 120;
+  const endX = direction > 0 ? viewport.width + 120 : -120;
+  const baseY = 140 + Math.random() * (viewport.height * 0.55);
+  const speed = (120 + Math.random() * 50) * RARITY[species.status].speed;
 
   return {
-    id: `bird-${nextId++}`,
+    id: `b${nextId}`,
     species,
-    x: endpoints.startX,
-    y: endpoints.startY,
-    startX: endpoints.startX,
-    startY: endpoints.startY,
-    endX: endpoints.endX,
-    endY: endpoints.endY,
-    progress: 0,
-    speed,
     pattern,
     direction,
+    startX,
+    endX,
+    startY: baseY,
+    endY: baseY + (Math.random() - 0.5) * 80,
+    x: startX,
+    y: baseY,
+    progress: 0,
+    speed,
+    wobble: 0,
     spawnTime: performance.now() / 1000,
   };
 }

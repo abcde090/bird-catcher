@@ -1,86 +1,219 @@
 import { useState } from "react";
 import { useBirdStore } from "../../stores/useBirdStore";
 import { useCollectionStore } from "../../stores/useCollectionStore";
-import type { BirdSpecies } from "../../types/bird";
-import BirdDetail from "./BirdDetail";
+import { useGameStore } from "../../stores/useGameStore";
+import { RARITY } from "../../lib/game-config";
+import type { ConservationStatus } from "../../types/bird";
+import BirdImage from "./BirdImage";
 
-interface Props {
-  onBack: () => void;
-}
+type Filter = "all" | ConservationStatus;
 
-export default function FieldGuide({ onBack }: Props) {
+const FILTER_OPTIONS: Array<[Filter, string]> = [
+  ["all", "All"],
+  ["least_concern", "Common"],
+  ["near_threatened", "Uncommon"],
+  ["vulnerable", "Rare"],
+  ["endangered", "Epic"],
+  ["critically_endangered", "Legendary"],
+];
+
+export default function FieldGuide() {
   const birds = useBirdStore((s) => s.birds);
-  const discoveredBirdIds = useCollectionStore((s) => s.discoveredBirdIds);
-  const [selectedBird, setSelectedBird] = useState<BirdSpecies | null>(null);
+  const discovered = useCollectionStore((s) => s.discovered);
+  const setScreen = useGameStore((s) => s.setScreen);
+  const [filter, setFilter] = useState<Filter>("all");
+
+  const filtered =
+    filter === "all" ? birds : birds.filter((b) => b.status === filter);
 
   return (
-    <div className="min-h-screen bg-sand-100 px-4 py-6">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-6 flex items-center justify-between">
-          <button
-            onClick={onBack}
-            className="rounded-full bg-sand-200 px-4 py-2 text-sm font-semibold text-bark-700 hover:bg-sand-300"
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(180deg, #f0e2c4, #e8d8b4)",
+        overflow: "auto",
+      }}
+    >
+      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 32px" }}>
+        <button
+          onClick={() => setScreen("title")}
+          className="btn btn-outline"
+          style={{ marginBottom: 32 }}
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
           >
-            ← Back
-          </button>
-          <h2 className="font-serif text-2xl font-bold text-bark-900">
-            Field Guide
-          </h2>
-          <p className="text-sm text-bark-400">
-            {discoveredBirdIds.length}/40 discovered
-          </p>
-        </div>
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          Back
+        </button>
 
-        <div className="mb-6 h-2 overflow-hidden rounded-full bg-sand-300">
+        <div
+          style={{
+            borderBottom: "1px solid rgba(138,94,32,0.3)",
+            paddingBottom: 20,
+            marginBottom: 32,
+          }}
+        >
           <div
-            className="h-full rounded-full bg-outback-gold transition-all"
             style={{
-              width: `${(discoveredBirdIds.length / 40) * 100}%`,
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 10,
+              letterSpacing: "0.4em",
+              color: "#8a5e20",
+              textTransform: "uppercase",
             }}
-          />
+          >
+            Vol. I
+          </div>
+          <h1
+            style={{
+              fontFamily: "'Fraunces', serif",
+              fontSize: 72,
+              fontWeight: 400,
+              margin: "4px 0 0",
+              letterSpacing: "-0.03em",
+              color: "#2a1a0a",
+              fontStyle: "italic",
+            }}
+          >
+            Field Journal
+          </h1>
+          <div
+            style={{
+              fontFamily: "'Fraunces', serif",
+              color: "#6a4a2a",
+              marginTop: 8,
+              fontSize: 16,
+            }}
+          >
+            {discovered.size} of {birds.length} species catalogued · keep
+            watching the skies.
+          </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8">
-          {birds.map((bird) => {
-            const isDiscovered = discoveredBirdIds.includes(bird.id);
+        <div
+          style={{
+            display: "flex",
+            gap: 8,
+            marginBottom: 24,
+            flexWrap: "wrap",
+          }}
+        >
+          {FILTER_OPTIONS.map(([k, l]) => (
+            <button
+              key={k}
+              onClick={() => setFilter(k)}
+              className={"chip " + (filter === k ? "chip-active" : "")}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
+            gap: 16,
+          }}
+        >
+          {filtered.map((b) => {
+            const known = discovered.has(b.id);
+            const rarity = RARITY[b.status];
             return (
-              <button
-                key={bird.id}
-                onClick={() => isDiscovered && setSelectedBird(bird)}
-                className={`flex flex-col items-center overflow-hidden rounded-xl border-2 p-2 transition-transform ${
-                  isDiscovered
-                    ? "border-outback-gold bg-white shadow-sm hover:scale-105"
-                    : "cursor-default border-dashed border-sand-300 bg-sand-200"
-                }`}
-                disabled={!isDiscovered}
+              <div
+                key={b.id}
+                style={{
+                  padding: 18,
+                  background: known ? "#fdf6e8" : "#e8dabe",
+                  border: `1.5px solid ${known ? rarity.color + "66" : "#8a6a3e33"}`,
+                  borderRadius: 4,
+                  opacity: known ? 1 : 0.85,
+                  position: "relative",
+                  overflow: "hidden",
+                }}
               >
-                <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-lg">
-                  {isDiscovered ? (
-                    <img
-                      src={bird.imageUrl}
-                      alt={bird.commonName}
-                      className="h-full w-full object-cover object-top"
-                    />
-                  ) : (
-                    <span className="text-2xl opacity-20">🐦</span>
-                  )}
-                </div>
-                <p
-                  className={`mt-1 text-center text-[10px] font-semibold leading-tight ${
-                    isDiscovered ? "text-bark-900" : "text-bark-400"
-                  }`}
+                <div
+                  style={{
+                    width: "100%",
+                    height: 140,
+                    background: "rgba(138,94,32,0.08)",
+                    borderRadius: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: 12,
+                    filter: known ? "none" : "grayscale(1) brightness(0.4)",
+                    opacity: known ? 1 : 0.5,
+                  }}
                 >
-                  {isDiscovered ? bird.commonName : "???"}
-                </p>
-              </button>
+                  <BirdImage
+                    bird={b}
+                    size={120}
+                    facing={1}
+                    ring={known ? rarity.color : undefined}
+                  />
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    fontSize: 9,
+                    letterSpacing: "0.2em",
+                    color: rarity.color,
+                    textTransform: "uppercase",
+                    fontWeight: 600,
+                  }}
+                >
+                  {rarity.label}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'Fraunces', serif",
+                    fontSize: 18,
+                    fontWeight: 500,
+                    color: "#2a1a0a",
+                    marginTop: 2,
+                  }}
+                >
+                  {known ? b.name : "— unrecorded —"}
+                </div>
+                {known && (
+                  <div
+                    style={{
+                      fontFamily: "'Fraunces', serif",
+                      fontStyle: "italic",
+                      fontSize: 12,
+                      color: "#6a4a2a",
+                    }}
+                  >
+                    {b.scientific}
+                  </div>
+                )}
+                {known && (
+                  <div
+                    style={{
+                      marginTop: 8,
+                      fontSize: 12,
+                      color: "#3a2a1a",
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    {b.funFact}
+                  </div>
+                )}
+              </div>
             );
           })}
         </div>
       </div>
-
-      {selectedBird && (
-        <BirdDetail bird={selectedBird} onClose={() => setSelectedBird(null)} />
-      )}
     </div>
   );
 }
