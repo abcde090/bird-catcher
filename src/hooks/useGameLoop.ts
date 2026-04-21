@@ -6,6 +6,7 @@ import { spawnBird } from "../lib/spawner";
 import {
   MAX_ACTIVE,
   MAX_MISSES,
+  NET_RADIUS,
   RARITY,
   getComboMult,
   getPhase,
@@ -29,6 +30,57 @@ export function useGameLoop() {
   useEffect(() => {
     screenRef.current = screen;
   }, [screen]);
+
+  const catchBird = useCallback(
+    (id: string, cx: number, cy: number) => {
+      const state = gameStore.getState();
+      const bird = birdsRef.current.find((b) => b.id === id);
+      if (!bird) return;
+
+      birdsRef.current = birdsRef.current.filter((b) => b.id !== id);
+      const rarity = RARITY[bird.species.status];
+      const isNew = !collectionStore.getState().isDiscovered(bird.species.id);
+
+      const nextCombo = state.combo + 1;
+      const mult = getComboMult(nextCombo);
+      const points = Math.round((rarity.points + (isNew ? 50 : 0)) * mult);
+
+      const fxId = `fx${Date.now()}${Math.random()}`;
+      const newEffect = {
+        id: fxId,
+        x: cx,
+        y: cy,
+        points,
+        name: bird.species.name,
+        color: rarity.ring,
+      };
+
+      gameStore.setState({
+        score: state.score + points,
+        combo: nextCombo,
+        lastCatchTime: Date.now(),
+        catches: [...state.catches, bird.species],
+        catchEffects: [...state.catchEffects, newEffect],
+        activeBirds: birdsRef.current,
+        newDiscoveries: state.newDiscoveries + (isNew ? 1 : 0),
+        revealBird: isNew
+          ? { species: bird.species, shownAt: performance.now() }
+          : state.revealBird,
+      });
+
+      if (isNew) {
+        collectionStore.getState().discoverBird(bird.species.id);
+      }
+
+      setTimeout(() => {
+        const s = gameStore.getState();
+        gameStore.setState({
+          catchEffects: s.catchEffects.filter((e) => e.id !== fxId),
+        });
+      }, 800);
+    },
+    [gameStore, collectionStore],
+  );
 
   const tick = useCallback(
     (timestamp: number) => {
@@ -122,7 +174,26 @@ export function useGameLoop() {
           gameStore.setState({
             net: { ...net, phase: "open", catchesThisCast: 0 },
           });
-        } else if (net.phase === "open" && elapsed >= CAST + OPEN) {
+        }
+
+        // Every frame during open — check collisions
+        if (net.phase === "open" && elapsed < CAST + OPEN) {
+          for (const bird of birdsRef.current) {
+            const dx = bird.x - net.targetX;
+            const dy = bird.y - net.targetY;
+            const distSq = dx * dx + dy * dy;
+            const hitR = 40 * RARITY[bird.species.status].sizeScale;
+            const threshold = NET_RADIUS + hitR;
+            if (distSq <= threshold * threshold) {
+              catchBird(bird.id, net.targetX, net.targetY);
+              gameStore.setState((s) => ({
+                net: { ...s.net, catchesThisCast: s.net.catchesThisCast + 1 },
+              }));
+            }
+          }
+        }
+
+        if (net.phase === "open" && elapsed >= CAST + OPEN) {
           const current = gameStore.getState();
           const hadCatches = current.net.catchesThisCast > 0;
           if (!hadCatches) {
@@ -163,58 +234,7 @@ export function useGameLoop() {
 
       rafRef.current = requestAnimationFrame(tick);
     },
-    [gameStore, collectionStore, birdStore],
-  );
-
-  const catchBird = useCallback(
-    (id: string, cx: number, cy: number) => {
-      const state = gameStore.getState();
-      const bird = birdsRef.current.find((b) => b.id === id);
-      if (!bird) return;
-
-      birdsRef.current = birdsRef.current.filter((b) => b.id !== id);
-      const rarity = RARITY[bird.species.status];
-      const isNew = !collectionStore.getState().isDiscovered(bird.species.id);
-
-      const nextCombo = state.combo + 1;
-      const mult = getComboMult(nextCombo);
-      const points = Math.round((rarity.points + (isNew ? 50 : 0)) * mult);
-
-      const fxId = `fx${Date.now()}${Math.random()}`;
-      const newEffect = {
-        id: fxId,
-        x: cx,
-        y: cy,
-        points,
-        name: bird.species.name,
-        color: rarity.ring,
-      };
-
-      gameStore.setState({
-        score: state.score + points,
-        combo: nextCombo,
-        lastCatchTime: Date.now(),
-        catches: [...state.catches, bird.species],
-        catchEffects: [...state.catchEffects, newEffect],
-        activeBirds: birdsRef.current,
-        newDiscoveries: state.newDiscoveries + (isNew ? 1 : 0),
-        revealBird: isNew
-          ? { species: bird.species, shownAt: performance.now() }
-          : state.revealBird,
-      });
-
-      if (isNew) {
-        collectionStore.getState().discoverBird(bird.species.id);
-      }
-
-      setTimeout(() => {
-        const s = gameStore.getState();
-        gameStore.setState({
-          catchEffects: s.catchEffects.filter((e) => e.id !== fxId),
-        });
-      }, 800);
-    },
-    [gameStore, collectionStore],
+    [gameStore, collectionStore, birdStore, catchBird],
   );
 
   const closeReveal = useCallback(() => {
