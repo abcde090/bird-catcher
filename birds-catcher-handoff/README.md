@@ -1,3 +1,7 @@
+> **NOTE (2026-04-21):** The live game has diverged from this handoff bundle — click-to-catch has been replaced by a cast-and-reel net mechanic, and tier behaviors added. Authoritative current state is in [CLAUDE.md](../CLAUDE.md) and [docs/GAME_RULES.md](../docs/GAME_RULES.md). The bundle below is preserved as a historical record.
+
+---
+
 # CODING AGENTS: READ THIS FIRST
 
 This is a **handoff bundle** from Claude Design (claude.ai/design).

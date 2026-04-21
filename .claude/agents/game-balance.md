@@ -39,6 +39,10 @@ You audit the "Birds at Golden Hour" arcade game for balance issues. Canonical c
 
 10. **New-species bonus** — +50 points on the base (pre-combo) when a discovery is new.
 
+11. **Net timing** — `NET_CAST_DURATION = 0.5`, `NET_OPEN_DURATION = 0.8`, `NET_RETRACT_DURATION = 0.4`, `NET_COOLDOWN = 0.3`. Total cycle ~2 s — players get ~45 casts per 90-s round. Miss cap 6 means ~13% empty-cast tolerance.
+
+12. **Tier reaction tuning** — flinch/burst/dodge/bite constants drive the skill ceiling. If Legendaries are too easy, shrink `LEGENDARY_BITE_DURATION`. If Epics are impossible, lower `EPIC_DODGE_SPEED` or `EPIC_DODGE_DURATION`.
+
 ## Reference scoring ceiling
 
 Perfect 90-second round, ~60 catches at rarity-weighted average ~80 base pts, sustained 8+ combo (×4), ~25 new-species bonuses → typical high score sits around 15–30k. If a round can regularly exceed ~50k or struggles to reach ~3k, flag the balance.
