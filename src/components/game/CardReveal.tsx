@@ -18,6 +18,7 @@ export default function CardReveal({ bird, onClose }: CardRevealProps) {
 
   return (
     <div
+      className="card-reveal"
       onClick={onClose}
       style={{
         position: "absolute",
@@ -69,12 +70,7 @@ export default function CardReveal({ bird, onClose }: CardRevealProps) {
           }}
         >
           <div style={{ flexShrink: 0 }}>
-            <BirdImage
-              bird={bird}
-              size={68}
-              facing={1}
-              ring={rarity.color}
-            />
+            <BirdImage bird={bird} size={68} facing={1} ring={rarity.color} />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <h3

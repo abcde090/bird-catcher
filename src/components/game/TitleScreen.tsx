@@ -131,9 +131,10 @@ export default function TitleScreen() {
             An Australian Field Study
           </div>
           <h1
+            className="title-heading"
             style={{
               fontFamily: "'Fraunces', serif",
-              fontSize: "clamp(56px, 10vw, 112px)",
+              fontSize: "clamp(44px, 10vw, 112px)",
               fontWeight: 400,
               color: "#fff4e0",
               margin: 0,
@@ -148,9 +149,10 @@ export default function TitleScreen() {
             Birds at
           </h1>
           <h1
+            className="title-heading"
             style={{
               fontFamily: "'Fraunces', serif",
-              fontSize: "clamp(56px, 10vw, 112px)",
+              fontSize: "clamp(44px, 10vw, 112px)",
               fontWeight: 300,
               color: "#fde8b8",
               margin: 0,
@@ -196,10 +198,7 @@ export default function TitleScreen() {
               <path d="M5 12h14M13 5l7 7-7 7" />
             </svg>
           </button>
-          <button
-            className="btn btn-ghost"
-            onClick={() => setScreen("guide")}
-          >
+          <button className="btn btn-ghost" onClick={() => setScreen("guide")}>
             Field Journal
           </button>
         </div>

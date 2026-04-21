@@ -40,7 +40,7 @@ export default function BirdDetailModal({
       }}
     >
       <div
-        className="panel"
+        className="panel modal-shell"
         onClick={(e) => e.stopPropagation()}
         style={{
           width: "min(720px, 100%)",
@@ -79,6 +79,7 @@ export default function BirdDetailModal({
 
         {/* Header: photo + names */}
         <div
+          className="modal-header"
           style={{
             display: "flex",
             gap: 24,
@@ -141,6 +142,7 @@ export default function BirdDetailModal({
 
         {/* Body: 2-column — map + stats */}
         <div
+          className="modal-body"
           style={{
             display: "grid",
             gridTemplateColumns: "240px 1fr",
@@ -150,7 +152,7 @@ export default function BirdDetailModal({
           }}
         >
           {/* Distribution map */}
-          <div>
+          <div className="modal-map">
             <div className="label" style={{ marginBottom: 8 }}>
               Distribution
             </div>

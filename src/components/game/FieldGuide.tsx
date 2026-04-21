@@ -37,7 +37,10 @@ export default function FieldGuide() {
         overflow: "auto",
       }}
     >
-      <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 32px" }}>
+      <div
+        className="guide-page"
+        style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 32px" }}
+      >
         <button
           onClick={() => setScreen("title")}
           className="btn btn-outline"
@@ -76,6 +79,7 @@ export default function FieldGuide() {
             Vol. I
           </div>
           <h1
+            className="guide-header"
             style={{
               fontFamily: "'Fraunces', serif",
               fontSize: 72,
@@ -121,6 +125,7 @@ export default function FieldGuide() {
         </div>
 
         <div
+          className="guide-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
@@ -171,6 +176,7 @@ function JournalCard({ bird, known, onOpen }: JournalCardProps) {
   const content = (
     <>
       <div
+        className="guide-card-photo"
         style={{
           width: "100%",
           height: 140,
@@ -237,6 +243,7 @@ function JournalCard({ bird, known, onOpen }: JournalCardProps) {
         {rarity.label}
       </div>
       <div
+        className="guide-card-name"
         style={{
           fontFamily: "'Fraunces', serif",
           fontSize: 18,
@@ -293,6 +300,7 @@ function JournalCard({ bird, known, onOpen }: JournalCardProps) {
     return (
       <button
         type="button"
+        className="guide-card"
         onClick={onOpen}
         style={baseStyle}
         onMouseEnter={(e) => {
@@ -309,5 +317,9 @@ function JournalCard({ bird, known, onOpen }: JournalCardProps) {
     );
   }
 
-  return <div style={baseStyle}>{content}</div>;
+  return (
+    <div className="guide-card" style={baseStyle}>
+      {content}
+    </div>
+  );
 }
