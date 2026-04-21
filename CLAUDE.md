@@ -52,12 +52,13 @@ Spawning ([src/lib/spawner.ts](src/lib/spawner.ts)) uses weighted-random selecti
 
 ### Components
 
-- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `NetCharacter`, `AimArc`, `Net`, `FlyingBird`, `BirdImage`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`
+- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `NetCharacter`, `AimArc`, `Net`, `FlyingBird`, `BirdImage`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`, `BirdDetailModal`, `AustraliaMap`
 - Birds render as real photos via `BirdImage` — cropped JPEGs under [public/birds/](public/birds/) (`{id}.jpg`, ≤320 px). The image is masked inside a rarity-colored circular frame.
+- `FieldGuide` uses `BirdDetailModal` for expanded species info: photo, category, `AustraliaMap` with the bird's `regions` highlighted (8 states/territories), population, size, habitats, diet, fun fact. Uncaught entries show the name but are not clickable.
 
 ### Types
 
-- [src/types/bird.ts](src/types/bird.ts) — `BirdSpecies`, `ConservationStatus`
+- [src/types/bird.ts](src/types/bird.ts) — `BirdSpecies`, `ConservationStatus`, `AustralianStateId`
 - [src/types/game.ts](src/types/game.ts) — `GameScreen`, `PhaseId`, `FlightPattern`, `FlyingBird`, `CatchEffectData`, `RevealBird`
 
 ## Conventions

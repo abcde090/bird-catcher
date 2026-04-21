@@ -169,6 +169,19 @@ Discoveries survive across rounds and sessions. Clearing either key resets that 
 
 ---
 
+## Field Journal
+
+The journal (from title or results screen) shows all 119 species, always visible but gated by catch state:
+
+- **Caught entries** — photo, name, scientific, rarity badge, fun fact. Clickable: opens `BirdDetailModal` with larger photo, category, distribution map (`AustraliaMap`), population, size, habitats, diet, and the full fun fact.
+- **Uncaught entries** — photo grayscaled + dimmed with a padlock overlay; name shown in italic muted; rarity label muted; text "Not yet catalogued" in place of scientific/fact. Not clickable.
+
+Filter chips at the top toggle between All / Common / Uncommon / Rare / Epic / Legendary.
+
+Each `BirdSpecies` carries a `regions: AustralianStateId[]` field (subset of `nsw | vic | qld | wa | sa | tas | nt | act`). Ranges are hand-curated per-species in [scripts/build-birds.py](../scripts/build-birds.py) under the `REGIONS` dict.
+
+---
+
 ## Worked example — how rare is a Legendary?
 
 With the current roster of 119 birds (83 Common · 12 Uncommon · 10 Rare · 8 Epic · 6 Legendary):
