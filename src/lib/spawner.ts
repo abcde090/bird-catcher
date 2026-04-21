@@ -38,5 +38,14 @@ export function spawnBird(
     speed,
     wobble: 0,
     spawnTime: performance.now() / 1000,
+    flinchUntil: 0,
+    flinchDx: 0,
+    speedBurstUntil: 0,
+    dodgeUntil: 0,
+    dodgeDx: 0,
+    dodgeDy: 0,
+    biteStart: 0,
+    biteEnd: 0,
+    biteTriggered: false,
   };
 }
