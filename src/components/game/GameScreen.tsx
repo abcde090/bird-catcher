@@ -1,4 +1,4 @@
-import type { MouseEvent } from "react";
+import type { PointerEvent } from "react";
 import { useGameStore } from "../../stores/useGameStore";
 import { useGameLoop } from "../../hooks/useGameLoop";
 import { getPhase } from "../../lib/game-config";
@@ -24,7 +24,11 @@ export default function GameScreen() {
 
   const phase = getPhase(time);
 
-  const handleCast = (e: MouseEvent) => {
+  const updateCursor = (e: PointerEvent) => {
+    setCursor(e.clientX, e.clientY);
+  };
+
+  const handleCast = (e: PointerEvent) => {
     if (netPhase !== "idle") return;
     const originX = window.innerWidth / 2;
     const originY = window.innerHeight - 80 - 90;
@@ -42,13 +46,19 @@ export default function GameScreen() {
 
   return (
     <div
-      onMouseMove={(e) => setCursor(e.clientX, e.clientY)}
-      onClick={handleCast}
+      onPointerMove={updateCursor}
+      onPointerDown={updateCursor}
+      onPointerUp={handleCast}
       style={{
         position: "absolute",
         inset: 0,
         overflow: "hidden",
         cursor: "crosshair",
+        // Prevent iOS pinch/double-tap-zoom and pull-to-refresh during play
+        touchAction: "none",
+        userSelect: "none",
+        WebkitUserSelect: "none",
+        WebkitTouchCallout: "none",
       }}
     >
       <Sky phase={phase} timeRemaining={time} />

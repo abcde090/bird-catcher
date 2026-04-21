@@ -39,6 +39,7 @@ interface GameStore {
   setNet: (net: Partial<NetState>) => void;
   cursorX: number;
   cursorY: number;
+  cursorSet: boolean;
   setCursor: (x: number, y: number) => void;
 
   startRound: () => void;
@@ -74,8 +75,9 @@ export const useGameStore = create<GameStore>((set) => ({
   ...initialRoundState(),
   cursorX: 0,
   cursorY: 0,
+  cursorSet: false,
   setNet: (net) => set((s) => ({ net: { ...s.net, ...net } })),
-  setCursor: (cursorX, cursorY) => set({ cursorX, cursorY }),
+  setCursor: (cursorX, cursorY) => set({ cursorX, cursorY, cursorSet: true }),
   startRound: () => set({ ...initialRoundState(), screen: "playing" }),
   endRound: () => set({ screen: "results" }),
 }));
