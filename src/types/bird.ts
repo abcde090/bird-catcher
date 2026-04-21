@@ -5,6 +5,16 @@ export type ConservationStatus =
   | "endangered"
   | "critically_endangered";
 
+export type AustralianStateId =
+  | "nsw"
+  | "vic"
+  | "qld"
+  | "wa"
+  | "sa"
+  | "tas"
+  | "nt"
+  | "act";
+
 export interface BirdSpecies {
   id: string;
   name: string;
@@ -12,6 +22,7 @@ export interface BirdSpecies {
   category: string;
   status: ConservationStatus;
   habitats: string[];
+  regions: AustralianStateId[];
   diet: string;
   funFact: string;
   size: number;
