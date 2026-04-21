@@ -134,9 +134,7 @@ gained     = round(basePoints × comboMultiplier)
 | 5–7 | 3× |
 | 8+ | 4× |
 
-**Combo resets** when either:
-- 2.5 seconds elapse since the last catch, or
-- Any bird flies off-screen uncaught (a miss).
+**Combo resets** when 2.5 seconds elapse since the last catch. Empty casts increment the miss counter but do not reset combo — that's an intentional softening to pair with the tighter miss cap.
 
 **New-species toast** — if `firstDiscovery` is true, `gameStore.revealBird` is set to trigger the CardReveal toast. The toast auto-dismisses after 3.2 s or on click. The game loop does not pause.
 

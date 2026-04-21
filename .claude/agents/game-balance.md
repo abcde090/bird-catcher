@@ -31,7 +31,7 @@ You audit the "Birds at Golden Hour" arcade game for balance issues. Canonical c
 
 6. **Combo multipliers** (`getComboMult`) — 2→1.5×, 3→2×, 5→3×, 8→4×. Combo resets on miss or after 2.5 s of inactivity.
 
-7. **Miss limit** — `MAX_MISSES = 10`. Game ends on miss 10 or timer 0, whichever first.
+7. **Miss limit** — `MAX_MISSES = 6`. Game ends on miss 6 or timer 0, whichever first. A miss now means an *empty cast* (zero catches during the open window); off-screen birds don't count.
 
 8. **Max active birds** — `MAX_ACTIVE = 6` concurrent.
 
