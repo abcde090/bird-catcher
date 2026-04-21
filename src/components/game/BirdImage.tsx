@@ -1,4 +1,5 @@
 import type { BirdSpecies } from "../../types/bird";
+import { asset } from "../../lib/asset";
 
 interface BirdImageProps {
   bird: BirdSpecies;
@@ -7,7 +8,12 @@ interface BirdImageProps {
   ring?: string;
 }
 
-export default function BirdImage({ bird, size, facing, ring }: BirdImageProps) {
+export default function BirdImage({
+  bird,
+  size,
+  facing,
+  ring,
+}: BirdImageProps) {
   return (
     <div
       style={{
@@ -25,7 +31,7 @@ export default function BirdImage({ bird, size, facing, ring }: BirdImageProps) 
       }}
     >
       <img
-        src={bird.imageUrl}
+        src={asset(bird.imageUrl)}
         alt={bird.name}
         width={size}
         height={size}

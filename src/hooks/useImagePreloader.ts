@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { BirdSpecies } from "../types/bird";
+import { asset } from "../lib/asset";
 
 export function useImagePreloader(birds: BirdSpecies[]): { loaded: boolean } {
   const [loadedCount, setLoadedCount] = useState(0);
@@ -18,7 +19,7 @@ export function useImagePreloader(birds: BirdSpecies[]): { loaded: boolean } {
       const img = new Image();
       img.onload = done;
       img.onerror = done;
-      img.src = b.imageUrl;
+      img.src = asset(b.imageUrl);
     }
 
     return () => {

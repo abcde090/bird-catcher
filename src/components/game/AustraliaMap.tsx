@@ -1,4 +1,5 @@
 import type { AustralianStateId } from "../../types/bird";
+import { asset } from "../../lib/asset";
 
 interface AustraliaMapProps {
   regions: AustralianStateId[];
@@ -49,7 +50,7 @@ export default function AustraliaMap({
       }}
     >
       <img
-        src="/maps/australia-states.svg"
+        src={asset("/maps/australia-states.svg")}
         alt="Australia"
         draggable={false}
         style={{

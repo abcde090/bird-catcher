@@ -1,4 +1,5 @@
 import type { BirdSpecies } from "../../types/bird";
+import { asset } from "../../lib/asset";
 import AustraliaMap from "./AustraliaMap";
 
 interface RangeMapProps {
@@ -34,7 +35,7 @@ export default function RangeMap({
         }}
       >
         <img
-          src={bird.rangeMapUrl}
+          src={asset(bird.rangeMapUrl)}
           alt={`${bird.name} distribution map`}
           loading="lazy"
           draggable={false}
