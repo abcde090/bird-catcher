@@ -9,6 +9,9 @@ import {
   NET_RADIUS,
   RARITY,
   LEGENDARY_BITE_DURATION,
+  FLINCH_TRIGGER_DIST,
+  FLINCH_DURATION,
+  FLINCH_MAX_OFFSET,
   getComboMult,
   getPhase,
 } from "../lib/game-config";
@@ -153,9 +156,10 @@ export function useGameLoop() {
             y = b.startY + (b.endY - b.startY) * (progress * progress);
           }
 
+          const flinchOffset = now < b.flinchUntil ? b.flinchDx : 0;
           return {
             ...b,
-            x: baseX,
+            x: baseX + flinchOffset,
             y: y + bob,
             progress,
             wobble: Math.sin(now * 3 + b.startY) * 1.5,
@@ -187,6 +191,28 @@ export function useGameLoop() {
         const COOLDOWN = 0.3;
 
         if (net.phase === "casting" && elapsed >= CAST) {
+          // Trigger tier reactions on any bird within flinch range of the target.
+          // Mutates birdsRef in place — values are read in the .map above on next tick.
+          const triggerDistSq = FLINCH_TRIGGER_DIST * FLINCH_TRIGGER_DIST;
+          for (const b of birdsRef.current) {
+            const dx = b.x - net.targetX;
+            const dy = b.y - net.targetY;
+            if (dx * dx + dy * dy > triggerDistSq) continue;
+
+            const status = b.species.status;
+            // Uncommon, Rare, Epic all flinch. (Legendary doesn't react — spec-aligned.)
+            if (
+              status === "near_threatened" ||
+              status === "vulnerable" ||
+              status === "endangered"
+            ) {
+              b.flinchUntil = now + FLINCH_DURATION;
+              b.flinchDx = (Math.random() - 0.5) * 2 * FLINCH_MAX_OFFSET;
+            }
+            // Task 13 will add speed burst for vulnerable (Rare) here
+            // Task 14 will add dodge for endangered (Epic) here
+          }
+
           gameStore.setState({
             net: { ...net, phase: "open", catchesThisCast: 0 },
           });
