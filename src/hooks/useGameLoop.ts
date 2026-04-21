@@ -66,7 +66,6 @@ export function useGameLoop() {
         }
       }
 
-      let missed = 0;
       birdsRef.current = birdsRef.current
         .map((b) => {
           const elapsed = now - b.spawnTime;
@@ -94,32 +93,20 @@ export function useGameLoop() {
             wobble: Math.sin(now * 3 + b.startY) * 1.5,
           };
         })
-        .filter((b) => {
-          if (b.progress >= 1) {
-            missed++;
-            return false;
-          }
-          return true;
-        });
+        .filter((b) => b.progress < 1);
 
-      // Combo expiry
+      // Combo expiry (only triggered by timeout — misses no longer reset combo here)
       let combo = state.combo;
       if (combo > 0 && Date.now() - state.lastCatchTime > 2500) {
         combo = 0;
       }
 
-      const totalMisses = state.misses + missed;
-      const missFlashKey = missed > 0 ? Date.now() : state.missFlashKey;
-      const comboAfterMiss = missed > 0 ? 0 : combo;
-
-      const gameOver = timeRemaining <= 0 || totalMisses >= MAX_MISSES;
+      const gameOver = timeRemaining <= 0 || state.misses >= MAX_MISSES;
 
       gameStore.setState({
         timeRemaining,
-        misses: totalMisses,
-        combo: comboAfterMiss,
+        combo,
         activeBirds: birdsRef.current,
-        missFlashKey,
       });
 
       // --- Net state machine ---

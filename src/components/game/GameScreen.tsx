@@ -20,7 +20,7 @@ export default function GameScreen() {
   const setCursor = useGameStore((s) => s.setCursor);
   const netPhase = useGameStore((s) => s.net.phase);
   const setNet = useGameStore((s) => s.setNet);
-  const { catchBird, closeReveal } = useGameLoop();
+  const { closeReveal } = useGameLoop();
 
   const phase = getPhase(time);
 
@@ -56,7 +56,7 @@ export default function GameScreen() {
       <AimArc />
       <div style={{ position: "absolute", inset: 0, zIndex: 20 }}>
         {activeBirds.map((b) => (
-          <FlyingBird key={b.id} bird={b} onCatch={catchBird} />
+          <FlyingBird key={b.id} bird={b} />
         ))}
       </div>
       <Net />

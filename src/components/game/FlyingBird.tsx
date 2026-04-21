@@ -4,25 +4,19 @@ import BirdImage from "./BirdImage";
 
 interface FlyingBirdProps {
   bird: FlyingBirdType;
-  onCatch: (id: string, x: number, y: number) => void;
 }
 
-export default function FlyingBird({ bird, onCatch }: FlyingBirdProps) {
+export default function FlyingBird({ bird }: FlyingBirdProps) {
   const rarity = RARITY[bird.species.status];
   const size = 80 * rarity.sizeScale;
   return (
     <div
-      onClick={(e) => {
-        e.stopPropagation();
-        onCatch(bird.id, e.clientX, e.clientY);
-      }}
       style={{
         position: "absolute",
         left: bird.x - size / 2,
         top: bird.y - size / 2,
         width: size,
         height: size,
-        cursor: "crosshair",
         transform: `rotate(${bird.wobble}deg)`,
         willChange: "transform",
       }}
