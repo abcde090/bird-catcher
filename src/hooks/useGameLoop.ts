@@ -12,6 +12,8 @@ import {
   FLINCH_TRIGGER_DIST,
   FLINCH_DURATION,
   FLINCH_MAX_OFFSET,
+  RARE_SPEED_BURST_MULT,
+  RARE_SPEED_BURST_DURATION,
   getComboMult,
   getPhase,
 } from "../lib/game-config";
@@ -140,8 +142,10 @@ export function useGameLoop() {
             ? now - b.spawnTime - LEGENDARY_BITE_DURATION
             : now - b.spawnTime;
 
+          const speedMult = now < b.speedBurstUntil ? RARE_SPEED_BURST_MULT : 1;
+          const effectiveSpeed = b.speed * speedMult;
           const totalDx = Math.abs(b.endX - b.startX);
-          const duration = totalDx / b.speed;
+          const duration = totalDx / effectiveSpeed;
           const progress = Math.min(1, effectiveElapsed / duration);
           const t = progress * progress * (3 - 2 * progress);
           const baseX = b.startX + (b.endX - b.startX) * t;
@@ -209,7 +213,9 @@ export function useGameLoop() {
               b.flinchUntil = now + FLINCH_DURATION;
               b.flinchDx = (Math.random() - 0.5) * 2 * FLINCH_MAX_OFFSET;
             }
-            // Task 13 will add speed burst for vulnerable (Rare) here
+            if (status === "vulnerable") {
+              b.speedBurstUntil = now + RARE_SPEED_BURST_DURATION;
+            }
             // Task 14 will add dodge for endangered (Epic) here
           }
 
