@@ -14,6 +14,8 @@ import {
   FLINCH_MAX_OFFSET,
   RARE_SPEED_BURST_MULT,
   RARE_SPEED_BURST_DURATION,
+  EPIC_DODGE_SPEED,
+  EPIC_DODGE_DURATION,
   getComboMult,
   getPhase,
 } from "../lib/game-config";
@@ -161,10 +163,18 @@ export function useGameLoop() {
           }
 
           const flinchOffset = now < b.flinchUntil ? b.flinchDx : 0;
+          let dodgeX = 0;
+          let dodgeY = 0;
+          if (now < b.dodgeUntil) {
+            const remaining = b.dodgeUntil - now;
+            dodgeX = b.dodgeDx * remaining;
+            dodgeY = b.dodgeDy * remaining;
+          }
+
           return {
             ...b,
-            x: baseX + flinchOffset,
-            y: y + bob,
+            x: baseX + flinchOffset + dodgeX,
+            y: y + bob + dodgeY,
             progress,
             wobble: Math.sin(now * 3 + b.startY) * 1.5,
           };
@@ -216,7 +226,16 @@ export function useGameLoop() {
             if (status === "vulnerable") {
               b.speedBurstUntil = now + RARE_SPEED_BURST_DURATION;
             }
-            // Task 14 will add dodge for endangered (Epic) here
+            if (status === "endangered") {
+              // Dodge direction = away from net center, normalized
+              const dxFromNet = b.x - net.targetX;
+              const dyFromNet = b.y - net.targetY;
+              const len =
+                Math.sqrt(dxFromNet * dxFromNet + dyFromNet * dyFromNet) || 1;
+              b.dodgeDx = (dxFromNet / len) * EPIC_DODGE_SPEED;
+              b.dodgeDy = (dyFromNet / len) * EPIC_DODGE_SPEED;
+              b.dodgeUntil = now + EPIC_DODGE_DURATION;
+            }
           }
 
           gameStore.setState({
