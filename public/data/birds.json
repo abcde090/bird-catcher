@@ -20,7 +20,8 @@
     "funFact": "Their dawn 'laughing' chorus marks territory boundaries.",
     "size": 43,
     "population": "11.3M",
-    "imageUrl": "/birds/kookaburra.jpg"
+    "imageUrl": "/birds/kookaburra.jpg",
+    "rangeMapUrl": "/birds/maps/kookaburra.jpg"
   },
   {
     "id": "magpie",
@@ -46,7 +47,8 @@
     "funFact": "Magpies can recognise up to 100 individual human faces.",
     "size": 40,
     "population": "12.4M",
-    "imageUrl": "/birds/magpie.jpg"
+    "imageUrl": "/birds/magpie.jpg",
+    "rangeMapUrl": "/birds/maps/magpie.png"
   },
   {
     "id": "lorikeet",
@@ -98,7 +100,8 @@
     "funFact": "'Galah' in Aussie slang means acting foolishly — from their playful antics.",
     "size": 35,
     "population": "5.8M",
-    "imageUrl": "/birds/galah.jpg"
+    "imageUrl": "/birds/galah.jpg",
+    "rangeMapUrl": "/birds/maps/galah.png"
   },
   {
     "id": "wagtail",
@@ -124,7 +127,8 @@
     "funFact": "Rides on the backs of cattle to catch disturbed insects.",
     "size": 20,
     "population": "7.6M",
-    "imageUrl": "/birds/wagtail.jpg"
+    "imageUrl": "/birds/wagtail.jpg",
+    "rangeMapUrl": "/birds/maps/wagtail.png"
   },
   {
     "id": "fairywren",
@@ -174,7 +178,8 @@
     "funFact": "Their bill pouch can hold up to 13 litres of water.",
     "size": 170,
     "population": "415K",
-    "imageUrl": "/birds/pelican.jpg"
+    "imageUrl": "/birds/pelican.jpg",
+    "rangeMapUrl": "/birds/maps/pelican.jpg"
   },
   {
     "id": "emu",
@@ -199,7 +204,8 @@
     "funFact": "Emus can sprint at 50 km/h and are excellent swimmers.",
     "size": 180,
     "population": "725K",
-    "imageUrl": "/birds/emu.jpg"
+    "imageUrl": "/birds/emu.jpg",
+    "rangeMapUrl": "/birds/maps/emu.png"
   },
   {
     "id": "eagle",
@@ -251,7 +257,8 @@
     "funFact": "Can live over 80 years and teaches others to open bins.",
     "size": 50,
     "population": "920K",
-    "imageUrl": "/birds/cockatoo.jpg"
+    "imageUrl": "/birds/cockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/cockatoo.png"
   },
   {
     "id": "noisy-miner",
@@ -325,7 +332,8 @@
     "funFact": "Migrates in large flocks along the east coast each autumn.",
     "size": 12,
     "population": "4M",
-    "imageUrl": "/birds/silvereye.jpg"
+    "imageUrl": "/birds/silvereye.jpg",
+    "rangeMapUrl": "/birds/maps/silvereye.png"
   },
   {
     "id": "crimson-rosella",
@@ -348,7 +356,8 @@
     "funFact": "Young birds are olive-green for their first two years.",
     "size": 36,
     "population": "1.2M",
-    "imageUrl": "/birds/crimson-rosella.jpg"
+    "imageUrl": "/birds/crimson-rosella.jpg",
+    "rangeMapUrl": "/birds/maps/crimson-rosella.png"
   },
   {
     "id": "eastern-rosella",
@@ -419,7 +428,8 @@
     "funFact": "Wedges prey in tree forks to 'butcher' it — hence the name.",
     "size": 30,
     "population": "1.1M",
-    "imageUrl": "/birds/grey-butcherbird.jpg"
+    "imageUrl": "/birds/grey-butcherbird.jpg",
+    "rangeMapUrl": "/birds/maps/grey-butcherbird.jpg"
   },
   {
     "id": "raven",
@@ -465,7 +475,8 @@
     "funFact": "Famous for their loud 'curra-wong' call echoing through forests.",
     "size": 48,
     "population": "1.8M",
-    "imageUrl": "/birds/pied-currawong.jpg"
+    "imageUrl": "/birds/pied-currawong.jpg",
+    "rangeMapUrl": "/birds/maps/pied-currawong.png"
   },
   {
     "id": "welcome-swallow",
@@ -595,7 +606,8 @@
     "funFact": "One of the few ducks that nests in tree hollows.",
     "size": 48,
     "population": "775K",
-    "imageUrl": "/birds/wood-duck.jpg"
+    "imageUrl": "/birds/wood-duck.jpg",
+    "rangeMapUrl": "/birds/maps/wood-duck.png"
   },
   {
     "id": "black-duck",
@@ -621,7 +633,8 @@
     "funFact": "Hybridises freely with introduced Mallards, threatening pure populations.",
     "size": 55,
     "population": "1.2M",
-    "imageUrl": "/birds/black-duck.jpg"
+    "imageUrl": "/birds/black-duck.jpg",
+    "rangeMapUrl": "/birds/maps/black-duck.png"
   },
   {
     "id": "chestnut-teal",
@@ -721,7 +734,8 @@
     "funFact": "Dives underwater and swims using webbed feet to chase fish.",
     "size": 60,
     "population": "475K",
-    "imageUrl": "/birds/little-pied-cormorant.jpg"
+    "imageUrl": "/birds/little-pied-cormorant.jpg",
+    "rangeMapUrl": "/birds/maps/little-pied-cormorant.jpg"
   },
   {
     "id": "great-cormorant",
@@ -771,7 +785,8 @@
     "funFact": "Swims with only its snake-like neck above water — hence 'snakebird'.",
     "size": 90,
     "population": "135K",
-    "imageUrl": "/birds/darter.jpg"
+    "imageUrl": "/birds/darter.jpg",
+    "rangeMapUrl": "/birds/maps/darter.png"
   },
   {
     "id": "white-faced-heron",
@@ -798,7 +813,8 @@
     "funFact": "The most commonly seen heron in Australia.",
     "size": 68,
     "population": "880K",
-    "imageUrl": "/birds/white-faced-heron.jpg"
+    "imageUrl": "/birds/white-faced-heron.jpg",
+    "rangeMapUrl": "/birds/maps/white-faced-heron.png"
   },
   {
     "id": "cattle-egret",
@@ -823,7 +839,8 @@
     "funFact": "Self-introduced to Australia in the 1940s from Asia.",
     "size": 51,
     "population": "660K",
-    "imageUrl": "/birds/cattle-egret.jpg"
+    "imageUrl": "/birds/cattle-egret.jpg",
+    "rangeMapUrl": "/birds/maps/cattle-egret.png"
   },
   {
     "id": "tawny-frogmouth",
@@ -896,7 +913,8 @@
     "funFact": "Introduced in the 1800s; now common across eastern cities.",
     "size": 30,
     "population": "1.5M",
-    "imageUrl": "/birds/spotted-dove.jpg"
+    "imageUrl": "/birds/spotted-dove.jpg",
+    "rangeMapUrl": "/birds/maps/spotted-dove.jpg"
   },
   {
     "id": "common-bronzewing",
@@ -922,7 +940,8 @@
     "funFact": "Iridescent bronze wing-patches flash in sunlight.",
     "size": 33,
     "population": "3.2M",
-    "imageUrl": "/birds/common-bronzewing.jpg"
+    "imageUrl": "/birds/common-bronzewing.jpg",
+    "rangeMapUrl": "/birds/maps/common-bronzewing.png"
   },
   {
     "id": "bee-eater",
@@ -1017,7 +1036,8 @@
     "funFact": "Named for the bright red fleshy wattles beside its eyes.",
     "size": 36,
     "population": "2.3M",
-    "imageUrl": "/birds/red-wattlebird.jpg"
+    "imageUrl": "/birds/red-wattlebird.jpg",
+    "rangeMapUrl": "/birds/maps/red-wattlebird.jpg"
   },
   {
     "id": "little-wattlebird",
@@ -1089,7 +1109,8 @@
     "funFact": "One of the first Australian birds described by European scientists.",
     "size": 18,
     "population": "1.8M",
-    "imageUrl": "/birds/new-holland-honeyeater.jpg"
+    "imageUrl": "/birds/new-holland-honeyeater.jpg",
+    "rangeMapUrl": "/birds/maps/new-holland-honeyeater.jpg"
   },
   {
     "id": "white-plumed-honeyeater",
@@ -1113,7 +1134,8 @@
     "funFact": "The distinctive white neck plume lights up like a paint stroke.",
     "size": 18,
     "population": "2.6M",
-    "imageUrl": "/birds/white-plumed-honeyeater.jpg"
+    "imageUrl": "/birds/white-plumed-honeyeater.jpg",
+    "rangeMapUrl": "/birds/maps/white-plumed-honeyeater.png"
   },
   {
     "id": "eastern-spinebill",
@@ -1243,7 +1265,8 @@
     "funFact": "Not a true magpie or lark — builds a unique mud-cup nest.",
     "size": 27,
     "population": "3.6M",
-    "imageUrl": "/birds/magpie-lark.jpg"
+    "imageUrl": "/birds/magpie-lark.jpg",
+    "rangeMapUrl": "/birds/maps/magpie-lark.jpg"
   },
   {
     "id": "grey-fantail",
@@ -1461,7 +1484,8 @@
     "funFact": "The most widespread fairy-wren — found across most of the continent.",
     "size": 14,
     "population": "940K",
-    "imageUrl": "/birds/variegated-fairywren.jpg"
+    "imageUrl": "/birds/variegated-fairywren.jpg",
+    "rangeMapUrl": "/birds/maps/variegated-fairywren.png"
   },
   {
     "id": "red-backed-fairywren",
@@ -1504,7 +1528,8 @@
     "funFact": "Males have scarlet heads; females have all-green heads.",
     "size": 42,
     "population": "220K",
-    "imageUrl": "/birds/king-parrot.jpg"
+    "imageUrl": "/birds/king-parrot.jpg",
+    "rangeMapUrl": "/birds/maps/king-parrot.png"
   },
   {
     "id": "koel",
@@ -1555,7 +1580,8 @@
     "funFact": "After landing, shuffles its wings in a distinctive 'rearranging' motion.",
     "size": 33,
     "population": "930K",
-    "imageUrl": "/birds/cuckoo-shrike.jpg"
+    "imageUrl": "/birds/cuckoo-shrike.jpg",
+    "rangeMapUrl": "/birds/maps/cuckoo-shrike.png"
   },
   {
     "id": "yellow-robin",
@@ -1577,7 +1603,8 @@
     "funFact": "Perches sideways on tree trunks, waiting to pounce on prey below.",
     "size": 16,
     "population": "520K",
-    "imageUrl": "/birds/yellow-robin.jpg"
+    "imageUrl": "/birds/yellow-robin.jpg",
+    "rangeMapUrl": "/birds/maps/yellow-robin.png"
   },
   {
     "id": "jacky-winter",
@@ -1649,7 +1676,8 @@
     "funFact": "Forms vast nomadic flocks of thousands across the inland.",
     "size": 18,
     "population": "5M",
-    "imageUrl": "/birds/budgerigar.jpg"
+    "imageUrl": "/birds/budgerigar.jpg",
+    "rangeMapUrl": "/birds/maps/budgerigar.png"
   },
   {
     "id": "cockatiel",
@@ -1673,7 +1701,8 @@
     "funFact": "The smallest of Australia's cockatoos.",
     "size": 32,
     "population": "1.2M",
-    "imageUrl": "/birds/cockatiel.jpg"
+    "imageUrl": "/birds/cockatiel.jpg",
+    "rangeMapUrl": "/birds/maps/cockatiel.png"
   },
   {
     "id": "nankeen-kestrel",
@@ -1726,7 +1755,8 @@
     "funFact": "The fastest animal on Earth — dives at over 300 km/h.",
     "size": 44,
     "population": "9K",
-    "imageUrl": "/birds/peregrine-falcon.jpg"
+    "imageUrl": "/birds/peregrine-falcon.jpg",
+    "rangeMapUrl": "/birds/maps/peregrine-falcon.png"
   },
   {
     "id": "brown-falcon",
@@ -2042,7 +2072,8 @@
     "funFact": "Mates for life and can live over 75 years in captivity.",
     "size": 36,
     "population": "42K",
-    "imageUrl": "/birds/mitchell.jpg"
+    "imageUrl": "/birds/mitchell.jpg",
+    "rangeMapUrl": "/birds/maps/mitchell.png"
   },
   {
     "id": "blackcockatoo",
@@ -2085,7 +2116,8 @@
     "funFact": "Rips apart banksia cones and wood with enormous force.",
     "size": 65,
     "population": "105K",
-    "imageUrl": "/birds/yellow-tailed-blackcockatoo.jpg"
+    "imageUrl": "/birds/yellow-tailed-blackcockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/yellow-tailed-blackcockatoo.png"
   },
   {
     "id": "glossy-blackcockatoo",
@@ -2106,7 +2138,8 @@
     "funFact": "Feeds almost exclusively on casuarina cones — critically habitat-dependent.",
     "size": 50,
     "population": "11K",
-    "imageUrl": "/birds/glossy-blackcockatoo.jpg"
+    "imageUrl": "/birds/glossy-blackcockatoo.jpg",
+    "rangeMapUrl": "/birds/maps/glossy-blackcockatoo.png"
   },
   {
     "id": "bush-stone-curlew",
@@ -2130,7 +2163,8 @@
     "funFact": "Unnerving night-time wailing calls have earned it ghostly folklore.",
     "size": 55,
     "population": "70K",
-    "imageUrl": "/birds/bush-stone-curlew.jpg"
+    "imageUrl": "/birds/bush-stone-curlew.jpg",
+    "rangeMapUrl": "/birds/maps/bush-stone-curlew.png"
   },
   {
     "id": "brolga",
@@ -2153,7 +2187,8 @@
     "funFact": "Famous for its elegant leaping courtship dance.",
     "size": 125,
     "population": "23K",
-    "imageUrl": "/birds/brolga.jpg"
+    "imageUrl": "/birds/brolga.jpg",
+    "rangeMapUrl": "/birds/maps/brolga.png"
   },
   {
     "id": "plumed-whistling-duck",
@@ -2268,7 +2303,8 @@
     "funFact": "Nests on sand above the high-tide line — extremely vulnerable to disturbance.",
     "size": 22,
     "population": "7K",
-    "imageUrl": "/birds/hooded-plover.jpg"
+    "imageUrl": "/birds/hooded-plover.jpg",
+    "rangeMapUrl": "/birds/maps/hooded-plover.png"
   },
   {
     "id": "rockwarbler",
@@ -2304,7 +2340,8 @@
     "funFact": "The only birds known to use tools as musical instruments, drumming sticks on trees.",
     "size": 60,
     "population": "3.1K",
-    "imageUrl": "/birds/palm.jpg"
+    "imageUrl": "/birds/palm.jpg",
+    "rangeMapUrl": "/birds/maps/palm.png"
   },
   {
     "id": "owl",
@@ -2371,7 +2408,8 @@
     "funFact": "Makes a creaking sound like a rusty hinge when flying.",
     "size": 35,
     "population": "20K",
-    "imageUrl": "/birds/gang-gang.jpg"
+    "imageUrl": "/birds/gang-gang.jpg",
+    "rangeMapUrl": "/birds/maps/gang-gang.png"
   },
   {
     "id": "superb-parrot",
@@ -2501,7 +2539,8 @@
     "funFact": "Unique among raptors for being strictly nocturnal.",
     "size": 36,
     "population": "1K",
-    "imageUrl": "/birds/letter-winged-kite.jpg"
+    "imageUrl": "/birds/letter-winged-kite.jpg",
+    "rangeMapUrl": "/birds/maps/letter-winged-kite.png"
   },
   {
     "id": "cassowary",
@@ -2519,7 +2558,8 @@
     "funFact": "Considered the most dangerous bird — kicks with dagger-like claws.",
     "size": 170,
     "population": "4.4K",
-    "imageUrl": "/birds/cassowary.jpg"
+    "imageUrl": "/birds/cassowary.jpg",
+    "rangeMapUrl": "/birds/maps/cassowary.png"
   },
   {
     "id": "red-goshawk",
@@ -2598,7 +2638,8 @@
     "funFact": "A feather-weight 4-gram bird — one of Australia's smallest.",
     "size": 15,
     "population": "10K",
-    "imageUrl": "/birds/mallee-emu-wren.jpg"
+    "imageUrl": "/birds/mallee-emu-wren.jpg",
+    "rangeMapUrl": "/birds/maps/mallee-emu-wren.png"
   },
   {
     "id": "black-eared-miner",
@@ -2656,7 +2697,8 @@
     "funFact": "So rare, young males have forgotten their song and mimic other species.",
     "size": 22,
     "population": "<350",
-    "imageUrl": "/birds/regent.jpg"
+    "imageUrl": "/birds/regent.jpg",
+    "rangeMapUrl": "/birds/maps/regent.jpg"
   },
   {
     "id": "nightparrot",
@@ -2678,7 +2720,8 @@
     "funFact": "Presumed extinct for a century — photographed alive only in 2013.",
     "size": 23,
     "population": "<250",
-    "imageUrl": "/birds/nightparrot.jpg"
+    "imageUrl": "/birds/nightparrot.jpg",
+    "rangeMapUrl": "/birds/maps/nightparrot.png"
   },
   {
     "id": "parrot-eng",
@@ -2722,7 +2765,8 @@
     "funFact": "Flies the Bass Strait each year — predated heavily by sugar gliders.",
     "size": 25,
     "population": "750",
-    "imageUrl": "/birds/swift-parrot.jpg"
+    "imageUrl": "/birds/swift-parrot.jpg",
+    "rangeMapUrl": "/birds/maps/swift-parrot.png"
   },
   {
     "id": "plains-wanderer",
@@ -2782,6 +2826,7 @@
     "funFact": "Males produce a deep 'booming' call that travels kilometres at dusk.",
     "size": 75,
     "population": "1.5K",
-    "imageUrl": "/birds/australasian-bittern.jpg"
+    "imageUrl": "/birds/australasian-bittern.jpg",
+    "rangeMapUrl": "/birds/maps/australasian-bittern.png"
   }
 ]

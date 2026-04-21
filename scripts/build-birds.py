@@ -698,6 +698,22 @@ def ensure_image(bird_id: str, wiki_title: str) -> bool:
 
 def main() -> int:
     os.makedirs(OUT_DIR, exist_ok=True)
+
+    # Preserve any rangeMapUrl from a prior build — populated by
+    # scripts/fetch-range-maps.py — so rebuilding the dataset doesn't drop maps.
+    prior_range_maps: dict[str, str] = {}
+    if os.path.exists(OUT_JSON):
+        try:
+            with open(OUT_JSON) as f:
+                for entry in json.load(f):
+                    url = entry.get("rangeMapUrl")
+                    if url:
+                        local = os.path.join(ROOT, "public", url.lstrip("/"))
+                        if os.path.exists(local):
+                            prior_range_maps[entry["id"]] = url
+        except Exception:
+            pass
+
     # dedupe by id, keeping first
     seen = set()
     unique: list[tuple] = []
@@ -723,7 +739,7 @@ def main() -> int:
                 print(f"[drop] {row[0]}: no image", file=sys.stderr)
                 continue
             bid, name, sci, cat, status, habitats, diet, fact, size, pop, _ = row
-            results[bid] = {
+            entry: dict = {
                 "id": bid,
                 "name": name,
                 "scientific": sci,
@@ -737,6 +753,9 @@ def main() -> int:
                 "population": pop,
                 "imageUrl": f"/birds/{bid}.jpg",
             }
+            if bid in prior_range_maps:
+                entry["rangeMapUrl"] = prior_range_maps[bid]
+            results[bid] = entry
 
     # preserve order of input list
     final = [results[row[0]] for row in unique if row[0] in results]

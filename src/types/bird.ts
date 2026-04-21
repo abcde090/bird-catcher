@@ -28,4 +28,6 @@ export interface BirdSpecies {
   size: number;
   population: string;
   imageUrl: string;
+  /** Optional — local path to a Wikipedia-sourced distribution map. */
+  rangeMapUrl?: string;
 }

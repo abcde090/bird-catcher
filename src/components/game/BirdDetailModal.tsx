@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import type { BirdSpecies } from "../../types/bird";
 import { RARITY } from "../../lib/game-config";
-import AustraliaMap from "./AustraliaMap";
+import RangeMap from "./RangeMap";
 import BirdImage from "./BirdImage";
 
 interface BirdDetailModalProps {
@@ -154,23 +154,21 @@ export default function BirdDetailModal({
             <div className="label" style={{ marginBottom: 8 }}>
               Distribution
             </div>
-            <AustraliaMap
-              regions={bird.regions}
-              highlightColor={rarity.color}
-              size={240}
-            />
-            {bird.regions.length === 0 && (
+            <RangeMap bird={bird} highlightColor={rarity.color} size={240} />
+            {!bird.rangeMapUrl && (
               <div
                 style={{
                   fontFamily: "'Fraunces', serif",
                   fontStyle: "italic",
-                  fontSize: 12,
+                  fontSize: 11,
                   color: "var(--ink-muted)",
                   marginTop: 6,
                   textAlign: "center",
                 }}
               >
-                Range data unknown
+                {bird.regions.length > 0
+                  ? "Approximate range (detailed map unavailable)"
+                  : "Range data unknown"}
               </div>
             )}
           </div>
