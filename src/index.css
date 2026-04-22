@@ -398,18 +398,22 @@ button:focus {
     white-space: normal !important;
   }
 
-  /* CardReveal on mobile: compact toast pinned to the bottom. Narrower
-     (centered), semi-transparent, and the fun fact is hidden so it's
-     short enough not to cover the net character. Slides up from below. */
+  /* CardReveal on mobile: floats ABOVE the net character (which sits at
+     bottom ~30-112 px), not below it. Birds can't spawn past y = vh-206
+     either, so this band between the playable sky and the character
+     never overlaps anything interactive. Compact layout + fact hidden
+     + click-through (pointer-events:none) so even if a finger lands on
+     it mid-cast, the playfield beneath still registers the gesture. */
   .card-reveal {
     top: auto !important;
-    bottom: max(16px, env(safe-area-inset-bottom)) !important;
+    bottom: calc(130px + env(safe-area-inset-bottom)) !important;
     left: 50% !important;
     right: auto !important;
-    width: min(92vw, 320px) !important;
+    width: min(88vw, 300px) !important;
     transform: translateX(-50%) !important;
     animation-name: toast-in-bottom-centered !important;
-    opacity: 0.88 !important;
+    opacity: 0.92 !important;
+    pointer-events: none !important;
   }
   .card-reveal-panel {
     padding: 10px 12px 12px !important;
