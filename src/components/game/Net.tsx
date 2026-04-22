@@ -139,14 +139,14 @@ export default function Net() {
 
       {isOpen ? (
         <g>
-          {/* Soft outer glow to signal "catch moment". */}
+          {/* Soft outer glow (proportional, toned down) to signal catch moment. */}
           <circle
             cx={x}
             cy={y}
-            r={radius + 6}
+            r={radius + Math.max(3, radius * 0.1)}
             fill="none"
-            stroke="rgba(253, 232, 184, 0.35)"
-            strokeWidth="6"
+            stroke="rgba(253, 232, 184, 0.25)"
+            strokeWidth="4"
           />
           {/* Mesh webbing filling the net. */}
           <circle
@@ -163,16 +163,16 @@ export default function Net() {
             r={radius}
             fill="none"
             stroke="#3a2818"
-            strokeWidth="2.5"
+            strokeWidth="2"
           />
           {/* Subtle inner highlight on the hoop. */}
           <circle
             cx={x}
             cy={y}
-            r={radius - 2}
+            r={radius - 1.5}
             fill="none"
-            stroke="rgba(253, 232, 184, 0.45)"
-            strokeWidth="1"
+            stroke="rgba(253, 232, 184, 0.4)"
+            strokeWidth="0.8"
           />
         </g>
       ) : (
