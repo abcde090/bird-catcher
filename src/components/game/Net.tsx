@@ -27,9 +27,7 @@ export default function Net() {
   const net = useGameStore((s) => s.net);
   const [, setTick] = useState(0);
 
-  // Drive per-frame re-render while the net is visibly active, so arc
-  // motion and radius bloom update smoothly (the store only mutates `net`
-  // on phase transitions, not per frame).
+  // Drive per-frame re-render while the net is visibly active.
   useEffect(() => {
     if (net.phase === "idle" || net.phase === "cooldown") return;
     let raf = 0;
@@ -41,17 +39,16 @@ export default function Net() {
     return () => cancelAnimationFrame(raf);
   }, [net.phase]);
 
-  if (net.phase === "idle") return null;
+  if (net.phase === "idle" || net.phase === "cooldown") return null;
 
-  // Intentional impure read: visual position tracks real time as the parent
-  // re-renders once per tick. See net-mechanic plan, Task 6.
+  // Intentional impure read — position tracks real time per frame.
   // eslint-disable-next-line react-hooks/purity
   const elapsed = performance.now() / 1000 - net.startTime;
 
   let x = net.originX;
   let y = net.originY;
-  let radius = 6;
-  let showCircle = false;
+  let radius = 10; // closed-net size while flying
+  let isOpen = false;
 
   if (net.phase === "casting") {
     const t = Math.min(1, elapsed / NET_CAST_DURATION);
@@ -65,12 +62,10 @@ export default function Net() {
   } else if (net.phase === "open") {
     x = net.targetX;
     y = net.targetY;
-    showCircle = true;
-    // Expand radius quickly then hold
+    isOpen = true;
     const openElapsed = elapsed - NET_CAST_DURATION;
     const expand = Math.min(1, openElapsed / 0.12);
     radius = getNetRadius() * expand;
-    // Shrink at the very end
     const closing = Math.max(
       0,
       (NET_OPEN_DURATION - openElapsed) / NET_OPEN_DURATION,
@@ -86,29 +81,121 @@ export default function Net() {
       net.targetX,
       net.targetY,
     ));
-  } else {
-    return null; // cooldown = no visual
   }
 
   return (
-    <div
+    <svg
+      width={window.innerWidth}
+      height={window.innerHeight}
       style={{
         position: "absolute",
-        left: x - (showCircle ? radius : 8),
-        top: y - (showCircle ? radius : 8),
-        width: showCircle ? radius * 2 : 16,
-        height: showCircle ? radius * 2 : 16,
+        inset: 0,
         zIndex: 25,
         pointerEvents: "none",
-        borderRadius: "50%",
-        border: showCircle
-          ? "3px solid rgba(253, 232, 184, 0.85)"
-          : "2px solid rgba(58, 40, 24, 0.9)",
-        background: showCircle
-          ? "radial-gradient(circle, rgba(253,232,184,0.15) 0%, transparent 70%)"
-          : "rgba(138, 94, 32, 0.4)",
-        boxShadow: showCircle ? "0 0 24px rgba(253, 232, 184, 0.5)" : "none",
       }}
-    />
+    >
+      <defs>
+        {/* Diagonal cross-hatched mesh pattern — reads as net webbing. */}
+        <pattern
+          id="net-mesh"
+          width="9"
+          height="9"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M 0 0 L 9 9 M 9 0 L 0 9"
+            stroke="rgba(42, 26, 10, 0.7)"
+            strokeWidth="1"
+            strokeLinecap="round"
+          />
+        </pattern>
+        {/* Lighter mesh for the closed-net shape during flight. */}
+        <pattern
+          id="net-mesh-small"
+          width="5"
+          height="5"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M 0 0 L 5 5 M 5 0 L 0 5"
+            stroke="rgba(42, 26, 10, 0.8)"
+            strokeWidth="0.7"
+          />
+        </pattern>
+      </defs>
+
+      {/* Rope / line from the character's hand to the net — makes it read as a
+          tool on a tether, not a projectile. */}
+      <line
+        x1={net.originX}
+        y1={net.originY}
+        x2={x}
+        y2={y}
+        stroke="rgba(58, 40, 24, 0.55)"
+        strokeWidth="1.5"
+        strokeDasharray="3 4"
+        strokeLinecap="round"
+      />
+
+      {isOpen ? (
+        <g>
+          {/* Soft outer glow to signal "catch moment". */}
+          <circle
+            cx={x}
+            cy={y}
+            r={radius + 6}
+            fill="none"
+            stroke="rgba(253, 232, 184, 0.35)"
+            strokeWidth="6"
+          />
+          {/* Mesh webbing filling the net. */}
+          <circle
+            cx={x}
+            cy={y}
+            r={radius - 1}
+            fill="url(#net-mesh)"
+            opacity="0.9"
+          />
+          {/* Hoop ring — the rim of the net. */}
+          <circle
+            cx={x}
+            cy={y}
+            r={radius}
+            fill="none"
+            stroke="#3a2818"
+            strokeWidth="2.5"
+          />
+          {/* Subtle inner highlight on the hoop. */}
+          <circle
+            cx={x}
+            cy={y}
+            r={radius - 2}
+            fill="none"
+            stroke="rgba(253, 232, 184, 0.45)"
+            strokeWidth="1"
+          />
+        </g>
+      ) : (
+        <g>
+          {/* Closed net shape during flight — ellipse with mesh fill. */}
+          <ellipse
+            cx={x}
+            cy={y}
+            rx={radius}
+            ry={radius * 0.7}
+            fill="url(#net-mesh-small)"
+          />
+          <ellipse
+            cx={x}
+            cy={y}
+            rx={radius}
+            ry={radius * 0.7}
+            fill="none"
+            stroke="#3a2818"
+            strokeWidth="1.5"
+          />
+        </g>
+      )}
+    </svg>
   );
 }

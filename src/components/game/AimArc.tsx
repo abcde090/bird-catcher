@@ -1,6 +1,6 @@
 import { useGameStore } from "../../stores/useGameStore";
 import { NET_CHARACTER_Y_OFFSET } from "../../lib/game-config";
-import { getPoleOffset } from "../../lib/viewport";
+import { getNetRadius, getPoleOffset } from "../../lib/viewport";
 
 export default function AimArc() {
   const cursorX = useGameStore((s) => s.cursorX);
@@ -25,6 +25,7 @@ export default function AimArc() {
   const ctrlY = Math.min(originY, cursorY) - height;
 
   const path = `M ${originX} ${originY} Q ${midX} ${ctrlY}, ${cursorX} ${cursorY}`;
+  const previewRadius = getNetRadius() * 0.45;
 
   return (
     <svg
@@ -37,6 +38,22 @@ export default function AimArc() {
         pointerEvents: "none",
       }}
     >
+      <defs>
+        <pattern
+          id="aim-mesh"
+          width="8"
+          height="8"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M 0 0 L 8 8 M 8 0 L 0 8"
+            stroke="rgba(42, 26, 10, 0.35)"
+            strokeWidth="0.6"
+          />
+        </pattern>
+      </defs>
+
+      {/* Trajectory arc */}
       <path
         d={path}
         fill="none"
@@ -44,13 +61,22 @@ export default function AimArc() {
         strokeWidth="2"
         strokeDasharray="4 6"
       />
+
+      {/* Reticle: a miniature net hoop with mesh, previewing the open net. */}
       <circle
         cx={cursorX}
         cy={cursorY}
-        r="6"
-        fill="rgba(253, 246, 232, 0.35)"
-        stroke="#fde8b8"
-        strokeWidth="1"
+        r={previewRadius}
+        fill="url(#aim-mesh)"
+        opacity="0.7"
+      />
+      <circle
+        cx={cursorX}
+        cy={cursorY}
+        r={previewRadius}
+        fill="none"
+        stroke="rgba(253, 232, 184, 0.9)"
+        strokeWidth="1.5"
       />
     </svg>
   );
