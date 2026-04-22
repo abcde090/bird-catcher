@@ -1,20 +1,22 @@
 import { NET_CHARACTER_Y_OFFSET } from "../../lib/game-config";
+import { getCharacterSize } from "../../lib/viewport";
 
 export default function NetCharacter() {
+  const { width, height } = getCharacterSize();
   return (
     <div
       style={{
         position: "absolute",
         left: "50%",
-        bottom: NET_CHARACTER_Y_OFFSET,
+        bottom: `max(${NET_CHARACTER_Y_OFFSET}px, env(safe-area-inset-bottom))`,
         transform: "translateX(-50%)",
-        width: 80,
-        height: 120,
+        width,
+        height,
         zIndex: 11,
         pointerEvents: "none",
       }}
     >
-      <svg viewBox="0 0 80 120" width="80" height="120">
+      <svg viewBox="0 0 80 120" width={width} height={height}>
         <line
           x1="40"
           y1="115"

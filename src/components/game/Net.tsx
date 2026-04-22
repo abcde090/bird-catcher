@@ -3,9 +3,9 @@ import { useGameStore } from "../../stores/useGameStore";
 import {
   NET_CAST_DURATION,
   NET_OPEN_DURATION,
-  NET_RADIUS,
   NET_RETRACT_DURATION,
 } from "../../lib/game-config";
+import { getNetRadius } from "../../lib/viewport";
 
 function arcPoint(
   t: number,
@@ -69,7 +69,7 @@ export default function Net() {
     // Expand radius quickly then hold
     const openElapsed = elapsed - NET_CAST_DURATION;
     const expand = Math.min(1, openElapsed / 0.12);
-    radius = NET_RADIUS * expand;
+    radius = getNetRadius() * expand;
     // Shrink at the very end
     const closing = Math.max(
       0,

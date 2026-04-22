@@ -1,5 +1,6 @@
 import type { FlyingBird as FlyingBirdType } from "../../types/game";
 import { RARITY } from "../../lib/game-config";
+import { getBirdBaseSize } from "../../lib/viewport";
 import BirdImage from "./BirdImage";
 
 interface FlyingBirdProps {
@@ -8,7 +9,7 @@ interface FlyingBirdProps {
 
 export default function FlyingBird({ bird }: FlyingBirdProps) {
   const rarity = RARITY[bird.species.status];
-  const size = 80 * rarity.sizeScale;
+  const size = getBirdBaseSize() * rarity.sizeScale;
   // Intentional impure read: halo intensifies during the bite window, re-read
   // each render since the game loop updates bird positions every tick.
   // eslint-disable-next-line react-hooks/purity
