@@ -32,6 +32,7 @@ export default function CardReveal({ bird, onClose }: CardRevealProps) {
       }}
     >
       <div
+        className="card-reveal-panel"
         style={{
           padding: "14px 16px 16px",
           background: "linear-gradient(160deg, #fdf6e8ee, #f0e2c4ee)",
@@ -114,6 +115,7 @@ export default function CardReveal({ bird, onClose }: CardRevealProps) {
         </div>
 
         <div
+          className="card-reveal-fact"
           style={{
             marginTop: 10,
             paddingTop: 8,

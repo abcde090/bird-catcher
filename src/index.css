@@ -398,17 +398,24 @@ button:focus {
     white-space: normal !important;
   }
 
-  /* CardReveal on mobile: pin to the bottom so it doesn't cover the HUD
-     (score/time/misses at the top). Slide up from below instead of the
-     default slide-in-from-top-right. Small bottom inset respects the
-     iOS home indicator. */
+  /* CardReveal on mobile: compact toast pinned to the bottom. Narrower
+     (centered), semi-transparent, and the fun fact is hidden so it's
+     short enough not to cover the net character. Slides up from below. */
   .card-reveal {
     top: auto !important;
     bottom: max(16px, env(safe-area-inset-bottom)) !important;
-    right: 10px !important;
-    left: 10px !important;
-    width: auto !important;
-    animation-name: toast-in-bottom !important;
+    left: 50% !important;
+    right: auto !important;
+    width: min(92vw, 320px) !important;
+    transform: translateX(-50%) !important;
+    animation-name: toast-in-bottom-centered !important;
+    opacity: 0.88 !important;
+  }
+  .card-reveal-panel {
+    padding: 10px 12px 12px !important;
+  }
+  .card-reveal-fact {
+    display: none !important;
   }
 
   /* Shrink the bottom dark band on mobile. Default heights (18% ground +
@@ -447,6 +454,18 @@ button:focus {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Used by the mobile CardReveal toast, which is centered via translateX(-50%). */
+@keyframes toast-in-bottom-centered {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(24px);
+  }
+  100% {
+    opacity: 0.88;
+    transform: translateX(-50%) translateY(0);
   }
 }
 
