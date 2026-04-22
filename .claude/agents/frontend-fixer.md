@@ -34,11 +34,17 @@ Tailwind is installed but mostly unused — if you're reaching for a utility cla
 
 5. **Animation jank** — keep animations on `transform`/`opacity`. Add `will-change: transform` on elements the RAF loop moves (already set on `FlyingBird`).
 
-6. **Z-index conflicts** — Sky is `z:0` (implicit), birds are `z:20`, catch effects `z:30`, HUD `z:50`, miss flash `z:60`, card reveal `z:60`.
+6. **Z-index conflicts** — Sky is `z:0` (implicit), character `z:11`, aim arc `z:12`, birds `z:20`, Net `z:25`, catch effects `z:30`, HUD `z:50`, miss flash + card-reveal `z:60`, BirdDetailModal `z:100`.
 
-7. **Touch target sizing** — minimum 44×44 px on mobile for clickable buttons/birds.
+7. **Touch target sizing** — minimum 44×44 px on mobile for clickable buttons/birds. Global `@media (hover: none)` rule in [src/index.css](src/index.css) already bumps `.btn`/`.chip` minimum heights; check new controls meet this.
 
 8. **Color contrast** — text on the photo layer must have `text-shadow: 0 2px 8px rgba(0,0,0,0.5)` or similar.
+
+9. **Viewport-relative sizing** — gameplay elements (birds, net, character) use fluid helpers in [src/lib/viewport.ts](src/lib/viewport.ts) (`getBirdBaseSize`, `getNetRadius`, `getCharacterSize`, `getPoleOffset`). Don't reintroduce hardcoded pixel sizes for gameplay dimensions.
+
+10. **Mobile responsive chrome** — HUD plates, modal grid, field-guide card grid, card-reveal toast, and horizon band heights collapse at `@media (max-width: 640px)` in [src/index.css](src/index.css). Components tag themselves with classes like `.hud-top`, `.modal-body`, `.guide-grid`, `.card-reveal`, `.sky-ground`, `.title-mountain` so the stylesheet can override inline styles.
+
+11. **iOS safe areas** — `env(safe-area-inset-bottom)` is used on the character wrapper and the mobile card-reveal toast. Don't place interactive UI below `safe-area-inset-bottom` without checking on a notched device.
 
 ## Process
 

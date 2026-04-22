@@ -11,6 +11,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 There is no test runner configured in this repo.
 
+## Deployment
+
+Pushes to `main` auto-deploy to GitHub Pages via [.github/workflows/deploy.yml](.github/workflows/deploy.yml). Live URL: https://abcde090.github.io/bird-catcher/. The Vite `base` is `/bird-catcher/` (see [vite.config.ts](vite.config.ts), overridable via `VITE_BASE=/ npm run build` for root-hosted deploys). Runtime asset paths go through [src/lib/asset.ts](src/lib/asset.ts), which prefixes `import.meta.env.BASE_URL`.
+
 ## Game rules
 
 Canonical gameplay reference — phase timing, rarity tiers, scoring, combo, miss cap, persistence, worked spawn-probability example: [docs/GAME_RULES.md](docs/GAME_RULES.md). Consult it before tweaking balance numbers.
@@ -46,15 +50,28 @@ Per-tick work: decrement timer → maybe spawn → advance each bird's progress,
 
 ### Phases and rarity ([src/lib/game-config.ts](src/lib/game-config.ts))
 
-Round is `ROUND_DURATION=90` seconds split into four phases (dawn 90→67, noon 67→45, dusk 45→22, night 22→0) via `getPhase`. Each phase has its own `spawn` interval, sky gradient (4-stop), sun color, horizon color, and `allowed` conservation statuses — rarer species only unlock in later phases. Rarity (`ConservationStatus`) drives `points`, `weight`, `sizeScale`, and `speed`. Combo multiplier tiers: 2→1.5×, 3→2×, 5→3×, 8→4× (see `getComboMult`). The Sky component linearly interpolates the 4-stop gradient between the current and next phase for smooth transitions.
+Round is `ROUND_DURATION=90` seconds split into four phases (dawn 90→67, noon 67→45, dusk 45→22, night 22→0) via `getPhase`. Each phase has its own `spawn` interval, sky gradient (4-stop), sun color, horizon color, and `allowed` conservation statuses — rarer species only unlock in later phases. Rarity (`ConservationStatus`) drives `points`, `sizeScale`, and `speed`. Combo multiplier tiers: 2→1.5×, 3→2×, 5→3×, 8→4× (see `getComboMult`). The Sky component linearly interpolates the 4-stop gradient between the current and next phase for smooth transitions.
 
-Spawning ([src/lib/spawner.ts](src/lib/spawner.ts)) uses weighted-random selection by rarity over phase-eligible species. Flight pattern is sampled: 55% straight, 30% arc, 10% dive, 5% zigzag.
+Spawning ([src/lib/spawner.ts](src/lib/spawner.ts)) is **tier-first**: pick a `ConservationStatus` via weighted-random over `TIER_SPAWN_WEIGHT` (restricted to the phase's eligible tiers), then pick a species uniformly within that tier. Decouples spawn probability from roster count — adding species to a tier doesn't inflate how often that tier appears. Current weights {60, 26, 11, 5, 3} target ~60/20/6/3/1 catches per round. Flight pattern is sampled: 55% straight, 30% arc, 10% dive, 5% zigzag. Spawn y is clamped to `[topMargin=170, originY − birdDiameter − 30]` so birds always fall within the net's cast reach and never overlap the HUD.
+
+### Responsive / touch ([src/lib/viewport.ts](src/lib/viewport.ts))
+
+Gameplay sizes are fluid, not breakpointed:
+- `getBirdBaseSize()` — `clamp(56, 9vw, 80)` px
+- `getNetRadius()` — `clamp(42, 7.5vw, 64)` px
+- `getCharacterSize()` / `getPoleOffset()` — character dimensions scale with viewport
+- `getMaxActive()` — active-bird cap scales by `viewportArea / 1280×720`, clamped 3–6
+- `isTouchPrimary()` / `getHitboxMultiplier()` — touch devices get ×1.15 on the collision threshold to compensate for fingertip imprecision
+
+Input is via Pointer Events (`onPointerMove` / `onPointerDown` / `onPointerUp`) — unified for mouse, touch, and pen. The playfield sets `touch-action: none` to block iOS pinch/zoom/pull-to-refresh during play. The character wrapper uses `bottom: max(NET_CHARACTER_Y_OFFSET, env(safe-area-inset-bottom))` to clear the iOS home indicator.
+
+UI chrome (HUD plates, modal grid, field-guide card grid, card-reveal toast position, horizon band heights) does use a `@media (max-width: 640px)` breakpoint in [src/index.css](src/index.css) — see component classes like `.hud-top`, `.modal-body`, `.guide-grid`, `.card-reveal`, `.sky-ground`.
 
 ### Components
 
-- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `NetCharacter`, `AimArc`, `Net`, `FlyingBird`, `BirdImage`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`, `BirdDetailModal`, `AustraliaMap`
+- [src/components/game/](src/components/game/) — everything: `Sky`, `TitleScreen`, `GameScreen`, `GameHUD` (with `PhaseGlyph`), `NetCharacter`, `AimArc`, `Net`, `FlyingBird`, `BirdImage`, `CatchEffect`, `MissFlash`, `CardReveal` (toast), `ResultsScreen`, `FieldGuide`, `BirdDetailModal`, `RangeMap`, `AustraliaMap`
 - Birds render as real photos via `BirdImage` — cropped JPEGs under [public/birds/](public/birds/) (`{id}.jpg`, ≤320 px). The image is masked inside a rarity-colored circular frame.
-- `FieldGuide` uses `BirdDetailModal` for expanded species info: photo, category, distribution map via `RangeMap` (real Wikipedia map when available under [public/birds/maps/](public/birds/maps/), falling back to the stylized `AustraliaMap` with hand-curated `regions`), population, size, habitats, diet, fun fact. Uncaught entries show the name but are not clickable.
+- `FieldGuide` uses `BirdDetailModal` for expanded species info: photo, category, distribution map via `RangeMap` (real Wikipedia map when available under [public/birds/maps/](public/birds/maps/), falling back to the `AustraliaMap` — a real Australia silhouette SVG at [public/maps/australia-states.svg](public/maps/australia-states.svg) with colored state-code markers at each state's centroid for the bird's hand-curated `regions`), population, size, habitats, diet, fun fact. Uncaught entries show the name but are not clickable.
 
 ### Types
 

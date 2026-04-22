@@ -12,7 +12,7 @@ You audit "Birds at Golden Hour" for performance issues that cause frame drops, 
 
 1. **Game loop** — must use `requestAnimationFrame`, never `setInterval`/`setTimeout` for per-frame work. See [src/hooks/useGameLoop.ts](src/hooks/useGameLoop.ts).
 
-2. **Active bird cap** — `MAX_ACTIVE = 6` in [src/lib/game-config.ts](src/lib/game-config.ts). Spawner must check `birdsRef.current.length` before pushing.
+2. **Active bird cap** — viewport-scaled via `getMaxActive()` in [src/lib/viewport.ts](src/lib/viewport.ts) (3–6 depending on viewport area). Spawner must check `birdsRef.current.length < getMaxActive()` before pushing. No longer a hardcoded `MAX_ACTIVE` constant.
 
 3. **Birds live in a ref** — the canonical bird list is `birdsRef.current` (a `useRef`), not Zustand state. The store mirror is updated via `gameStore.setState({ activeBirds })` once per tick. If a PR moves bird positions into React state, reject it — per-frame re-renders will nuke FPS.
 
@@ -29,6 +29,12 @@ You audit "Birds at Golden Hour" for performance issues that cause frame drops, 
 9. **Sky component** — `Sky` recomputes a 4-stop gradient every render. That's OK (cheap), but flag if any work inside `Sky` allocates large arrays or runs DOM queries per tick.
 
 10. **React-hooks purity** — React 19's `react-hooks/purity` rule blocks `Math.random()` inside render or `useMemo`. Use `useState(() => …)` for one-shot random layout data (see `CloudLayer`).
+
+11. **Pointer Events only** — input is via `onPointerMove` / `onPointerDown` / `onPointerUp` on the playfield (unified mouse/touch/pen). If a PR adds `onMouseMove` or `onTouchStart` separately, flag as regression — touch devices won't fire mouse events and vice versa. See [src/components/game/GameScreen.tsx](src/components/game/GameScreen.tsx).
+
+12. **Asset URL helper** — all runtime fetches / `<img src>` / `new Image().src` must go through `asset()` in [src/lib/asset.ts](src/lib/asset.ts) (prefixes `import.meta.env.BASE_URL`). Direct `"/data/…"` or `"/birds/…"` strings will 404 under the `/bird-catcher/` Pages subpath.
+
+13. **Range-map lazy loading** — `<img>` tags for distribution maps in `RangeMap` must set `loading="lazy"` so the 45 large maps aren't all fetched at app startup. Only bird photos are eagerly preloaded.
 
 ## Output
 

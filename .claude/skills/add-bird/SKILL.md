@@ -15,31 +15,33 @@ The current `BirdSpecies` interface lives in [src/types/bird.ts](../../../src/ty
 
 ```ts
 interface BirdSpecies {
-  id: string;                 // kebab-case, unique
-  name: string;               // display name, e.g. "Rainbow Lorikeet"
-  scientific: string;         // "Trichoglossus moluccanus"
-  category: string;           // loose grouping: Parrot, Songbird, Raptor, Waterbird, Cockatoo, Kingfisher, Honeyeater, Shorebird, Nocturnal, Dove, Ratite, Ground Bird, Insectivore
-  status: ConservationStatus; // "least_concern" | "near_threatened" | "vulnerable" | "endangered" | "critically_endangered"
-  habitats: string[];         // free-form tags, e.g. ["forest","urban","coastal"]
-  diet: string;               // "Nectarivore — nectar, pollen, fruits"
-  funFact: string;            // one sentence
-  size: number;               // length in cm
-  population: string;         // display string, e.g. "5.2M", "42K", "<350"
-  imageUrl: string;           // "/birds/{id}.jpg" — MUST be a local path, NOT external
+  id: string;                      // kebab-case, unique
+  name: string;                    // display name, e.g. "Rainbow Lorikeet"
+  scientific: string;              // "Trichoglossus moluccanus"
+  category: string;                // loose grouping: Parrot, Songbird, Raptor, Waterbird, Cockatoo, Kingfisher, Honeyeater, Shorebird, Nocturnal, Dove, Ratite, Ground Bird, Insectivore
+  status: ConservationStatus;      // "least_concern" | "near_threatened" | "vulnerable" | "endangered" | "critically_endangered"
+  habitats: string[];              // free-form tags, e.g. ["forest","urban","coastal"]
+  regions: AustralianStateId[];    // ["nsw","vic","qld","wa","sa","tas","nt","act"] subset
+  diet: string;                    // "Nectarivore — nectar, pollen, fruits"
+  funFact: string;                 // one sentence
+  size: number;                    // length in cm
+  population: string;              // display string, e.g. "5.2M", "42K", "<350"
+  imageUrl: string;                // "/birds/{id}.jpg" — local path; rendered via asset() helper
+  rangeMapUrl?: string;            // optional "/birds/maps/{id}.{png|jpg}" — fetched by fetch-range-maps.py
 }
 ```
 
-Status → rarity tier mapping (see `RARITY` in [src/lib/game-config.ts](../../../src/lib/game-config.ts)):
+Status → rarity tier mapping (see `RARITY` and `TIER_SPAWN_WEIGHT` in [src/lib/game-config.ts](../../../src/lib/game-config.ts)):
 
-| Status | Tier | Points | Spawn weight |
+| Status | Tier | Points | Tier spawn weight |
 |---|---|---|---|
-| `least_concern` | Common | 50 | 10 |
-| `near_threatened` | Uncommon | 100 | 5 |
-| `vulnerable` | Rare | 150 | 3 |
-| `endangered` | Epic | 250 | 1 |
-| `critically_endangered` | Legendary | 400 | 0.6 |
+| `least_concern` | Common | 50 | 60 |
+| `near_threatened` | Uncommon | 100 | 26 |
+| `vulnerable` | Rare | 150 | 11 |
+| `endangered` | Epic | 250 | 5 |
+| `critically_endangered` | Legendary | 400 | 3 |
 
-Distribution target is skewed heavily toward common (realistic for Aussie avifauna): ~70% `least_concern`, and the rare tiers get progressively fewer entries.
+**The spawner picks a tier first**, then a species uniformly within that tier. Adding more species to a tier does NOT inflate how often that tier appears — so you can add as many Commons as you like without drowning out Legendaries. Still worth preserving a realistic Aussie distribution (many commons, a handful of endangered endemics).
 
 ## Process
 
@@ -68,9 +70,13 @@ Given `$ARGUMENTS` (a common name like "Eastern Whipbird"):
 
 5. **Populate the remaining fields** from general knowledge: scientific name, category, conservation status (IUCN or EPBC Act), habitats, diet, size in cm, rough population, one fun fact.
 
-6. **Append to [public/data/birds.json](../../../public/data/birds.json)** — add a new object at the end. Keep existing entries untouched (IDs are used as localStorage keys for `bc_discovered`, so changing them resets user progress).
+6. **Regions** — pick the Australian states/territories where the bird is native or established. Subset of `["nsw","vic","qld","wa","sa","tas","nt","act"]`. Hand-curated per-species, even approximate is fine (used to highlight states on the fallback Australia map when no Wikipedia distribution image is available). See the `REGIONS` dict in [scripts/build-birds.py](../../../scripts/build-birds.py) for reference examples.
 
-7. **Verify**: `npx tsc --noEmit` and `npm run build` must pass. Open the dev server and check the bird appears in the Field Journal grid.
+7. **Optional: range map** — if Wikipedia's article for the species has a distribution map, run `python3 scripts/fetch-range-maps.py --only <id>` to download and rasterize it into `public/birds/maps/`. The script adds `rangeMapUrl` to birds.json automatically. Skip if Wikipedia has no map — the Field Guide falls back to the stylized Australia silhouette with your `regions` highlighted.
+
+8. **Append to [public/data/birds.json](../../../public/data/birds.json)** — add a new object at the end. Keep existing entries untouched (IDs are used as localStorage keys for `bc_discovered`, so changing them resets user progress).
+
+9. **Verify**: `npx tsc --noEmit` and `npm run build` must pass. Open the dev server and check the bird appears in the Field Journal grid.
 
 ## Field-level guidance
 

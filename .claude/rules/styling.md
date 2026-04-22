@@ -65,3 +65,23 @@ Modals (see [`BirdDetailModal`](../../src/components/game/BirdDetailModal.tsx)) 
 - A `.panel` child centered in the viewport with max-height and `overflow: auto`.
 - Entry animation: existing `card-in` keyframe (0.35 s `cubic-bezier(0.16, 1, 0.3, 1)`) on the panel; `fade-in` on the backdrop.
 - Dismiss paths (all three): click backdrop (outer `onClick`), press Escape (window `keydown` listener in a `useEffect`), click an explicit `×` button in the top-right corner. The inner panel must `stopPropagation()` on click to avoid triggering the backdrop dismiss.
+
+## Responsive layout
+
+Gameplay sizes are *fluid* (see [src/lib/viewport.ts](../../src/lib/viewport.ts)) using `clamp(min, %, max)` — no hard breakpoint "jump" between phone/desktop sizes. UI *chrome* (HUD plates, modal grid, field-guide card grid, card-reveal toast, horizon band heights) is responsive via a single `@media (max-width: 640px)` block at the bottom of [src/index.css](../../src/index.css).
+
+Components that need responsive behavior tag themselves with semantic classes and let the stylesheet override inline values. Current classes:
+
+- HUD: `.hud-top`, `.hud-score-value`, `.hud-time-value`, `.hud-chapter-value`, `.hud-chapter-label`, `.hud-best`, `.hud-discovered`, `.hud-miss-dot`, `.combo-display`
+- Field Guide: `.guide-page`, `.guide-header`, `.guide-grid`, `.guide-card`, `.guide-card-photo`, `.guide-card-name`
+- Modal: `.modal-shell`, `.modal-header`, `.modal-body`, `.modal-map`
+- Overlays: `.card-reveal`, `.title-heading`
+- Sky / title chrome: `.title-mountain`, `.title-ground`, `.sky-mountain-far`, `.sky-mountain-near`, `.sky-ground`, `.sky-grass`
+
+When adding a new responsive-sensitive element, tag it with a semantic class and add a rule to the existing `@media` block — don't duplicate the breakpoint.
+
+## Touch / iOS
+
+- `touch-action: none` on the playfield (`GameScreen`) blocks iOS pinch/zoom/double-tap-zoom and pull-to-refresh during gameplay.
+- `(hover: none)` media query bumps `.btn` (min-height 44 px) and `.chip` (min-height 36 px) to meet Apple HIG touch-target sizing.
+- Any bottom-anchored interactive UI must include `env(safe-area-inset-bottom)` in its position — see the `.card-reveal` rule and `NetCharacter`'s `bottom: max(NET_CHARACTER_Y_OFFSET, env(safe-area-inset-bottom))`.
