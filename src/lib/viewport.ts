@@ -28,14 +28,14 @@ export function getBirdBaseSize(): number {
 }
 
 /**
- * Net catch circle radius in pixels. ~6 % of viewport width,
- * clamped 36–50 px. Reads as a hand-net rather than a drop-catching
- * basket; still larger than an average fingertip (~40 px) thanks to
- * the touch hitbox bonus applied in the collision loop.
+ * Net catch circle radius in pixels. ~4.5 % of viewport width,
+ * clamped 28–40 px. Sized to feel like a hand-net around a bird
+ * rather than engulfing it. Touch devices get a ×1.15 hitbox bonus
+ * in the collision loop to compensate for fingertip imprecision.
  */
 export function getNetRadius(): number {
   const vw = typeof window !== "undefined" ? window.innerWidth : 1280;
-  return clamp(36, 50, vw * 0.06);
+  return clamp(28, 40, vw * 0.045);
 }
 
 /**
