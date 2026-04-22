@@ -410,6 +410,33 @@ button:focus {
     width: auto !important;
     animation-name: toast-in-bottom !important;
   }
+
+  /* Shrink the bottom dark band on mobile. Default heights (18% ground +
+     28% mountain = ~46% of the viewport) turned the bottom half of the
+     title/play screen into a solid dark bar. Mobile gets a slimmer horizon
+     so the sky gets more room. */
+  .title-mountain {
+    height: 18% !important;
+    bottom: 10% !important;
+  }
+  .title-ground {
+    height: 10% !important;
+  }
+  .sky-mountain-far {
+    height: 16% !important;
+    bottom: 10% !important;
+  }
+  .sky-mountain-near {
+    height: 14% !important;
+    bottom: 7% !important;
+  }
+  .sky-grass {
+    height: 5% !important;
+    bottom: 10% !important;
+  }
+  .sky-ground {
+    height: 10% !important;
+  }
 }
 
 @keyframes toast-in-bottom {

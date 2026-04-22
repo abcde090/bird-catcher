@@ -13,7 +13,10 @@ export const NET_COOLDOWN = 0.3;
 
 // Geometry
 export const NET_RADIUS = 60;
-export const NET_CHARACTER_Y_OFFSET = 80;
+// Distance from the bottom of the viewport to the character's feet.
+// Lower = more sky for birds to fly in. iOS home-indicator clearance is
+// handled via env(safe-area-inset-bottom) in NetCharacter.
+export const NET_CHARACTER_Y_OFFSET = 30;
 
 // Tier reaction tuning
 export const FLINCH_TRIGGER_DIST = 120;

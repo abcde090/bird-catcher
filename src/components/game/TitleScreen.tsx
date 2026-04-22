@@ -80,6 +80,7 @@ export default function TitleScreen() {
       <svg
         viewBox="0 0 1200 200"
         preserveAspectRatio="none"
+        className="title-mountain"
         style={{
           position: "absolute",
           bottom: "18%",
@@ -94,6 +95,7 @@ export default function TitleScreen() {
         />
       </svg>
       <div
+        className="title-ground"
         style={{
           position: "absolute",
           bottom: 0,

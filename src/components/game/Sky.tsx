@@ -81,6 +81,7 @@ export default function Sky({ phase, timeRemaining }: SkyProps) {
       <svg
         viewBox="0 0 1200 200"
         preserveAspectRatio="none"
+        className="sky-mountain-far"
         style={{
           position: "absolute",
           bottom: "18%",
@@ -98,6 +99,7 @@ export default function Sky({ phase, timeRemaining }: SkyProps) {
       <svg
         viewBox="0 0 1200 200"
         preserveAspectRatio="none"
+        className="sky-mountain-near"
         style={{
           position: "absolute",
           bottom: "14%",
@@ -115,6 +117,7 @@ export default function Sky({ phase, timeRemaining }: SkyProps) {
       </svg>
 
       <div
+        className="sky-ground"
         style={{
           position: "absolute",
           bottom: 0,
@@ -127,6 +130,7 @@ export default function Sky({ phase, timeRemaining }: SkyProps) {
       <svg
         viewBox="0 0 1200 60"
         preserveAspectRatio="none"
+        className="sky-grass"
         style={{
           position: "absolute",
           bottom: "18%",
@@ -167,9 +171,7 @@ function CloudLayer({ phaseId }: CloudLayerProps) {
         ? "#d89070"
         : "#fdfaf0";
   return (
-    <div
-      style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
-    >
+    <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
       {clouds.map((c) => (
         <div
           key={c.i}

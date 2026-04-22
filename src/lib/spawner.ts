@@ -51,7 +51,10 @@ export function spawnBird(
   // clears the HUD plates.
   const birdDiameter = getBirdBaseSize();
   const originY = viewport.height - NET_CHARACTER_Y_OFFSET - getPoleOffset();
-  const topMargin = 110;
+  // Clear the HUD's tallest column (Chapter + Time, stacked center). On
+  // mobile this is ~120 px from the top; 170 leaves comfortable headroom
+  // on both phones and desktops.
+  const topMargin = 170;
   const bottomMargin = birdDiameter + 30;
   const maxY = Math.max(topMargin + 60, originY - bottomMargin);
   const baseY = topMargin + Math.random() * (maxY - topMargin);
