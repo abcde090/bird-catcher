@@ -1,5 +1,6 @@
 import { useGameStore } from "../../stores/useGameStore";
 import { NET_CHARACTER_Y_OFFSET } from "../../lib/game-config";
+import { getPoleOffset } from "../../lib/viewport";
 
 export default function AimArc() {
   const cursorX = useGameStore((s) => s.cursorX);
@@ -13,7 +14,7 @@ export default function AimArc() {
   if (!cursorSet) return null;
 
   const originX = window.innerWidth / 2;
-  const originY = window.innerHeight - NET_CHARACTER_Y_OFFSET - 90;
+  const originY = window.innerHeight - NET_CHARACTER_Y_OFFSET - getPoleOffset();
 
   // Hide if cursor is at or below the character's hand
   if (cursorY >= originY - 10) return null;

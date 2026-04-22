@@ -1,7 +1,8 @@
 import type { PointerEvent } from "react";
 import { useGameStore } from "../../stores/useGameStore";
 import { useGameLoop } from "../../hooks/useGameLoop";
-import { getPhase } from "../../lib/game-config";
+import { getPhase, NET_CHARACTER_Y_OFFSET } from "../../lib/game-config";
+import { getPoleOffset } from "../../lib/viewport";
 import Sky from "./Sky";
 import NetCharacter from "./NetCharacter";
 import AimArc from "./AimArc";
@@ -31,7 +32,8 @@ export default function GameScreen() {
   const handleCast = (e: PointerEvent) => {
     if (netPhase !== "idle") return;
     const originX = window.innerWidth / 2;
-    const originY = window.innerHeight - 80 - 90;
+    const originY =
+      window.innerHeight - NET_CHARACTER_Y_OFFSET - getPoleOffset();
     if (e.clientY >= originY - 10) return;
     setNet({
       phase: "casting",

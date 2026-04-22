@@ -4,9 +4,7 @@ import { useCollectionStore } from "../stores/useCollectionStore";
 import { useBirdStore } from "../stores/useBirdStore";
 import { spawnBird } from "../lib/spawner";
 import {
-  MAX_ACTIVE,
   MAX_MISSES,
-  NET_RADIUS,
   RARITY,
   LEGENDARY_BITE_DURATION,
   FLINCH_TRIGGER_DIST,
@@ -19,6 +17,12 @@ import {
   getComboMult,
   getPhase,
 } from "../lib/game-config";
+import {
+  getBirdBaseSize,
+  getHitboxMultiplier,
+  getMaxActive,
+  getNetRadius,
+} from "../lib/viewport";
 import type { FlyingBird } from "../types/game";
 
 export function useGameLoop() {
@@ -108,7 +112,7 @@ export function useGameLoop() {
 
       if (
         now - lastSpawnRef.current >= spawnInterval &&
-        birdsRef.current.length < MAX_ACTIVE
+        birdsRef.current.length < getMaxActive()
       ) {
         const viewport = {
           width: window.innerWidth,
@@ -250,6 +254,10 @@ export function useGameLoop() {
 
         // Every frame during open — check collisions
         if (net.phase === "open" && elapsed < CAST + OPEN) {
+          // Snapshot viewport-derived values once per frame, not per bird
+          const currentNetRadius = getNetRadius();
+          const birdBase = getBirdBaseSize();
+          const hitboxMult = getHitboxMultiplier();
           for (const bird of birdsRef.current) {
             // Legendaries are only catchable during their bite window
             if (bird.species.status === "critically_endangered") {
@@ -258,8 +266,13 @@ export function useGameLoop() {
             const dx = bird.x - net.targetX;
             const dy = bird.y - net.targetY;
             const distSq = dx * dx + dy * dy;
-            const hitR = 40 * RARITY[bird.species.status].sizeScale;
-            const threshold = NET_RADIUS + hitR;
+            // Bird hitbox = half of rendered diameter. Touch devices get a
+            // 15% bonus to compensate for fingertip imprecision.
+            const hitR =
+              (birdBase / 2) *
+              RARITY[bird.species.status].sizeScale *
+              hitboxMult;
+            const threshold = currentNetRadius + hitR;
             if (distSq <= threshold * threshold) {
               catchBird(bird.id, net.targetX, net.targetY);
               gameStore.setState((s) => ({
