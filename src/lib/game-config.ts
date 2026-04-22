@@ -30,18 +30,34 @@ export const LEGENDARY_BITE_WINDOW_MAX = 0.7;
 export interface RarityConfig {
   label: string;
   points: number;
-  weight: number;
   sizeScale: number;
   speed: number;
   color: string;
   ring: string;
 }
 
+/**
+ * Per-tier spawn probability — the spawner picks a tier first using these
+ * weights (re-normalized over eligible tiers per phase), then uniformly
+ * picks a species within the chosen tier. Decouples spawn rarity from
+ * roster size: adding more species to a tier doesn't inflate how often
+ * that tier appears.
+ *
+ * Expected per-round counts (out of ~89 spawns, Dawn→Night):
+ *   Common ≈ 60, Uncommon ≈ 20, Rare ≈ 6, Epic ≈ 3, Legendary ≈ 1
+ */
+export const TIER_SPAWN_WEIGHT: Record<ConservationStatus, number> = {
+  least_concern: 60,
+  near_threatened: 26,
+  vulnerable: 11,
+  endangered: 5,
+  critically_endangered: 3,
+};
+
 export const RARITY: Record<ConservationStatus, RarityConfig> = {
   least_concern: {
     label: "Common",
     points: 50,
-    weight: 10,
     sizeScale: 1.1,
     speed: 0.85,
     color: "#6a8a3c",
@@ -50,7 +66,6 @@ export const RARITY: Record<ConservationStatus, RarityConfig> = {
   near_threatened: {
     label: "Uncommon",
     points: 100,
-    weight: 5,
     sizeScale: 1.0,
     speed: 1.0,
     color: "#d4a43a",
@@ -59,7 +74,6 @@ export const RARITY: Record<ConservationStatus, RarityConfig> = {
   vulnerable: {
     label: "Rare",
     points: 150,
-    weight: 3,
     sizeScale: 0.95,
     speed: 1.2,
     color: "#e08a3a",
@@ -68,7 +82,6 @@ export const RARITY: Record<ConservationStatus, RarityConfig> = {
   endangered: {
     label: "Epic",
     points: 250,
-    weight: 1,
     sizeScale: 0.9,
     speed: 1.4,
     color: "#c85530",
@@ -77,7 +90,6 @@ export const RARITY: Record<ConservationStatus, RarityConfig> = {
   critically_endangered: {
     label: "Legendary",
     points: 400,
-    weight: 0.6,
     sizeScale: 0.85,
     speed: 1.6,
     color: "#9c3a70",

@@ -54,15 +54,26 @@ This means **Legendary (critically_endangered) birds only appear in the last 22 
 Defined in [src/lib/spawner.ts](../src/lib/spawner.ts) and driven by `useGameLoop`.
 
 Per tick:
-1. If `now - lastSpawnRef >= phase.spawn` **and** `birdsRef.current.length < MAX_ACTIVE`, attempt a spawn.
-2. Filter the full roster by `phase.allowed`.
-3. Pick one species with weighted-random over `RARITY[status].weight`.
+1. If `now - lastSpawnRef >= phase.spawn` **and** `birdsRef.current.length < getMaxActive()`, attempt a spawn.
+2. **Pick a tier** (`ConservationStatus`) using weighted-random over `TIER_SPAWN_WEIGHT`, restricted to the phase's `allowed` list.
+3. **Pick a species** uniformly within that tier — decouples spawn probability from roster count.
 4. Roll a flight pattern — 55% `straight`, 30% `arc`, 10% `dive`, 5% `zigzag`.
-5. Roll a direction (left ↔ right, 50/50), a base `y` in the upper 55% of screen, and a speed of `(120 + random·50) × RARITY[status].speed` px/s.
+5. Roll a direction (left ↔ right, 50/50), a base `y` clamped to the catchable band (above the character's reach — `originY - birdSize - 30`), and a speed of `(120 + random·50) × RARITY[status].speed` px/s.
+
+Tier spawn weights (from [src/lib/game-config.ts](../src/lib/game-config.ts), re-normalized per phase):
+
+| Tier | Weight |
+|---|---|
+| Common (`least_concern`) | 60 |
+| Uncommon (`near_threatened`) | 26 |
+| Rare (`vulnerable`) | 11 |
+| Epic (`endangered`) | 5 |
+| Legendary (`critically_endangered`) | 3 |
 
 Constants:
-- `MAX_ACTIVE = 6` — hard cap on concurrent flying birds
+- `getMaxActive()` — active-bird cap scaled by viewport area (3 on phone, 5 on tablet, 6 on desktop)
 - No exclusion of already-caught species — duplicates can (and do) appear in the same round
+- Birds never spawn below `viewport.height - NET_CHARACTER_Y_OFFSET - poleOffset - birdSize - 30` — keeps every bird within the net's cast arc
 
 ---
 
@@ -70,19 +81,19 @@ Constants:
 
 Five tiers, mapped directly from IUCN/EPBC conservation status. Each tier defines four independent gameplay multipliers plus a game-display label:
 
-| Tier | Status | Points | Weight | Size × | Speed × |
+| Tier | Status | Points | Tier spawn weight | Size × | Speed × |
 |---|---|---|---|---|---|
-| Common | least_concern | 50 | 10 | 1.10 | 0.85 |
-| Uncommon | near_threatened | 100 | 5 | 1.00 | 1.00 |
-| Rare | vulnerable | 150 | 3 | 0.95 | 1.20 |
-| Epic | endangered | 250 | 1 | 0.90 | 1.40 |
-| Legendary | critically_endangered | 400 | 0.6 | 0.85 | 1.60 |
+| Common | least_concern | 50 | 60 | 1.10 | 0.85 |
+| Uncommon | near_threatened | 100 | 26 | 1.00 | 1.00 |
+| Rare | vulnerable | 150 | 11 | 0.95 | 1.20 |
+| Epic | endangered | 250 | 5 | 0.90 | 1.40 |
+| Legendary | critically_endangered | 400 | 3 | 0.85 | 1.60 |
 
 Meaning of each column:
 
 - **Points** — base score on a successful catch, before combo multiplier and before the first-discovery bonus.
-- **Weight** — relative probability inside the weighted-random spawn pick. A Common bird is ~16× more likely to be chosen than a Legendary one for any given spawn slot (10 ÷ 0.6).
-- **Size ×** — multiplier on base hitbox diameter (80 px in the current renderer). Legendary birds render at 68 px vs. Common at 88 px — a ~25% smaller click target.
+- **Tier spawn weight** — probability of the tier being chosen before species selection. Applied via `TIER_SPAWN_WEIGHT` after filtering to the phase's eligible tiers. Unlike the old per-species weight, this is independent of roster count — adding more Legendary species doesn't change how often Legendaries appear.
+- **Size ×** — multiplier on the viewport-relative bird diameter. Legendary renders at 85% of the base size, so ~15% smaller click target than Common's 110%.
 - **Speed ×** — multiplier on base ground-speed. Legendary birds cross the screen in roughly half the time Common birds do.
 
 Rarer birds also show a pulsing `bird-glow` halo (anything that isn't Common) and a rarity-colored circular border via `RARITY[status].ring`.
@@ -182,29 +193,35 @@ Each `BirdSpecies` carries a `regions: AustralianStateId[]` field (subset of `ns
 
 ---
 
-## Worked example — how rare is a Legendary?
+## Worked example — what does a round look like?
 
-With the current roster of 119 birds (83 Common · 12 Uncommon · 10 Rare · 8 Epic · 6 Legendary):
+Tier-first spawning (see `TIER_SPAWN_WEIGHT`) gives tier shares that depend only on the eligible tiers of each phase — roster size doesn't skew the picks.
 
-**In the Night phase**, total spawn weight is:
+Share by tier in each phase (weights re-normalized over eligible tiers):
 
-```
-83×10 + 12×5 + 10×3 + 8×1 + 6×0.6
-= 830 + 60 + 30 + 8 + 3.6
-= 931.6
-```
+| Tier | Dawn (only least_concern) | Noon (+ near_threatened) | Dusk (+ vulnerable, endangered) | Night (all five) |
+|---|---|---|---|---|
+| Common | 100 % | 69.8 % | 58.8 % | 57.1 % |
+| Uncommon | — | 30.2 % | 25.5 % | 24.8 % |
+| Rare | — | — | 10.8 % | 10.5 % |
+| Epic | — | — | 4.9 % | 4.8 % |
+| Legendary | — | — | — | 2.9 % |
 
-Share by tier in Night:
+### Expected catches per 90-second round
 
-| Tier | Weight share | Per 100 Night spawns |
+Spawn attempts per phase: Dawn ≈ 14, Noon ≈ 18, Dusk ≈ 26, Night ≈ 31 (subject to the `getMaxActive()` cap — roughly 3 on phone, 5 on tablet, 6 on desktop).
+
+Summed across all four phases ⇒ about 89 spawns per round, split:
+
+| Tier | Per round | Per 100 birds |
 |---|---|---|
-| Common | 89.1% | ~89 |
-| Uncommon | 6.4% | ~6 |
-| Rare | 3.2% | ~3 |
-| Epic | 0.9% | ~1 |
-| Legendary | 0.4% | ~0.4 |
+| Common | ~60 | 67 |
+| Uncommon | ~20 | 22 |
+| Rare | ~6 | 7 |
+| Epic | ~3 | 3 |
+| Legendary | ~1 (roughly one every round or two) | 1 |
 
-Night is 22 seconds with a 0.7 s spawn interval ⇒ up to ~31 spawn attempts. A Legendary shows up in roughly **1 in 8 rounds** on average — and when it does, it's a small, fast, short-lived target. That's why Legendary base points are 400 (vs. 50 for Common) and why the +50 first-discovery bonus matters — catching one pays up to `(400 + 50) × 4 = 1,800`.
+Legendary is still genuinely rare — you won't see one in every Night phase, but you're not waiting 8 rounds for one either. A Legendary catch pays `(400 + 50) × up to 4` = up to **1,800** points.
 
 ---
 
